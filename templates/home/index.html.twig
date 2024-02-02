@@ -1,0 +1,477 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SnapCode™ Agency | Accueil{% endblock %}
+
+{% block body %}
+  <!-- banner starts -->
+<div class="banner home-banner d-flex align-items-center">
+    
+
+  <div class="container">
+      <div class="row no-gutters align-items-center">
+          <div class="col-lg-6 text-center text-lg-left">
+              <h1>Démarquez vous grâce à la présence en ligne de votre entreprise avec rapidité et succès.</h1>
+              <p class="larger-txt">
+                  Transformez votre présence en ligne avec des sites web rapides 
+                  et des intégrations personnalisées afin d'atteindre enfin vos objectifs et d'aller chercher toujours plus loin.
+              </p>
+              <a href="" class="custom-btn secondary-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">Prendre un RDV</a>
+              
+          </div>
+          <!-- End of .col-lg-5 -->
+
+          <div class="col-lg-6">
+              <div class="img-container text-center text-lg-right">
+                  <img src="assets/images/banner/home-banner.png" alt="Home banner image" class="img-fluid">
+              </div>
+              <!-- End of .img-container -->
+          </div>
+          <!-- End of .col-lg-7 -->
+      </div>
+      <!-- End of .row -->
+  </div>
+  <!-- End of .container -->
+</div>
+<!-- End of .banner -->
+
+  <!-- achievements starts -->
+  <div class="achievements section-gap theme-bg-d ">
+      <div class="container">
+          <div class="row">
+              <div class="col-4">
+                  <div class="counter-block d-flex align-items-center justify-content-center">
+                      <div class="icon-container">
+                          <img src="assets/images/achievements-counter/counter-icon-1.png" alt="Happy Clients">
+                      </div>
+                      <!-- End of .icon-container -->
+
+                      <div class="counter-wrapper">
+                          <div class="number">
+                              <span class="counter">131</span>+
+                          </div>
+                          <!-- End of .number -->
+                          Clients <br>satisfaits
+                      </div>
+                      <!-- End of .counter-wrapper -->
+                  </div>
+                  <!-- End of .counter-block -->
+              </div>
+              <!-- End of .col-4 -->
+              <div class="col-4">
+                  <div class="counter-block d-flex align-items-center justify-content-center">
+                      <div class="icon-container">
+                          <img src="assets/images/achievements-counter/counter-icon-2.png" alt="Running Projects">
+                      </div>
+                      <!-- End of .icon-container -->
+
+                      <div class="counter-wrapper">
+                          <div class="number">
+                              <span class="counter">11</span>+
+                          </div>
+                          <!-- End of .number -->
+                          Projets <br>en cours
+                      </div>
+                      <!-- End of .counter-wrapper -->
+                  </div>
+                  <!-- End of .counter-block -->
+              </div>
+              <div class="col-4">
+                  <div class="counter-block d-flex align-items-center justify-content-center">
+                      <div class="icon-container">
+                          <img src="assets/images/achievements-counter/counter-icon-3.png" alt="Project Completed">
+                      </div>
+                      <!-- End of .icon-container -->
+
+                      <div class="counter-wrapper">
+                          <div class="number">
+                              <span class="counter">219</span>+
+                          </div>
+                          <!-- End of .number -->
+                          Projets <br>Terminés
+                      </div>
+                      <!-- End of .counter-wrapper -->
+                  </div>
+                  <!-- End of .counter-block -->
+              </div>
+          </div>
+          <!-- End of .row -->
+      </div>
+      <!-- End of .container -->
+  </div>
+  <!-- End of .achievements -->
+
+<section class="services light-grey-bg" id="cynic-services" data-scroll-offset="165">
+  <div class="floating-service-wrapper section-gap">
+      <div class="container">
+          <h2 class="section-title text-center">Les services que nous proposons</h2>
+          <p class="larger-txt text-center">Nous pouvons effectuez différentes tâches pour votre activité.</p>
+          <div class="grid-wrapper">
+              <div class="row justify-content-center">
+              
+                  <div class="col-xl-4 col-lg-6">
+                      <a href="{{path('app_service_integration')}}" class="service-block text-center">
+                          <img src="assets/images/services/service-icon-2.png" alt="Logo and branding">
+                          <h4>Intégration <br> HTML</h4>
+                          <p>Transformez vos maquettes en sites web interactifs, alliant design et fonctionnalité de manière fluide et professionnelle.</p>
+                      </a>
+                  </div>
+                  <!-- End of .service-block -->
+                  <!-- End of .col-lg-4 -->
+                  
+                  <div class="col-xl-4 col-lg-6">
+                      <a href="{{path('app_service_webDevPersonalized')}}" class="service-block text-center">
+                          <img src="assets/images/services/service-icon-2-1.png" alt="undefined">
+                          <h4>Développement de site web personnalisé</h4>
+                          <p>Nous concevons des sites Web simples et d'aspect professionnel. Nos conceptions sont spécifiquement adaptées pour les moteurs de recherche et vos clients.</p>
+                      </a>
+                  </div>
+                  <!-- End of .service-block -->
+                  <!-- End of .col-lg-4 -->
+                  
+                  <!-- <div class="col-xl-4 col-lg-6">
+                      <a href="mobile-app-development.html" class="service-block text-center">
+                          <img src="assets/images/services/service-icon-3.png" alt="undefined">
+                          <h4>Application Développement Mobile</h4>
+                          <p>Du simple système de gestion de contenu au développeur de commerce électronique complexe, 
+                          nous couvrons tout.</p>
+                      </a>
+                  </div> -->
+                  <!-- End of .service-block -->
+                  <!-- End of .col-lg-4 -->
+                  
+                  <!-- <div class="col-xl-4 col-lg-6">
+                      <a href="search-engine-optimization.html" class="service-block text-center">
+                          <img src="assets/images/services/service-icon-4.png" alt="Search Engine Optimization">
+                          <h4>Search Engine Optimization</br>(SEO)</h4> 
+                          <p>Nous concevons des sites Web simples mais d'aspect professionnel. Nos conceptions sont spécifiquement adaptés pour les moteurs de recherche et les utilisateurs.</p>
+                      </a>
+                  </div> -->
+                  <!-- End of .service-block -->
+                  <!-- End of .col-lg-4 -->
+                  
+                  <!-- <div class="col-xl-4 col-lg-6">
+                      <a href="pay-per-click.html" class="service-block text-center">
+                          <img src="assets/images/services/service-icon-5.png" alt="Pay-Per-Click">
+                          <h4>Pay-Per-Click</h4>
+                          <p>We design professional looking yet simple websites. Our designs are search engine and user friendly.</p>
+                      </a>
+                  </div> -->
+                  <!-- End of .service-block -->
+                  <!-- End of .col-lg-4 -->
+                  
+                  <!-- <div class="col-xl-4 col-lg-6">
+                      <a href="#" class="service-block text-center">
+                          <img src="assets/images/services/service-icon-6.png" alt="Online Marketing">
+                          <h4>Marketing Digital</h4>
+                          <p>Nous sommes à l'écoute de vos besoins dans le but d'adapter nos stratégies à votre activité.</p>
+                      </a>
+                  </div> -->
+                  <!-- End of .service-block -->
+                  <!-- End of .col-lg-4 -->
+                  
+              </div>
+              <!-- End of .row -->
+          </div>
+          <!-- End of .grid-wrapper -->
+      </div>
+      <!-- End of .container -->
+  </div>
+  <!-- End of .floating-service-wrapper -->
+</section>
+
+<!-- our features starts -->
+<section class="features light-grey-bg" id="cynic-about" data-scroll-offset="165">
+  <div class="container">
+
+      
+          <div class="features-grid">
+              <div class="row align-items-center">
+                  <div class="col-lg-6 order-lg-2 offset-lg-1 text-center text-lg-right">
+                      <div class="img-container">
+                          <img src="assets/images/features/features-img-1.png" alt="why choose us" class="img-fluid">
+                          
+                      </div>
+                      <!-- End of .img-container -->
+                  </div>
+                  <!-- End of .col-lg-6 -->
+
+                  <div class="col-lg-5">
+                      <div class="features-content">
+                          <h2 class="section-title">Des difficultés de croissance, de visibilité ?</h2>
+                          <p>
+                              La raison est simple. <br>
+                              Que vous soyez entrepreneurs indépendants, agences, organisateurs d'événements, designers, ou startups, vous êtes confrontés à des défis spécifiques dans le monde en ligne. <br>
+                              Voici les problèmes majeures que vous rencontrez : <br><br>
+
+                              - <strong>Les freelances et petites entreprises</strong> cherchent à accroître leur visibilité rapidement tout en se démarquant dans un marché compétitif. <br>
+                              - <strong>Certaines agences</strong> font face à la demande croissante de solutions personnalisées qui dépassent leurs compétences internes, ou qui ne peuvent pas être réalisées <strong>efficacement ET rapidement.</strong><br>
+                              - <strong>Les organisateurs d'événements</strong> ont aujourd'hui forcément besoin une présence en ligne efficace pour promouvoir leurs événements locaux.<br>
+                              - <strong>Les designers</strong> rencontrent des complexités dans l'intégration de leurs designs dans un site web.<br>
+                              - <strong>Quant aux startups</strong>, elles aspirent à des solutions web innovantes mais sont souvent pressées par des délais serrés. <br><br>
+
+                              Notre <strong>service d'intégration HTML et/ou service de développement de site spécifique</strong> pour votre activité répond à ces divers défis en offrant une solution rapide, personnalisée et innovante pour répondre aux besoins de chaque persona.
+                          </p>
+                              <a href="{{path('about')}}" class="hyperlink">En apprendre plus sur nous</a>
+                          
+                      </div>
+                      <!-- End of .features-content -->
+                  </div>
+                  <!-- End of .col-lg-6 -->
+              </div>
+              <!-- End of .row -->
+          </div>
+          <!-- End of .features-grid -->
+      
+          <div class="features-grid">
+              <div class="row align-items-center">
+                  <div class="col-lg-6 text-center text-lg-left">
+                      <div class="img-container">
+                          <img src="assets/images/features/features-img-2.png" alt="why choose us" class="img-fluid">
+                          
+                      </div>
+                      <!-- End of .img-container -->
+                  </div>
+                  <!-- End of .col-lg-6 -->
+
+                  <div class="col-lg-5 offset-lg-1">
+                      <div class="features-content">
+                          <h2 class="section-title">Votre solution, en fonction de votre besoin.</h2>
+                          <p>
+                              Notre service d'intégration HTML se présente comme la solution ultime, offrant des réponses adaptées à des défis variés. <br><br>
+                              Que vous cherchiez à accroître votre visibilité en ligne en un temps record, à vous démarquer dans un marché concurrentiel, à répondre 
+                              à des demandes spécifiques de clients, à promouvoir efficacement des événements locaux, ou à intégrer vos créations dans des sites web 
+                              sans tracas, notre approche sur mesure est conçue pour résoudre ces problématiques avec excellence. <br><br>
+
+                              Nous proposons des sites web rapides, conçus sur mesure pour assurer votre présence en ligne immédiate, alignés sur vos besoins spécifiques, 
+                              dédiés à la promotion efficace d'événements locaux, et facilitant l'intégration sans faille de designs de qualité. <br><br>
+                              
+                              Que vous soyez entrepreneur, agence, organisateur d'événements, designer, ou startup, notre service garantit une satisfaction optimale
+                              en répondant à vos besoins de manière rapide, efficace, et personnalisée.
+                          </p>
+
+                              <a href="{{path('about')}}" class="hyperlink">En apprendre plus sur nous</a>
+                          
+                      </div>
+                      <!-- End of .features-content -->
+                  </div>
+                  <!-- End of .col-lg-6 -->
+              </div>
+              <!-- End of .row -->
+          </div>
+          <!-- End of .features-grid -->
+       
+      
+  </div>
+  <!-- End of .container -->
+</section>
+<!-- End of .features -->
+
+<!-- Projects starts -->
+
+<!-- End of .projects -->
+
+
+<!-- End of .team -->
+
+<!-- End of .team -->
+
+<div class="clients">
+  <div class="container">
+      <div class="row align-items-center clients-carousel-wrapper owl-carousel">
+          <div class="item client">
+              <img src="assets/images/clients/client-1.png" alt="clients' logo">
+          </div>
+          <div class="item client">
+              <img src="assets/images/clients/client-2.png" alt="clients' logo">
+          </div>
+          <div class="item client">
+              <img src="assets/images/clients/client-3.png" alt="clients' logo">
+          </div>
+          <div class="item client">
+              <img src="assets/images/clients/client-4.png" alt="clients' logo">
+          </div>
+          <div class="item client">
+              <img src="assets/images/clients/client-5.png" alt="clients' logo">
+          </div>
+          <div class="item client">
+              <img src="assets/images/clients/client-6.png" alt="clients' logo">
+          </div>
+          <div class="item client">
+              <img src="assets/images/clients/client-7.png" alt="clients' logo">
+          </div>
+      </div>
+      <!-- End of .clients-carousel-wrapper -->
+  </div>
+  <!-- End of .container -->
+</div>
+<!-- End of .clients -->
+
+
+<!-- pricing start -->
+
+<!-- End of .pricing -->
+
+
+
+<!-- customer-reviews starts -->
+<section class="customer-reviews section-gap grey-bg">
+  <div class="container">
+      <h2 class="section-title text-center">Ce que vous pensez de nous</h2>
+      <p class="larger-txt text-center">Des témoignages de personne avec lesquelles nous avons déjà travaillé.</p>
+      <div class="grid-wrapper">
+          <div class="row justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                  <div class="img-card review-card text-left white-bg">
+  <div class="media align-items-center">
+      <img class="img-fluid " src="assets/images/review/reviewer-1.png" alt="reviewer image">
+      <div class="media-body">
+          <h5>Julien B.</h5>
+          <p>Entrepreneur Local
+              <a href="#">Salon de coiffure (Val d'Oise)</a>
+          </p>
+      </div>
+  </div>
+  <!-- End of .media -->
+  <p>
+      "Grâce à SnapCode™ Corp, j'ai pu obtenir un site web professionnel en un temps record. 
+      Cela a vraiment boosté ma visibilité en ligne et attiré de nouveaux clients."
+  </p>
+</div>
+<!-- End of .img-card -->
+              </div>
+              <!-- End of .col-lg-4 -->
+
+              <div class="col-lg-4 col-md-6">
+                   <div class="img-card review-card text-left white-bg">
+                    <div class="media align-items-center">
+                        <img class="img-fluid " src="assets/images/review/reviewer-2.png" alt="reviewer image">
+                        <div class="media-body">
+                            <h5>Amandine C.</h5>
+                            <p>Indépendante
+                                <a href="#">CV en ligne</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- End of .media -->
+                    <p>“J'ai trouvé en SnapCode™ Corp le partenaire idéal pour répondre aux demandes
+                        que j'avais en matière d'intégration personnalisée. 
+                        Leur expertise a ajouté une véritable valeur à mes expériences &amp; projets.” </p>
+                    </div>
+                    <!-- End of .img-card -->
+              </div>
+              <!-- End of .col-lg-4 -->
+
+              <div class="col-lg-4 col-md-6">
+                   <div class="img-card review-card text-left white-bg">
+                    <div class="media align-items-center">
+                        <img class="img-fluid " src="assets/images/review/reviewer-2.png" alt="reviewer image">
+                        <div class="media-body">
+                            <h5>Albertina D.</h5>
+                            <p>CTO chez
+                                <a href="#">Mon Assistant Numérique - Boucle de Seine (92)</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- End of .media -->
+                    <p>“L'équipe de SnapCode™ Corp nous a fourni un site web dédié pour notre dernier événement.
+                        Cela a grandement facilité la promotion et a contribué au succès global de l'événement.” </p>
+                    </div>
+                    <!-- End of .img-card -->
+              </div>
+              <!-- End of .col-lg-4 -->
+          </div>
+          <!-- End of .row -->
+      </div>
+      <!-- End of .grid-wrapper -->
+      <!--<div class="col-lg-12">
+          <div class=" text-lg-center info mt-5 info">
+              <a href="#" class="custom-btn secondary-btn" data-toggle="modal" data-target="#quote-modal">Prendre RDV</a>
+          </div>-->
+      </div>
+  </div>
+  <!-- End of .container -->
+</section>
+<!-- End of .customer-reviews -->
+
+
+<!-- Section latest-news starts  Rendez vous Start -->
+<section class="newsletter section-gap  newsletter__white"> <!-- theme-bg-d -->
+  <div class="container">
+      <h2 class="text-center">Intéressé par nos services ?<br>
+            Réservez votre appel avec un expert.</h2>
+            <div class="d-flex justify-content-center flex-column text-center">
+              <p class="font-weight-bold mb-3">Si vous êtes intéressé par nos services, réservez votre appel dès aujourd'hui avec un de nos experts.<br> Cet appel est parfait si vous :</p>
+              <ul class="text-black">
+                  <li>Vous avez pour objectif de de vous créer ou d'optimiser votre présence sur internet via un portfolio, un site web one-page, multipage etc.</li>
+                  <li>Vous êtes une petite/moyenne entreprise locale et vous pensez que vous devriez avoir une présence plus importante sur internet pour votre activité.</li>
+                  <li>Ou encore, vous êtes une entreprise déjà établie, une agence et vous rencontrez des soucis de délivrabilité sur le développement de pages web spécifiques.</li>
+              </ul>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                  <div class="col-md-12 d-flex justify-content-center">
+                      <!-- Début de widget de lien Calendly -->
+                          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                          <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                          <a href="" class="custom-btn secondary-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">Prendre un RDV</a>
+                      <!-- Fin de widget de lien Calendly -->
+                  </div>
+              </div>
+            </div>
+
+            
+          <!--<form action="#" class="newsletter-form" method="POST">
+              <div class="row justify-content-between">
+                  <div class="col-md">
+                      <input type="text" name="fname" placeholder="Nom">
+                  </div>
+                  <div class="col-md">
+                      <input type="text" name="email" placeholder="Email">
+                  </div>
+
+                  <div class="col-md-auto">
+                      <a href="#" class="custom-btn secondary-btn">Prendre un RDV</a>
+                  </div>
+              </div>
+          </form>-->
+          <!-- End of .newsletter-form -->
+
+      <!-- <div class="social-icons-wrapper d-flex justify-content-center">
+          <p>Suivez nous:</p>
+          <ul class="social-icons">
+              <li>
+                  <a href="http://www.facebook.com/" target="_blank" rel="noopener">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="http://twitter.com/" target="_blank" rel="noopener">
+                      <i class="fab fa-twitter"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="http://youtube.com/" target="_blank" rel="noopener">
+                      <i class="fab fa-youtube"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="http://plus.google.com/discover" target="_blank" rel="noopener">
+                      <i class="fab fa-google-plus-g"></i>
+                  </a>
+              </li>
+          </ul>
+          
+      </div> --> 
+          <!-- End of .social-icons -->
+
+      <!-- End of .social-icons-wrapper -->
+  </div>
+  <!-- End of .container -->
+</section>
+<!-- End of .latest-news End of .rendez vous -->
+
+<!-- location starts -->
+
+<!-- End of .location -->
+{% endblock %}

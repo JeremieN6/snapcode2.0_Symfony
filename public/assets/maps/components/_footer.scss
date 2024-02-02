@@ -1,0 +1,116 @@
+/* -- Footer css
+------------------------------------- -- */
+
+.dark-footer-bg {
+    background: #171741;
+}
+.page-footer {
+    padding: 10rem 0 8.2rem;
+    font-size: 1.6rem;
+
+    a {
+        white-space: nowrap;
+        color: $typo-lighter;
+        text-decoration: none;
+
+        &:hover,
+        &.active {
+            color: $color-palette-b;
+        }
+    }
+
+    .social-icons {
+        padding-left: 0;
+        margin: 0 0 .6rem;
+
+        li {
+            color: $typo-lighter;
+
+            &:hover {
+                color: #fff;
+                a {
+                    color: currentColor;
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        line-height: 2.7rem;
+        color: $typo-lighter;
+        font-weight: 400;
+    }
+
+    .footer-logo {
+        margin-bottom: 5rem;
+    }
+}
+
+.footer-nav {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-nav-title {
+    margin-bottom: 5rem;
+    color: #fff;
+}
+
+
+.footer-nav {
+    li {
+        font-size: 1.6rem;
+        line-height: 2.7rem;
+        color: $typo-lighter;
+        margin-bottom: 1rem;
+        font-weight: 400;
+
+        a {
+            color: inherit;
+        }
+    }
+}
+
+.footer-contact-info {
+    p {
+        margin-bottom: 2rem;
+    }
+
+    a {
+        font-weight: 500;
+        color: $color-palette-c;
+        white-space: pre-wrap;
+        text-decoration: underline;
+    }
+
+    .info {
+        a {
+            display: block;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .tel {
+        color: $typo-lighter;
+        text-decoration: none;
+    }
+}
+
+.page-footer {
+
+    p,
+    .social-icons {
+        margin-bottom: 3rem;
+    }
+
+    .social-icons {
+        li {
+            margin-right: 2.5rem;
+        }
+    }
+}
+
+.footer-logo {
+    height: 3rem;
+}

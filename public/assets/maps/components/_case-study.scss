@@ -1,0 +1,44 @@
+/*-- Case study --*/
+
+.case-study-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.3rem;
+
+    img {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 100%;
+        object-fit: cover;
+        margin-right: 1rem;
+    }
+
+    h5 {
+        margin-bottom: 0;
+    }
+
+    span {
+        font-family: $primary-font;
+        font-size: 1.2rem;
+        line-height: 2.4rem;
+        color: $typo-lighter;
+        margin-left: 2rem;
+    }
+}
+
+.img-card {
+
+    &.case-study-card {
+        p {
+            font-size: 1.6rem;
+            line-height: 2.7rem;
+            margin-bottom: 3rem;
+        }
+
+        h4 {
+            span {
+                margin-top: 0;
+            }
+        }
+    }
+}

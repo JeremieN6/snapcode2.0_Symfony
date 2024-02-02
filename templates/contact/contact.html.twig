@@ -1,0 +1,228 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} SnapCode™ | 🫡 Contactez nous{% endblock %}
+
+{% block body %}
+
+<!-- banner starts -->
+<div class="banner d-flex align-items-center light-grey-bg">
+
+  <!-- Breadcrumb starts -->
+  <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+      <div class="container">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{path('app_home')}}">Accueil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contact</li>
+          </ol>
+      </div>
+  </nav>
+
+
+  <div class="container">
+      <div class="row no-gutters align-items-center">
+          <div class="col-lg-6 text-center text-lg-left">
+              <h1>Contact</h1>
+              <p class="larger-txt">
+                  Nous sommes impatients de vous entendre ! Laissez-nous savoir comment nous pouvons concrétiser votre vision et créer une expérience web exceptionnelle pour votre projet ou entreprise.
+              </p>
+
+          </div>
+          <!-- End of .col-lg-5 -->
+
+          <div class="col-lg-6">
+              <div class="img-container text-center text-lg-right">
+                  <img src="assets/images/banner/contact-banner.png" alt="Contact banner image" class="img-fluid">
+              </div>
+              <!-- End of .img-container -->
+          </div>
+          <!-- End of .col-lg-7 -->
+      </div>
+      <!-- End of .row -->
+  </div>
+  <!-- End of .container -->
+</div>
+<!-- End of .banner -->
+
+<section class="contact-us section-gap">
+  <div class="container">
+      <h2 class="section-title text-center">Contactez nous</h2>
+      <p class="larger-txt text-center">Votre projet est unique, tout comme notre engagement à vous offrir le meilleur service. 
+          Contactez-nous dès aujourd'hui pour commencer à concrétiser vos idées. Nous sommes toujours à votre écoute et sommes prêts à transformer vos ambitions en une réalité en ligne exceptionnelle.</p>
+      <div class="quote-form-wrapper contact-form-wrapper text-center grid-wrapper">
+        <div>
+            {{ form_start(contactForm, {'attr': {'class': 'quote-form text-center row', 'id': 'custom-form-id'}}) }}
+                <div class="col-lg-6">
+                {{form_row(contactForm.nom)}}
+                </div>
+                <div class="col-lg-6">
+                {{form_row(contactForm.email)}}
+                </div>
+                <div class="col-lg-6">
+                {{form_row(contactForm.companyName)}}
+                </div>
+                <div class="col-lg-6">
+                {{form_row(contactForm.phone)}}
+                </div>
+                <div class="col-lg-12">
+                    {{form_row(contactForm.message)}}
+                    {{form_row(contactForm.submit)}}
+            {{form_end(contactForm)}}
+                  <!-- End of .social-icons-wrapper -->
+                </div>
+        </div>
+          <!-- End of .quote-form -->
+      </div>
+      <!-- End of .quote-form-wrapper -->
+  </div>
+</section>
+
+  <!-- Section latest-news starts  Rendez vous Start -->
+  <section class="newsletter section-gap newsletter__white">
+      <div class="container">
+          <h2 class="text-center">Intéressé par nos services ?
+              Réservez votre appel avec un expert.</h2>
+              <div class="d-flex justify-content-center flex-column text-center">
+                  <p class="font-weight-bold mb-3">Si vous êtes intéressé par nos services, réservez votre appel dès aujourd'hui avec un de nos experts.<br> Cet appel est parfait si vous :</p>
+                  <ul class="text-black">
+                      <li>Vous avez pour objectif de de vous créer ou d'optimiser votre présence sur internet via un portfolio, un site web one-page, multipage etc.</li>
+                      <li>Vous êtes une petite/moyenne entreprise locale et vous pensez que vous devriez avoir une présence plus importante sur internet pour votre activité.</li>
+                      <li>Ou encore, vous êtes une entreprise déjà établie, une agence et vous rencontrez des soucis de délivrabilité sur le développement de pages web spécifiques.</li>
+                  </ul>
+              </div>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-12 d-flex justify-content-center">
+                          <!-- Début de widget de lien Calendly -->
+                              <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                              <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                              <a href="" class="custom-btn secondary-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">Prendre un RDV</a>
+                          <!-- Fin de widget de lien Calendly -->
+                      </div>
+                  </div>
+                </div>
+          <!--<form action="#" class="newsletter-form" method="POST">
+              <div class="row justify-content-between">
+                  <div class="col-md">
+                      <input type="text" name="fname" placeholder="Nom">
+                  </div>
+                  <div class="col-md">
+                      <input type="text" name="email" placeholder="Email">
+                  </div>
+
+                  <div class="col-md-auto">
+                      <a href="#" class="custom-btn secondary-btn">Prendre un RDV</a>
+                  </div>
+              </div>
+          </form>-->
+              <!-- End of .newsletter-form -->
+
+          <!-- <div class="social-icons-wrapper d-flex justify-content-center">
+              <p>Suivez nous:</p>
+              <ul class="social-icons">
+                  <li>
+                      <a href="http://www.facebook.com/" target="_blank" rel="noopener">
+                          <i class="fab fa-facebook-f"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://twitter.com/" target="_blank" rel="noopener">
+                          <i class="fab fa-twitter"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://youtube.com/" target="_blank" rel="noopener">
+                          <i class="fab fa-youtube"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="http://plus.google.com/discover" target="_blank" rel="noopener">
+                          <i class="fab fa-google-plus-g"></i>
+                      </a>
+                  </li>
+              </ul>
+              
+          </div> --> 
+              <!-- End of .social-icons -->
+
+          <!-- End of .social-icons-wrapper -->
+      </div>
+      <!-- End of .container -->
+  </section>
+  <!-- End of .latest-news End of .rendez vous -->
+
+<!-- Quote modal starts
+================================= -->
+<div class="modal fade full-width-modal quote-modal" id="quote-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content white-bg">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fas fa-times"></i>
+              </button>
+              <!-- End of .close -->
+          </div>
+          <!-- End of .modal-header -->
+
+            <div class="modal-body d-flex align-items-center justify-content-center text-center">
+                <div class="quote-form-wrapper text-center">
+                    <h3>Nous contacter</h3>
+                    <form method="POST" class="quote-form text-center row" action="#">
+                        <div class="col-lg-6">
+                            <input type="text" name="fname" placeholder="Nom">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" name="email" placeholder="Email">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <input type="text" name="phone" placeholder="Téléphone">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" name="website" placeholder="Site web">
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea placeholder="Message" name="message"></textarea>
+                            <button type="submit" class="custom-btn secondary-btn w-100">Envoyer</button>
+                            <div class="social-icons-wrapper d-flex justify-content-center">
+                                <!--<p>Suivez nous:</p>-->
+                                <!--<ul class="social-icons">
+                                    <li>
+                                        <a href="http://www.facebook.com/" target="_blank" rel="noopener">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://twitter.com/" target="_blank" rel="noopener">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://youtube.com/" target="_blank" rel="noopener">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://plus.google.com/discover" target="_blank" rel="noopener">
+                                            <i class="fab fa-google-plus-g"></i>
+                                        </a>
+                                    </li>
+                                </ul> -->
+                                
+                                <!-- End of .social-icons -->
+                            </div>
+                            <!-- End of .social-icons-wrapper -->
+                        </div>
+                    </form>
+                    <!-- End of .quote-form -->
+                </div>
+                <!-- End of .quote-form-wrapper -->
+            </div>
+            <!-- End of .modal-body -->
+      </div>
+      <!-- End of .modal-content -->
+  </div>
+  <!-- End of .modal-dialog -->
+</div>
+<!-- End of .quote-modal -->
+
+{% endblock %}

@@ -1,0 +1,52 @@
+/* -- Achievements css
+---------------------------------- -- */
+
+.achievement-extra-padding-bottom {
+    padding-bottom: 17.5rem;
+}
+
+.counter-block {
+    position: relative;
+    padding: .5rem 0 1rem;
+    &::after {
+        content: " ";
+        position: absolute;
+        top: -3rem;
+        right: -16px;
+        bottom: -3rem;
+        width: 2px;
+        display: block;
+        background: radial-gradient(closest-side, rgba(127, 154, 255, 0), rgba(127, 154, 255, 1), rgba(127, 154, 255, 0));
+    }
+    .icon-container {
+        margin-right: 3rem;
+    }
+}
+
+.achievements {
+    [class*="col-"]:last-child {
+        .counter-block {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.counter-wrapper {
+    font-family: $secondary-font;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #fff;
+    font-weight: 700;
+    br {
+        display: none;
+    }
+    .number {
+        font-family: $primary-font;
+        font-size: 4.8rem;
+        line-height: 5.4rem;
+        font-weight: 900;
+        margin-bottom: .9rem;
+    }
+}
