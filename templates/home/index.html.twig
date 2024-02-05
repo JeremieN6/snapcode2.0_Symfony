@@ -3,475 +3,1094 @@
 {% block title %}SnapCode™ Agency | Accueil{% endblock %}
 
 {% block body %}
-  <!-- banner starts -->
-<div class="banner home-banner d-flex align-items-center">
-    
 
-  <div class="container">
-      <div class="row no-gutters align-items-center">
-          <div class="col-lg-6 text-center text-lg-left">
-              <h1>Démarquez vous grâce à la présence en ligne de votre entreprise avec rapidité et succès.</h1>
-              <p class="larger-txt">
-                  Transformez votre présence en ligne avec des sites web rapides 
-                  et des intégrations personnalisées afin d'atteindre enfin vos objectifs et d'aller chercher toujours plus loin.
-              </p>
-              <a href="" class="custom-btn secondary-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">Prendre un RDV</a>
-              
-          </div>
-          <!-- End of .col-lg-5 -->
+    <section class="header">
+        <div class="containerText">
+            <!--<div class="containerSubTitle">
+                <p>😎  Simple way to communicate</p>
+            </div>-->
+            <div class="containerTitle">
+                <h1>Création de site vitrine sur mesure via<span class="styled-colored"> intégration de maquette</span></h1>
+            </div>
+            <div class="containerTexteTitle">
+                <p>Expert en création web sur mesure via intégration de maquettes client, 
+                    je transforme vos maquettes et vos idées de sites vitrine en réelles plateforme numérique percutantes et personnalisées.</p>
+            </div>
+            <div class="containerCTA">
+                <a href="" class="custom-btn secondary-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">
+                    <div class="mainCTA"><i class="fa fa-calendar"></i> Je prend un RDV</div>
+                </a>
+                <a href="mailto:contact.snapcode@jeremiecode.fr">
+                    <div class="mainCTA"><i class="fa fa-envelope"></i> J'envoie un mail</div>
+                </a>
+                <!-- <div class="subCTA">Get live demo</div> -->
+            </div>
+            <div class="containerSmallInfo">
+                <div class="smallInfo1">
+                    <img src="./assets/images/home/Done_ring_round_fill.svg" alt="Picto Check" class="contentPicto">
+                    <p>Client satisfait à 100%*</p>
+                </div>
+                <div class="smallInfo2">
+                    <img src="./assets/images/home/Done_ring_round_fill.svg" alt="Picto Check" class="contentPicto">
+                    <p>Des sites de qualité</p>
+                </div>
+            </div>
+        </div>
+        <div class="containerImageHeader">
+            <img src="./assets/images/home/hero-image-simple-homepage.png" alt="Image Header" class="contentImageHeader">
+        </div>
+    </section>
 
-          <div class="col-lg-6">
-              <div class="img-container text-center text-lg-right">
-                  <img src="assets/images/banner/home-banner.png" alt="Home banner image" class="img-fluid">
-              </div>
-              <!-- End of .img-container -->
-          </div>
-          <!-- End of .col-lg-7 -->
-      </div>
-      <!-- End of .row -->
-  </div>
-  <!-- End of .container -->
-</div>
-<!-- End of .banner -->
-
-  <!-- achievements starts -->
-  <div class="achievements section-gap theme-bg-d ">
-      <div class="container">
-          <div class="row">
-              <div class="col-4">
-                  <div class="counter-block d-flex align-items-center justify-content-center">
-                      <div class="icon-container">
-                          <img src="assets/images/achievements-counter/counter-icon-1.png" alt="Happy Clients">
-                      </div>
-                      <!-- End of .icon-container -->
-
-                      <div class="counter-wrapper">
-                          <div class="number">
-                              <span class="counter">131</span>+
-                          </div>
-                          <!-- End of .number -->
-                          Clients <br>satisfaits
-                      </div>
-                      <!-- End of .counter-wrapper -->
-                  </div>
-                  <!-- End of .counter-block -->
-              </div>
-              <!-- End of .col-4 -->
-              <div class="col-4">
-                  <div class="counter-block d-flex align-items-center justify-content-center">
-                      <div class="icon-container">
-                          <img src="assets/images/achievements-counter/counter-icon-2.png" alt="Running Projects">
-                      </div>
-                      <!-- End of .icon-container -->
-
-                      <div class="counter-wrapper">
-                          <div class="number">
-                              <span class="counter">11</span>+
-                          </div>
-                          <!-- End of .number -->
-                          Projets <br>en cours
-                      </div>
-                      <!-- End of .counter-wrapper -->
-                  </div>
-                  <!-- End of .counter-block -->
-              </div>
-              <div class="col-4">
-                  <div class="counter-block d-flex align-items-center justify-content-center">
-                      <div class="icon-container">
-                          <img src="assets/images/achievements-counter/counter-icon-3.png" alt="Project Completed">
-                      </div>
-                      <!-- End of .icon-container -->
-
-                      <div class="counter-wrapper">
-                          <div class="number">
-                              <span class="counter">219</span>+
-                          </div>
-                          <!-- End of .number -->
-                          Projets <br>Terminés
-                      </div>
-                      <!-- End of .counter-wrapper -->
-                  </div>
-                  <!-- End of .counter-block -->
-              </div>
-          </div>
-          <!-- End of .row -->
-      </div>
-      <!-- End of .container -->
-  </div>
-  <!-- End of .achievements -->
-
-<section class="services light-grey-bg" id="cynic-services" data-scroll-offset="165">
-  <div class="floating-service-wrapper section-gap">
-      <div class="container">
-          <h2 class="section-title text-center">Les services que nous proposons</h2>
-          <p class="larger-txt text-center">Nous pouvons effectuez différentes tâches pour votre activité.</p>
-          <div class="grid-wrapper">
-              <div class="row justify-content-center">
-              
-                  <div class="col-xl-4 col-lg-6">
-                      <a href="{{path('app_service_integration')}}" class="service-block text-center">
-                          <img src="assets/images/services/service-icon-2.png" alt="Logo and branding">
-                          <h4>Intégration <br> HTML</h4>
-                          <p>Transformez vos maquettes en sites web interactifs, alliant design et fonctionnalité de manière fluide et professionnelle.</p>
-                      </a>
-                  </div>
-                  <!-- End of .service-block -->
-                  <!-- End of .col-lg-4 -->
-                  
-                  <div class="col-xl-4 col-lg-6">
-                      <a href="{{path('app_service_webDevPersonalized')}}" class="service-block text-center">
-                          <img src="assets/images/services/service-icon-2-1.png" alt="undefined">
-                          <h4>Développement de site web personnalisé</h4>
-                          <p>Nous concevons des sites Web simples et d'aspect professionnel. Nos conceptions sont spécifiquement adaptées pour les moteurs de recherche et vos clients.</p>
-                      </a>
-                  </div>
-                  <!-- End of .service-block -->
-                  <!-- End of .col-lg-4 -->
-                  
-                  <!-- <div class="col-xl-4 col-lg-6">
-                      <a href="mobile-app-development.html" class="service-block text-center">
-                          <img src="assets/images/services/service-icon-3.png" alt="undefined">
-                          <h4>Application Développement Mobile</h4>
-                          <p>Du simple système de gestion de contenu au développeur de commerce électronique complexe, 
-                          nous couvrons tout.</p>
-                      </a>
-                  </div> -->
-                  <!-- End of .service-block -->
-                  <!-- End of .col-lg-4 -->
-                  
-                  <!-- <div class="col-xl-4 col-lg-6">
-                      <a href="search-engine-optimization.html" class="service-block text-center">
-                          <img src="assets/images/services/service-icon-4.png" alt="Search Engine Optimization">
-                          <h4>Search Engine Optimization</br>(SEO)</h4> 
-                          <p>Nous concevons des sites Web simples mais d'aspect professionnel. Nos conceptions sont spécifiquement adaptés pour les moteurs de recherche et les utilisateurs.</p>
-                      </a>
-                  </div> -->
-                  <!-- End of .service-block -->
-                  <!-- End of .col-lg-4 -->
-                  
-                  <!-- <div class="col-xl-4 col-lg-6">
-                      <a href="pay-per-click.html" class="service-block text-center">
-                          <img src="assets/images/services/service-icon-5.png" alt="Pay-Per-Click">
-                          <h4>Pay-Per-Click</h4>
-                          <p>We design professional looking yet simple websites. Our designs are search engine and user friendly.</p>
-                      </a>
-                  </div> -->
-                  <!-- End of .service-block -->
-                  <!-- End of .col-lg-4 -->
-                  
-                  <!-- <div class="col-xl-4 col-lg-6">
-                      <a href="#" class="service-block text-center">
-                          <img src="assets/images/services/service-icon-6.png" alt="Online Marketing">
-                          <h4>Marketing Digital</h4>
-                          <p>Nous sommes à l'écoute de vos besoins dans le but d'adapter nos stratégies à votre activité.</p>
-                      </a>
-                  </div> -->
-                  <!-- End of .service-block -->
-                  <!-- End of .col-lg-4 -->
-                  
-              </div>
-              <!-- End of .row -->
-          </div>
-          <!-- End of .grid-wrapper -->
-      </div>
-      <!-- End of .container -->
-  </div>
-  <!-- End of .floating-service-wrapper -->
-</section>
-
-<!-- our features starts -->
-<section class="features light-grey-bg" id="cynic-about" data-scroll-offset="165">
-  <div class="container">
-
-      
-          <div class="features-grid">
-              <div class="row align-items-center">
-                  <div class="col-lg-6 order-lg-2 offset-lg-1 text-center text-lg-right">
-                      <div class="img-container">
-                          <img src="assets/images/features/features-img-1.png" alt="why choose us" class="img-fluid">
-                          
-                      </div>
-                      <!-- End of .img-container -->
-                  </div>
-                  <!-- End of .col-lg-6 -->
-
-                  <div class="col-lg-5">
-                      <div class="features-content">
-                          <h2 class="section-title">Des difficultés de croissance, de visibilité ?</h2>
-                          <p>
-                              La raison est simple. <br>
-                              Que vous soyez entrepreneurs indépendants, agences, organisateurs d'événements, designers, ou startups, vous êtes confrontés à des défis spécifiques dans le monde en ligne. <br>
-                              Voici les problèmes majeures que vous rencontrez : <br><br>
-
-                              - <strong>Les freelances et petites entreprises</strong> cherchent à accroître leur visibilité rapidement tout en se démarquant dans un marché compétitif. <br>
-                              - <strong>Certaines agences</strong> font face à la demande croissante de solutions personnalisées qui dépassent leurs compétences internes, ou qui ne peuvent pas être réalisées <strong>efficacement ET rapidement.</strong><br>
-                              - <strong>Les organisateurs d'événements</strong> ont aujourd'hui forcément besoin une présence en ligne efficace pour promouvoir leurs événements locaux.<br>
-                              - <strong>Les designers</strong> rencontrent des complexités dans l'intégration de leurs designs dans un site web.<br>
-                              - <strong>Quant aux startups</strong>, elles aspirent à des solutions web innovantes mais sont souvent pressées par des délais serrés. <br><br>
-
-                              Notre <strong>service d'intégration HTML et/ou service de développement de site spécifique</strong> pour votre activité répond à ces divers défis en offrant une solution rapide, personnalisée et innovante pour répondre aux besoins de chaque persona.
-                          </p>
-                              <a href="{{path('about')}}" class="hyperlink">En apprendre plus sur nous</a>
-                          
-                      </div>
-                      <!-- End of .features-content -->
-                  </div>
-                  <!-- End of .col-lg-6 -->
-              </div>
-              <!-- End of .row -->
-          </div>
-          <!-- End of .features-grid -->
-      
-          <div class="features-grid">
-              <div class="row align-items-center">
-                  <div class="col-lg-6 text-center text-lg-left">
-                      <div class="img-container">
-                          <img src="assets/images/features/features-img-2.png" alt="why choose us" class="img-fluid">
-                          
-                      </div>
-                      <!-- End of .img-container -->
-                  </div>
-                  <!-- End of .col-lg-6 -->
-
-                  <div class="col-lg-5 offset-lg-1">
-                      <div class="features-content">
-                          <h2 class="section-title">Votre solution, en fonction de votre besoin.</h2>
-                          <p>
-                              Notre service d'intégration HTML se présente comme la solution ultime, offrant des réponses adaptées à des défis variés. <br><br>
-                              Que vous cherchiez à accroître votre visibilité en ligne en un temps record, à vous démarquer dans un marché concurrentiel, à répondre 
-                              à des demandes spécifiques de clients, à promouvoir efficacement des événements locaux, ou à intégrer vos créations dans des sites web 
-                              sans tracas, notre approche sur mesure est conçue pour résoudre ces problématiques avec excellence. <br><br>
-
-                              Nous proposons des sites web rapides, conçus sur mesure pour assurer votre présence en ligne immédiate, alignés sur vos besoins spécifiques, 
-                              dédiés à la promotion efficace d'événements locaux, et facilitant l'intégration sans faille de designs de qualité. <br><br>
-                              
-                              Que vous soyez entrepreneur, agence, organisateur d'événements, designer, ou startup, notre service garantit une satisfaction optimale
-                              en répondant à vos besoins de manière rapide, efficace, et personnalisée.
-                          </p>
-
-                              <a href="{{path('about')}}" class="hyperlink">En apprendre plus sur nous</a>
-                          
-                      </div>
-                      <!-- End of .features-content -->
-                  </div>
-                  <!-- End of .col-lg-6 -->
-              </div>
-              <!-- End of .row -->
-          </div>
-          <!-- End of .features-grid -->
-       
-      
-  </div>
-  <!-- End of .container -->
-</section>
-<!-- End of .features -->
-
-<!-- Projects starts -->
-
-<!-- End of .projects -->
-
-
-<!-- End of .team -->
-
-<!-- End of .team -->
-
-<div class="clients">
-  <div class="container">
-      <div class="row align-items-center clients-carousel-wrapper owl-carousel">
-          <div class="item client">
-              <img src="assets/images/clients/client-1.png" alt="clients' logo">
-          </div>
-          <div class="item client">
-              <img src="assets/images/clients/client-2.png" alt="clients' logo">
-          </div>
-          <div class="item client">
-              <img src="assets/images/clients/client-3.png" alt="clients' logo">
-          </div>
-          <div class="item client">
-              <img src="assets/images/clients/client-4.png" alt="clients' logo">
-          </div>
-          <div class="item client">
-              <img src="assets/images/clients/client-5.png" alt="clients' logo">
-          </div>
-          <div class="item client">
-              <img src="assets/images/clients/client-6.png" alt="clients' logo">
-          </div>
-          <div class="item client">
-              <img src="assets/images/clients/client-7.png" alt="clients' logo">
-          </div>
-      </div>
-      <!-- End of .clients-carousel-wrapper -->
-  </div>
-  <!-- End of .container -->
-</div>
-<!-- End of .clients -->
-
-
-<!-- pricing start -->
-
-<!-- End of .pricing -->
-
-
-
-<!-- customer-reviews starts -->
-<section class="customer-reviews section-gap grey-bg">
-  <div class="container">
-      <h2 class="section-title text-center">Ce que vous pensez de nous</h2>
-      <p class="larger-txt text-center">Des témoignages de personne avec lesquelles nous avons déjà travaillé.</p>
-      <div class="grid-wrapper">
-          <div class="row justify-content-center">
-              <div class="col-lg-4 col-md-6">
-                  <div class="img-card review-card text-left white-bg">
-  <div class="media align-items-center">
-      <img class="img-fluid " src="assets/images/review/reviewer-1.png" alt="reviewer image">
-      <div class="media-body">
-          <h5>Julien B.</h5>
-          <p>Entrepreneur Local
-              <a href="#">Salon de coiffure (Val d'Oise)</a>
-          </p>
-      </div>
-  </div>
-  <!-- End of .media -->
-  <p>
-      "Grâce à SnapCode™ Corp, j'ai pu obtenir un site web professionnel en un temps record. 
-      Cela a vraiment boosté ma visibilité en ligne et attiré de nouveaux clients."
-  </p>
-</div>
-<!-- End of .img-card -->
-              </div>
-              <!-- End of .col-lg-4 -->
-
-              <div class="col-lg-4 col-md-6">
-                   <div class="img-card review-card text-left white-bg">
-                    <div class="media align-items-center">
-                        <img class="img-fluid " src="assets/images/review/reviewer-2.png" alt="reviewer image">
-                        <div class="media-body">
-                            <h5>Amandine C.</h5>
-                            <p>Indépendante
-                                <a href="#">CV en ligne</a>
-                            </p>
+    <section class="section-card-informations fade-in-top" id="card">
+    <div class="containerCard">
+        <div class="containerCardTop">
+            <div class="containerCardTopLeft my-card">
+                <h2 class="h2-left-heading-white">Création de sites mémorables<span class="styled-colored">.</span><br></h2>
+                <p class="card-paragraph">Je me concentre exclusivement sur une chose, et je m'y dédie avec une précision et une passion inégalée. 
+                    Si vous recherchez un site web uniquement pour son esthétisme, avec des animations omniprésentes mais sans efficacité commerciale, alors mes services ne sont probablement pas pour vous. 
+                    Mon expertise réside dans la création de sites centré sur vos objectifs (chiffre d'affaire, visibilité, récupération d'adresse mail etc), pour générer de véritables résultats pour les startups et entreprises en croissance.<br>
+                </p>
+            </div>
+            <div class="containerCardTopRight">
+                <div class="containerCardTopRightSquare my-card">
+                    <div class="squareTopLeft mini">
+                        <div class="up">
+                            <sup class="supSquareTopLeft">+</sup>24
+                        </div>
+                        <div class="down">
+                            <span>Projets</span>
                         </div>
                     </div>
-                    <!-- End of .media -->
-                    <p>“J'ai trouvé en SnapCode™ Corp le partenaire idéal pour répondre aux demandes
-                        que j'avais en matière d'intégration personnalisée. 
-                        Leur expertise a ajouté une véritable valeur à mes expériences &amp; projets.” </p>
-                    </div>
-                    <!-- End of .img-card -->
-              </div>
-              <!-- End of .col-lg-4 -->
-
-              <div class="col-lg-4 col-md-6">
-                   <div class="img-card review-card text-left white-bg">
-                    <div class="media align-items-center">
-                        <img class="img-fluid " src="assets/images/review/reviewer-2.png" alt="reviewer image">
-                        <div class="media-body">
-                            <h5>Albertina D.</h5>
-                            <p>CTO chez
-                                <a href="#">Mon Assistant Numérique - Boucle de Seine (92)</a>
-                            </p>
+                </div>
+                <div class="containerCardTopRightSquare my-card">
+                    <div class="squareTopRight mini">
+                        <div class="up">
+                            +8<span>années</span>
+                        </div>
+                        <div class="down">
+                            <span>Expériences</span>
                         </div>
                     </div>
-                    <!-- End of .media -->
-                    <p>“L'équipe de SnapCode™ Corp nous a fourni un site web dédié pour notre dernier événement.
-                        Cela a grandement facilité la promotion et a contribué au succès global de l'événement.” </p>
+                </div>
+                <div class="containerCardTopRightSquare my-card">
+                    <div class="squareBottomLeft mini">
+                    <div class="up">
+                            <sup class="supSquareTopRight">+</sup>18
+                        </div>
+                        <div class="down">
+                            <span>clients heureux</span>
+                        </div>
                     </div>
-                    <!-- End of .img-card -->
-              </div>
-              <!-- End of .col-lg-4 -->
-          </div>
-          <!-- End of .row -->
-      </div>
-      <!-- End of .grid-wrapper -->
-      <!--<div class="col-lg-12">
-          <div class=" text-lg-center info mt-5 info">
-              <a href="#" class="custom-btn secondary-btn" data-toggle="modal" data-target="#quote-modal">Prendre RDV</a>
-          </div>-->
-      </div>
-  </div>
-  <!-- End of .container -->
-</section>
-<!-- End of .customer-reviews -->
+                </div>
+                <div class="containerCardTopRightSquare my-card">
+                    <div class="squareBottomRight mini">
+                        <div class="up">100%</div>
+                        <div class="down">
+                            <span>Clients satisfaits</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containerCardBottom">
+            <div class="containerCardBottonLeft my-card">
+                <div class="contentCardBottomLeft">
+                    <div class="subheaderCard">
+                        <span class="reason-blue-subheader">Ce que vous obtenez</span>
+                    </div>
+                    <h2 class="h2-heading-white">Un site impactant pour :<br></h2>
+                    <ul role="list" class="bullet-point-card">
+                        <li>Un design mémorable, pour une image de marque puissante et irrésistible.</li>
+                        <li>Une expérience utilisateur sur mesure pour augmenter les ventes.</li>
+                        <li>Des stratégies marketing pour augmenter vos taux de conversion et l'autorité de votre marque.</li>
+                        <li>Un site optimisé SEO pour se positionner dans les premiers résultats.</li>
+                    </ul>
+                </div>
 
+            </div>
+            <div class="containerCardBottonRight my-card-CTA">
+                <div class="containerCardBottonRightTop">
+                    <div class="contentCardBottomRightTop">
+                        <div class="contentCardSubtitle">
+                            Mémorable, impactant, centré résultats.
+                        </div>
+                        <div class="h2-heading-white contentCardTitre">
+                            Ca sonne comme quelque chose dont vous auriez besoin ?
+                        </div>
+                        <a href="#contact">
+                            <div class="contentCardCTA">
+                                <p class="smallCTA">Discutons création de site web ➔</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="containerCardBottonRightBottom">
+                    <img src="https://assets-global.website-files.com/6533bdea645a5e7646167e3d/65345481694c7dea027d888f_pdp%20agency-min(1)%201.png" alt="Illustration" class="contentCardImageIllustration">
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
 
-<!-- Section latest-news starts  Rendez vous Start -->
-<section class="newsletter section-gap  newsletter__white"> <!-- theme-bg-d -->
-  <div class="container">
-      <h2 class="text-center">Intéressé par nos services ?<br>
-            Réservez votre appel avec un expert.</h2>
-            <div class="d-flex justify-content-center flex-column text-center">
-              <p class="font-weight-bold mb-3">Si vous êtes intéressé par nos services, réservez votre appel dès aujourd'hui avec un de nos experts.<br> Cet appel est parfait si vous :</p>
-              <ul class="text-black">
-                  <li>Vous avez pour objectif de de vous créer ou d'optimiser votre présence sur internet via un portfolio, un site web one-page, multipage etc.</li>
-                  <li>Vous êtes une petite/moyenne entreprise locale et vous pensez que vous devriez avoir une présence plus importante sur internet pour votre activité.</li>
-                  <li>Ou encore, vous êtes une entreprise déjà établie, une agence et vous rencontrez des soucis de délivrabilité sur le développement de pages web spécifiques.</li>
-              </ul>
+    <section class="section-home-work section-realisations" id="realisations">
+    <div class="containerWorkComponent">
+        <div class="work_heading-wrapper">
+            <h2 class="section-heading-gradient">Mes réalisations</h2>
+                <div class="margin-top margin-xsmall">
+                    <div class="containerSubTitleRealisation">
+                        <p class="section-centred-paragraph">Des sites web qui donnent des résultats, et rien d'autre.&nbsp;Vous pourriez être le prochain !<br></p>
+                    </div>
+                </div>
+                <div class="containerWorkScreen workGrid">
+                    <a href="#" class="contentWorkScreen work_project w-inline-block">
+                        <img srcset="./assets/images/portfolio/screencapture-preview-template.png 500w, 
+                        ./assets/images/portfolio/screencapture-preview-template.png 800w, 
+                        ./assets/images/portfolio/screencapture-preview-template.png 1080w, 
+                        ./assets/images/portfolio/screencapture-preview-template.png 1426w" 
+                        loading="eager" sizes="(max-width: 479px) 84vw, (max-width: 767px) 91vw, (max-width: 991px) 93vw, (max-width: 1439px) 31vw, 32vw" 
+                        src="./assets/images/portfolio/screencapture-preview-template.png" 
+                        alt="Medisoluce - site vitrine" class="contentWorkScreenImage work_project_image">
+                    </a>
+                    <a href="#" class="contentWorkScreen work_project w-inline-block">
+                        <img srcset="./assets/images/portfolio/screencapture-themezaa-html-leadgen-demo-product-index-html.png 500w, 
+                        ./assets/images/portfolio/screencapture-themezaa-html-leadgen-demo-product-index-html.png 800w, 
+                        ./assets/images/portfolio/screencapture-themezaa-html-leadgen-demo-product-index-html.png 1080w, 
+                        ./assets/images/portfolio/screencapture-themezaa-html-leadgen-demo-product-index-html.png 1426w" 
+                        loading="eager" sizes="(max-width: 479px) 84vw, (max-width: 767px) 91vw, (max-width: 991px) 93vw, (max-width: 1439px) 31vw, 32vw" 
+                        src="./assets/images/portfolio/screencapture-themezaa-html-leadgen-demo-product-index-html.png" 
+                        alt="Medisoluce - site vitrine" class="contentWorkScreenImage work_project_image">
+                    </a>
+                    <a href="#" class="contentWorkScreen work_project w-inline-block">
+                        <img srcset="./assets/images/portfolio/screencapture-preview-cruip-fintech.png 500w, 
+                        ./assets/images/portfolio/screencapture-preview-cruip-fintech.png 800w, 
+                        ./assets/images/portfolio/screencapture-preview-cruip-fintech.png 1080w, 
+                        ./assets/images/portfolio/screencapture-preview-cruip-fintech.png 1426w" 
+                        loading="eager" sizes="(max-width: 479px) 84vw, (max-width: 767px) 91vw, (max-width: 991px) 93vw, (max-width: 1439px) 31vw, 32vw" 
+                        src="./assets/images/portfolio/screencapture-preview-cruip-fintech.png" 
+                        alt="Medisoluce - site vitrine" class="contentWorkScreenImage work_project_image">
+                    </a>
+                </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-home-process fade-in-bottom" id="process">
+    <div class="container_work_process">
+        <div class="content_work_process">
+            <div class="container_work_process_left">
+                <div class="content_work_process_left">
+                    <div class="container_title_h2">
+                        <h2 class="h2-heading-gradient"><strong>Comment marche la collaboration avec moi ?</strong></h2>
+                    </div>
+                    <div class="container_subtitle_h2">
+                        <p class="content_subtitle">J'ai un processus clair et précis pour que l'on collabore en toute confiance et de manière efficiente vers notre but commun : décuplez vos ventes grâce à votre site web.</p>
+                    </div>
+                    <div class="container_cta">
+                        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">
+                            <div class="default_button default_button_w">Prendre un rdv</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container_work_process_right">
+                <div class="content_work_porcess_step">
+                    <div class="content_work_porcess_step_left">
+                        <div class="work_porcess_step_number step_number_custom"> 
+                            <div>01</div> 
+                        </div>
+                        <div class="work_porcess_line"></div>
+                    </div>
+                    <div class="content_work_process_step_right">
+                        <div class="container_title_h3">
+                            <h3 class="h3-heading">Découverte<span class="styled-colored">.</span></h3>
+                        </div>
+                        <p>
+                            Nous entamons le processus par une phase de découverte approfondie de votre entreprise.
+                            L'objectif sera de comprendre vos besoins, vos objectifs, votre clientèle cible, votre marché et la vision que vous avez pour votre site web et votre entreprise, 
+                            pour définir la stratégie la plus pertinante.
+                            A cette étape une position de consultant d'analyste est nécessaire pour vous offrir une solution adaptée.
+                        </p>
+                    </div>
+                </div>
+                <div class="content_work_porcess_step">
+                    <div class="content_work_porcess_step_left">
+                        <div class="work_porcess_step_number step_number_custom"> 
+                            <div>02</div> 
+                        </div>
+                        <div class="work_porcess_line"></div>
+                    </div>
+                    <div class="content_work_process_step_right">
+                        <div class="container_title_h3">
+                            <h3 class="h3-heading">En cocréation<span class="styled-colored">.</span></h3>
+                        </div>
+                        <p>Établir une relation de confiance est essentiel, surtout dans un environnement de travail à distance. 
+                            C'est pourquoi je privilégie la cocréation avec les clients, les impliquant à chaque étape du processus de création et de prise de décision. 
+                            Cette étape l'objectif sera de transformer vos idées et maquettes en une réalité digitale concrète.
+                            Votre avis est primordial, et vous aurez une vue d'ensemble sur la progression du projet.</p>
+                    </div>
+                </div>
+                <div class="content_work_porcess_step">
+                    <div class="content_work_porcess_step_left">
+                        <div class="work_porcess_step_number step_number_custom"> 
+                            <div>03</div> 
+                        </div>
+                        <div class="work_porcess_line"></div>
+                    </div>
+                    <div class="content_work_process_step_right">
+                        <div class="container_title_h3">
+                            <h3 class="h3-heading">Des résultats et rien d'autre<span class="styled-colored">.</span></h3>
+                        </div>
+                        <p>
+                            Mon objectif principal est que vous obteniez des résultats tangibles. 
+                            A cette étape vous recevrez votre site web développé à 100% selon votre convenance.
+                            L'accompagnement pourra même se poursuivre après la livraison de votre site web, c'est à dire jusqu'à la mise en ligne complète.
+                            Encore une fois, nous crééons votre présence en ligne ensemble et nous seront satisfait uniquement lorsque vous le serez aussi à 100%. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    </section>
+
+    <section class="section-home-testimonials fade-in-top" id="testimonials">
+    <div class="container_testimonials">
+        <div class="content_testimonials">
+            <div class="w-layout-grid testimonials_component">
+                <div class="testimonials_content-right">
+                    <div class="container_title">
+                        <div class="container_title_h2">
+                            <h2 class="heading-medium">Ce que les clients pensent de mes services.</h2>
+                        </div>
+                        <p><strong>Ne prenez pas seulement ma parole pour acquis, découvrez les témoignages de clients.</strong></p>
+                    </div>
+                </div>
+                <div class="testimonials_content-left">
+                    <div class="testimonials_slider-mask w-slider-mask" id="w-slider-mask-0">
+                        <div class="testimonials_slide-content">
+                            <p class="text-weight-medium text-size-large">
+                                "La landing page créée par Jérémie a été un tournant pour mon affaire. 
+                                Nous avons vu une nette augmentation de notre visibilité et de nouveaux clients affluent régulièrement. 
+                                Le meilleur dans tout ça ? <u>Je n'ai rien eu à faire.</u>"
+                            </p>
+                            <div class="review_rating-icon-list margin-small">
+                                <img src="./assets/images/home/googleIcon.jpg" loading="lazy" width="40" alt="Icône Google Création site internet" class="review_google-icon margin-0"><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div>
+                            </div>
+                            <div class="testimonials_author-wrapper">
+                                <div class="testimonials_image-wrapper">
+                                    <img src="./assets/images/testimonials/img-1.jpg" loading="lazy" width="49" alt="" class="testimonial-image">
+                                </div>
+                                <div class="testimonials_name-wrapper">
+                                <div>
+                                    <strong>Gaëtan Chiavarini</strong>
+                                </div>
+                                    <div class="text-size-tiny text-weight-medium">gcbarbershop.org</div>
+                                </div>
+                                <div class="container_control_testimonial">
+                                    <div class="testimonials_arrow prev_testimonial" id="prev_testimonial_00" onclick="prevTestimonial00();">
+                                        <div class="testimonials_arrow-icon w-embed"><svg height="100%" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.5859 -1.23626e-07L13 3.21951L3.96947 10.9106L13 18.7805L11.5859 22L9.06922e-07 11.626L1.06329e-06 9.8374L11.5859 -1.23626e-07Z" fill="currentcolor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="testimonials_arrow next_testimonial" id="next_testimonial_00" onclick="nextTestimonial00();">
+                                        <div class="testimonials_arrow-icon w-embed"><svg height="100%" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.41412 22L0 18.7805L9.03053 11.0894L0 3.21951L1.41412 0L13 10.374V12.1626L1.41412 22Z" fill="currentcolor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials_slider-mask w-slider-mask" id="w-slider-mask-1">
+                        <div class="testimonials_slide-content">
+                            <p class="text-weight-medium text-size-large">
+                                "J'ai collaborée avec Jérémie pour la refonte de mon site. 
+                                Grâce à ses conseils et à son sens du design, il a su donner une nouvelle dimension à mon projet. 
+                                Sa connaissance du web et du marketing digitale a vraiment fait la différence."
+                            </p>
+                            <div class="review_rating-icon-list margin-small">
+                                <img src="./assets/images/home/googleIcon.jpg" loading="lazy" width="40" alt="Icône Google Création site internet" class="review_google-icon margin-0"><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div>
+                            </div>
+                            <div class="testimonials_author-wrapper">
+                                <div class="testimonials_image-wrapper">
+                                    <img src="./assets/images/testimonials/img-2.jpg" loading="lazy" width="49" alt="" class="testimonial-image">
+                                </div>
+                                <div class="testimonials_name-wrapper">
+                                <div>
+                                    <strong>Christophe Leclerc</strong>
+                                </div>
+                                    <div class="text-size-tiny text-weight-medium">sichemcoatings.com</div>
+                                </div>
+                                <div class="container_control_testimonial">
+                                    <div class="testimonials_arrow prev_testimonial" id="prev_testimonial_01" onclick="prevTestimonial01();">
+                                        <div class="testimonials_arrow-icon w-embed"><svg height="100%" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.5859 -1.23626e-07L13 3.21951L3.96947 10.9106L13 18.7805L11.5859 22L9.06922e-07 11.626L1.06329e-06 9.8374L11.5859 -1.23626e-07Z" fill="currentcolor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="testimonials_arrow next_testimonial" id="next_testimonial_01" onclick="nextTestimonial01();">
+                                        <div class="testimonials_arrow-icon w-embed"><svg height="100%" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.41412 22L0 18.7805L9.03053 11.0894L0 3.21951L1.41412 0L13 10.374V12.1626L1.41412 22Z" fill="currentcolor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials_slider-mask w-slider-mask" id="w-slider-mask-2">
+                        <div class="testimonials_slide-content">
+                            <p class="text-weight-medium text-size-large">
+                                "Jérémie a été l'artisan du site de ma start-up. 
+                                Grâce à lui, j'ai pu lancer rapidement mon entreprise avec une présence en ligne solide et professionnelle. 
+                                Son expertise a été essentielle pour démarrer sur de bonnes bases."
+                            </p>
+                            <div class="review_rating-icon-list margin-small">
+                                <img src="./assets/images/home/googleIcon.jpg" loading="lazy" width="40" alt="Icône Google Création site internet" class="review_google-icon margin-0"><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div>
+                            </div>
+                            <div class="testimonials_author-wrapper">
+                                <div class="testimonials_image-wrapper">
+                                    <img src="./assets/images/testimonials/img-3.jpg" loading="lazy" width="49" alt="" class="testimonial-image">
+                                </div>
+                                <div class="testimonials_name-wrapper">
+                                <div>
+                                    <strong>Alex Houari</strong>
+                                </div>
+                                    <div class="text-size-tiny text-weight-medium">medisoluce.fr</div>
+                                </div>
+                                <div class="container_control_testimonial">
+                                    <div class="testimonials_arrow prev_testimonial" id="prev_testimonial_02" onclick="prevTestimonial02();">
+                                        <div class="testimonials_arrow-icon w-embed"><svg height="100%" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.5859 -1.23626e-07L13 3.21951L3.96947 10.9106L13 18.7805L11.5859 22L9.06922e-07 11.626L1.06329e-06 9.8374L11.5859 -1.23626e-07Z" fill="currentcolor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="testimonials_arrow next_testimonial" id="next_testimonial_02" onclick="nextTestimonial02();">
+                                        <div class="testimonials_arrow-icon w-embed"><svg height="100%" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.41412 22L0 18.7805L9.03053 11.0894L0 3.21951L1.41412 0L13 10.374V12.1626L1.41412 22Z" fill="currentcolor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials_slider-mask w-slider-mask" id="w-slider-mask-3">
+                        <div class="testimonials_slide-content">
+                            <p class="text-weight-medium text-size-large">
+                                "Jérémie m'a aidé à créer un CV en ligne qui reflète véritablement ma personnalité et mes compétences.
+                                Aujourd'hui, je suis ravie de recevoir des propositions de plusieurs crèches qui ont été impressionnées par mon CV en ligne. 
+                                Merci Jérémie pour m'avoir aider à prendre le contrôle sur ma présence professionnelle sur le web."
+                            </p>
+                            <div class="review_rating-icon-list margin-small">
+                                <img src="./assets/images/home/googleIcon.jpg" loading="lazy" width="40" alt="Icône Google Création site internet" class="review_google-icon margin-0"><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div><div class="review_rating-icon w-embed"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg></div>
+                            </div>
+                            <div class="testimonials_author-wrapper">
+                                <div class="testimonials_image-wrapper">
+                                    <img src="./assets/images/testimonials/img-4.jpg" loading="lazy" width="49" alt="" class="testimonial-image testimonial-image-custom">
+                                </div>
+                                <div class="testimonials_name-wrapper">
+                                <div>
+                                    <strong>Amandine C.</strong>
+                                </div>
+                                    <div class="text-size-tiny text-weight-medium">***ine.fr</div>
+                                </div>
+                                <div class="container_control_testimonial">
+                                    <div class="testimonials_arrow prev_testimonial" id="prev_testimonial_02" onclick="prevTestimonial03();">
+                                        <div class="testimonials_arrow-icon w-embed"><svg height="100%" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.5859 -1.23626e-07L13 3.21951L3.96947 10.9106L13 18.7805L11.5859 22L9.06922e-07 11.626L1.06329e-06 9.8374L11.5859 -1.23626e-07Z" fill="currentcolor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="testimonials_arrow next_testimonial" id="next_testimonial_02" onclick="nextTestimonial03();">
+                                        <div class="testimonials_arrow-icon w-embed"><svg height="100%" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.41412 22L0 18.7805L9.03053 11.0894L0 3.21951L1.41412 0L13 10.374V12.1626L1.41412 22Z" fill="currentcolor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-home-about fade-in-bottom" id="about">
+    <div class="container_about">
+        <div class="content_about">
+            <div class="content_about_left">
+                <div class="full-width-grid_max-width-left">
+                    <div class="full-width-grid_content-wrapper-left">
+                        <div class="container_title_h2">
+                            <h2 class="h2-heading-gradient">Salut, moi c’est Jérémie.<span>👋</span></h2>
+                        </div>
+                        <div class="container_subtitle_h2">
+                            <p>
+                                Je suis Développeur Full Stack depuis plus de 7 ans, j'ai développé bon nombre de sites e-commerces, de sites vitrines et d'applications web.
+                                J'accompagne et collabore depuis 2020 avec mon Agence les entreprises, les agences web, start up, les feelances dans leur transformation digitale. 
+                                Je mets un point d'honneur à fournir un service de qualité, adapté à chacun des clients. 
+                                Mon approche unique allie expertise technique à une véritable écoute de vos besoins.
+                            </p>
+                        </div>
+                        <div class="container_cta">
+                            <a href="mailto:contact@jeromeknops.com">
+                                <div class="default_button default_button_w">Me contacter</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="full-width-grid_decorative-wrapper">
+                        <div class="decorative-line-large is-color-green is-home-3"></div>
+                        <div class="decorative-line-medium is-color-purple is-home-1"></div>
+                        <div class="decorative-line-large is-color-purple is-home-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_about_right">
+                <div class="full-width-grid_max-width-right-image">
+                    <div class="circle-image_component">
+                        <div class="circle-image_image1-wrapper">
+                            <img src="https://assets-global.website-files.com/6533bdea645a5e7646167e3d/6533d000e7a6dfe0f1c99047_itsme%201%20(1).webp" loading="lazy" alt="" class="circle-image_image1">
+                        </div>
+                        <div class="circle-image_decorative-wrapper">
+                            <div class="circle-image_decorative-group">
+                                <div class="circle-image_decorative-line-1"></div>
+                                <div class="circle-image_decorative-line-2"></div>
+                                <div class="circle-image_decorative-line-3"></div>
+                            </div>
+                            <div class="circle-image_decorative-line-0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-home-pricing fade-in-top" id="pricing">
+    <div class="container_pricing">
+        <div class="content_pricing">
+            <div class="container_title_h2">
+                <h2 class="h2-heading-gradient">Faisons simple et efficace.</h2>
+            </div>
+            <div class="container_subtitle_h2">
+                <p class="subtitle_tarif">Pas de surprise. Pas de frais caché. Des prix justes. <br>
+                La transparence est essentielle. Le but est d'établir une relation de confiance avec chacun de mes clients.</p>
+            </div>
+            <div class="pricing-new-grid">
+                <div class="pricing-colomm-1 fade-in-left">
+                    <div class="pricing-new-card">
+                        <div class="container_title_pricing_card">
+                            <div class="content_pricing_card">Site Vitrine<br> Flash<span class="styled-colored">.</span> </div>
+                        </div>
+                        <div class="container_pricing">
+                            <div class="content_price">
+                                600€ <span class="styled-colored-red">HT</span>
+                            </div>
+                        </div>
+                        <div class="container_cta">
+                            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">
+                                <div class="default_button default_button_w">Prendre rdv</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pricing-new-card included">
+                        <div class="included-feaures-wrapper">
+                            <div class="pricing-included-features">Ce qui est inclus :</div>
+                            <ul role="list" class="pricing-features-list">
+                                <li>Développement de votre maquette</li>
+                                <li>Site vitrine 1 page</li>
+                                <li>Responsive Tablet &amp; Mobile</li>
+                                <li>Intégration HTML CSS Javascript</li>
+                                <li>2 Retours</li>
+                                <li>Livraison en 1 semaine</li><br>
+                                <a href="#contact">
+                                    <li><strong><u>Tarif au forfait pour les agences*</u></strong></li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-colomm-2 fade-in-right">
+                    <div class="pricing-new-card">
+                        <div class="popular-plan"><div>La plus populaire</div></div>
+                        <div class="container_title_pricing_card">
+                            <div class="content_pricing_card">Site Vitrine<br> Premium<span class="styled-colored">.</span> </div>
+                        </div>
+                        <div class="container_pricing">
+                            <div class="content_price">
+                                1250€ <span class="styled-colored-red">HT</span>
+                            </div>
+                        </div>
+                        <div class="container_cta">
+                            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">
+                                <div class="default_button default_button_w">Prendre rdv</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pricing-new-card included">
+                        <div class="included-feaures-wrapper">
+                            <div class="pricing-included-features">Ce qui est inclus :</div>
+                            <ul role="list" class="pricing-features-list">
+                                <li>3 choix de maquettes ou développement de votre maquette</li>
+                                <li>Site vitrine de 2 à 3 pages</li>
+                                <li>Intégration Font End de votre choix via un Framework ou un CMS</li>
+                                <li>Optimisation pour les moteurs de recherche (SEO)</li>
+                                <li>Mises à jour mensuelles <br> (3 mois)</li>
+                                <li>Responsive Tablet &amp; Mobile</li>
+                                <li>Retours Illimités</li>
+                                <li>Livraison en 3/5 jours</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-colomm-3 fade-in-left">
+                    <div class="pricing-new-card">
+                        <div class="container_title_pricing_card">
+                            <div class="content_pricing_card">Site Vitrine <br> Custom<span class="styled-colored">.</span> </div>
+                        </div>
+                        <div class="container_pricing">
+                            <div class="content_price">
+                                Sur devis <!-- <span class="styled-colored-red"></span> -->
+                            </div>
+                        </div>
+                        <div class="container_cta">
+                            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">
+                                <div class="default_button default_button_w">Prendre rdv</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pricing-new-card included">
+                        <div class="included-feaures-wrapper">
+                            <div class="pricing-included-features">Ce qui est inclus :</div>
+                            <ul role="list" class="pricing-features-list">
+                                <li>5 choix de maquettes ou développement de votre maquette</li>
+                                <li>Site multipage</li>
+                                <li>Intégration Font End de votre choix via un Framework ou un CMS</li>
+                                <li>Développement spécifique (Formulaire, réservation en ligne, etc)</li>
+                                <li>Optimisation pour les moteurs de recherche (SEO)</li>
+                                <li>Responsive Tablet &amp; Mobile</li>
+                                <li>Retours Illimités</li>
+                                <li>Livraison définit avec le client</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container_add_ons fade-in-top">
+                <div class="pricing-seperator white"></div>
+                <div class="content_add_ons">
+                    <div class="container_title_add_ons">
+                        <p>Options complémentaires</p>
+                    </div>
+                    <div class="container_subtitle_add_ons">
+                        <p>Passez votre site web au niveau supérieur grâce à ces optimisations complémentaires.</p>
+                    </div>
+
+                    <div class="content_add_ons_grid">
+                        <div class="theAddOn">
+                            <img src="./assets/images/pricing/img-pricing-upsell-1.png" loading="lazy" alt="Création site web et rédaction web irrésistible" height="110">
+                            <div class="available"><div>disponible</div></div>
+                            <div class="container_theAddOn-title">
+                                <strong class="theAddOn-title">Mise en ligne</strong>
+                            </div>
+                            <div class="container_subtitle_add_on">
+                                <p class="add-on-item-description">
+                                    On vous accompagne jusqu'au bout. De l'hébergement à la mise en ligne finale, nous sommes à vos côtés.
+                                    C'est la garntie d'une performance optimale, d'une sécurité renforcée et de sauvegardes régulières.
+                                </p>
+                            </div>
+                            <a href="#contact">
+                                <div class="container_small_cta">
+                                    <div class="small_cta styled-colored">En savoir plus</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="theAddOn">
+                            <img src="./assets/images/pricing/img-pricing-upsell-2-1.png" loading="lazy" alt="Création site web et rédaction web irrésistible" height="110">
+                            <div class="available"><div>disponible</div></div>
+                            <div class="container_theAddOn-title">
+                                <strong class="theAddOn-title">Formation</strong>
+                            </div>
+                            <div class="container_subtitle_add_on">
+                                <p class="add-on-item-description">
+                                    Le but est de vous permettre de gérer et mettre à jour votre contenu de manière autonome.
+                                    Des supports visuels au format PDF ou vidéo seront à votre disposition pour jouer les codeurs vous aussi.
+                                </p>
+                            </div>
+                            <a href="#contact">
+                                <div class="container_small_cta">
+                                    <div class="small_cta styled-colored">En savoir plus</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="theAddOn">
+                            <img src="./assets/images/pricing/img-pricing-upsell-3.png" loading="lazy" alt="Création site web et rédaction web irrésistible" height="110">
+                            <div class="available"><div>disponible</div></div>
+                            <div class="container_theAddOn-title">
+                                <strong class="theAddOn-title">Fonctionnalités spécifiques</strong>
+                            </div>
+                            <div class="container_subtitle_add_on">
+                                <p class="add-on-item-description">
+                                    En fonction de votre entreprise, il est possible que vous souhaitiez une personnalisation de votre site web. 
+                                    Cela peut passer par du développement spécifique.
+                                    Discutons en plus en détail pour élaborer la meilleure stratégie.
+                                </p>
+                            </div>
+                            <a href="#contact">
+                                <div class="container_small_cta">
+                                    <div class="small_cta styled-colored">En savoir plus</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-faq fade-in-bottom" id="faq">
+    <div class="page-padding">
+        <div class="container-large">
+            <div class="padding-vertical padding-xhuge">
+                <div class="w-layout-grid faq_component">
+                    <div class="faq_text-column">
+                        <div class="faq_side-bar">
+                            <div class="container_title_h2">
+                                <h2>Questions fréquentes<span class="styled-colored">.</span></h2>
+                            </div>
+                            <a href="#contact" class="text-style-link">Contacte-moi pour plus d'informations</a>
+                        </div>
+                    </div>
+                    <div class="faq_questions-column">
+                        <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">01</div>
+                                </div>
+                                <div class="faq_question" onclick="seeMoreFAQ0();">
+                                    <h3 class="heading-xxsmall">Combien coûte un site web ? <br></h3>
+                                    <div class="faq_icon" id="faq_icon">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer">
+                                <div class="faq_answer-wrapper">
+                                    <p>Le prix de chaque site internet varie en fonction du nombre de pages et des fonctionnalités que voous souhaitez.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">02</div>
+                                </div>
+                                <div class="faq_question" onclick="seeMoreFAQ1();">
+                                    <h3 class="heading-xxsmall">Combien de temps pour créer mon site web ? <br></h3>
+                                    <div class="faq_icon" id="faq_icon1">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer1">
+                                <div class="faq_answer-wrapper">
+                                    <p>Il me faut en moyenne 5 jours ouvrables pour créer un site internet classique. Certains projets peuvent prendre 2-4 semaines selon la taille du site et les actions marketing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">03</div>
+                                </div>
+                                <div class="faq_question" onclick="seeMoreFAQ2();">
+                                    <h3 class="heading-xxsmall">Puis-je créer mon site internet moi-même ?<br></h3>
+                                    <div class="faq_icon" id="faq_icon2">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer2">
+                                <div class="faq_answer-wrapper">
+                                    <p>
+                                        De nos jours, tout le monde peut créer son site web. En revanche, en faire un performant est une autre affaire. <br><br>
+                                        Beaucoup ont commencé à faire leur propre pain pendant le confinement. Pour autant, tu vas toujours chez le boulanger du coin, pourquoi ? <br><br>
+                                        Parce que c'est son métier et lui seul excelle dans son art. <br><br>
+                                        Sans compter que ça prend beaucoup de temps (surtout quand on ne maîtrise pas les outils).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">04</div>
+                                </div>
+                                <div class="faq_question" onclick="seeMoreFAQ3();">
+                                    <h3 class="heading-xxsmall">Puis-je mettre à jour mon site web moi-même ?<br></h3>
+                                    <div class="faq_icon" id="faq_icon3">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer3">
+                                <div class="faq_answer-wrapper">
+                                    <p>
+                                        Oui, après la réalisation du site web,  je propose des supports PDF et/ou vidéo pour que vous soyez en mesure de modifier les contenus du site de manière autonome.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">05</div>
+                                </div>
+                                <div class="faq_question" onclick="seeMoreFAQ4();">
+                                    <h3 class="heading-xxsmall">Que se passe-t-il si je n'aime pas le site que tu as réalisé ?<br></h3>
+                                    <div class="faq_icon" id="faq_icon4">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer4">
+                                <div class="faq_answer-wrapper">
+                                    <p>
+                                        Je considère le travail terminé que quand le client est pleinement satisfait du nouveau site web. <br><br>
+                                        Je travaille en cocréation avec les clients. Votre avis compte et je validerai avec vous ce que je fais à des étapes clés du projet.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">06</div>
+                                </div>
+                                <div class="faq_question" onclick="seeMoreFAQ5();">
+                                    <h3 class="heading-xxsmall">Comment savoir si tu fais du bon travail ?<br></h3>
+                                    <div class="faq_icon" id="faq_icon5">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer5">
+                                <div class="faq_answer-wrapper">
+                                    <p>
+                                        Pour les clients qui possèdent leurs propres maquettes, ils n'auront qu'à vérifier la conformité du site web avec celle-ci. <br><br>
+                                        Pour les clients qui n'en possédaient pas, je m'appuie sur des principes fondateurs dans le développement web. Ma touche personnelle réside dans le fait que j'ai une expertise dans
+                                        dans la capacité à trouver des solutions à des problèmes orienté web. <br><br>
+                                        <strong>Un souci de chiffre d'affaire ?</strong> Je saurai développé un site optimisé pour améliorer votre taux de conversion. <br>
+                                        <strong>Un problème de référencement ?</strong> Je développement des sites structurés selon les normes de codage. Les moteurs de recherches seront les meilleurs amis de votre site web.<br> Mes sites sont donc fondés sur des principes prouvés et efficaces. <br><br>
+                                        Je crée des sites web depuis des années. Mon expérience et ma volonté d'apprendre sans cesse de nouvelles choses me poussent à être à la pointe des meilleures pratiques actuelles du web.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">07</div>
+                                </div>
+                                <div class="faq_question">
+                                    <h3 class="heading-xxsmall">Puis-je créer mon site internet moi-même ?<br></h3>
+                                    <div class="faq_icon" id="faq_icon6" onclick="seeMoreFAQ6();">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer6">
+                                <div class="faq_answer-wrapper">
+                                    <p>
+                                        De nos jours, tout le monde peut créer son site web. En revanche, en faire un performant est une autre affaire. <br><br>
+                                        Beaucoup ont commencé à faire leur propre pain pendant le confinement. Pour autant, tu vas toujours chez le boulanger du coin, pourquoi ?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">08</div>
+                                </div>
+                                <div class="faq_question">
+                                    <h3 class="heading-xxsmall">Puis-je créer mon site internet moi-même ?<br></h3>
+                                    <div class="faq_icon" id="faq_icon6" onclick="seeMoreFAQ6();">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer6">
+                                <div class="faq_answer-wrapper">
+                                    <p>
+                                        De nos jours, tout le monde peut créer son site web. En revanche, en faire un performant est une autre affaire. <br><br>
+                                        Beaucoup ont commencé à faire leur propre pain pendant le confinement. Pour autant, tu vas toujours chez le boulanger du coin, pourquoi ?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq_item">
+                            <div class="faq_question-wrapper">
+                                <div class="faq_question-number">
+                                    <div class="faq_text-number">09</div>
+                                </div>
+                                <div class="faq_question">
+                                    <h3 class="heading-xxsmall">Puis-je créer mon site internet moi-même ?<br></h3>
+                                    <div class="faq_icon" id="faq_icon8" onclick="seeMoreFAQ8();">
+                                        <div class="faq_icon-line right" id="iconPlus"></div>
+                                        <div class="faq_icon-line is-vertical" id="iconCross"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq_answer" id="faq_answer8">
+                                <div class="faq_answer-wrapper">
+                                    <p>
+                                        De nos jours, tout le monde peut créer son site web. En revanche, en faire un performant est une autre affaire. <br><br>
+                                        Beaucoup ont commencé à faire leur propre pain pendant le confinement. Pour autant, tu vas toujours chez le boulanger du coin, pourquoi ?
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-contact fade-in-top" id="contact">
+    <div class="contact_form_wrapper">
+        <div class="contact_component">
+            <p class="contact-heading">Alors, prêt à libérer le potentiel de votre site web ?</p>
+            <div class="section-title-wrapper">
+                <p class="section-centred-paragraph">Tout ce que vous avez à faire, c'est de remplir ce court formulaire interactif. Je vous répondrai dans les 24 heures.</p>
+                    <div class="review-row">
+                        <a href="#avis-clients" class="review-link w-inline-block"><div class="review_rating-icon-list">
+                            <div class="review_rating-icon w-embed">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="review_rating-icon w-embed">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="review_rating-icon w-embed">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="review_rating-icon w-embed">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="review_rating-icon w-embed">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.1812 2.54133C11.4841 1.81296 12.5159 1.81296 12.8189 2.54133L15.1961 8.25687C15.2501 8.38671 15.3722 8.47542 15.5124 8.48667L21.6828 8.98134C22.4691 9.04439 22.788 10.0257 22.1889 10.5389L17.4876 14.566C17.3808 14.6574 17.3342 14.801 17.3669 14.9378L18.8031 20.9591C18.9861 21.7263 18.1514 22.3328 17.4782 21.9216L12.1955 18.695C12.0755 18.6216 11.9245 18.6216 11.8045 18.695L6.52179 21.9216C5.84859 22.3328 5.01384 21.7263 5.19687 20.9591L6.63317 14.9378C6.66581 14.801 6.61916 14.6574 6.51237 14.566L1.81116 10.5389C1.21206 10.0257 1.5309 9.04439 2.31723 8.98134L8.48765 8.48667C8.62782 8.47542 8.74992 8.38671 8.80392 8.25687L11.1812 2.54133Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <img src="./assets/images/home/googleIcon.jpg" loading="lazy" width="40" alt="" class="review_google-icon">
+                        <div class="review_paragraph">+5 avis 4.9 sur 5.0 </div>
+                    </a>
+                </div>
             </div>
 
-            <div class="container">
-              <div class="row">
-                  <div class="col-md-12 d-flex justify-content-center">
-                      <!-- Début de widget de lien Calendly -->
-                          <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-                          <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-                          <a href="" class="custom-btn secondary-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">Prendre un RDV</a>
-                      <!-- Fin de widget de lien Calendly -->
-                  </div>
-              </div>
+            <div class="contact_form_slide" id="one">
+                <div class="container_form">
+                    <div class="content_form">
+                        <div class="form_title">
+                            <div class="progress_bar_form">
+                                <div class="form-active">1</div>
+                                <div class="stepline"></div>
+                                <div class="form-step">2</div>
+                                <div class="form-step">3</div>
+                            </div>
+                            <div class="content_step_title">
+                                <div class="form-step-count">Étape 1/3</div>
+                                <h2 class="form-title">De quels services avez-vous besoin <span class="styled-colored">?</span></h2>
+                                <p class="form-description"> Je réponds à toutes demandes sous 24 heures<span class="styled-colored">.</span></p>
+                            </div>
+                        </div>
+                        <div class="form_body">
+                            <div class="form_body_step_1">
+                                <label class="w-checkbox form-checkbox-field" id="input-label">
+                                    <div class="form-checkbox-wrap">
+                                        <img loading="lazy" src="./assets/images/home/creation_de_site.png" alt="" class="form-icon">
+                                        <div>
+                                            <div class="form-item-title">Création Site Surperformant</div>
+                                            <p class="form-item-description">Création d'un site web mémorable axé sur la performance.</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"></div>
+                                    {{form_start(formMoreInfo)}}
+                                    {{form_row(formMoreInfo.serviceType)}}
+                                    {# <input id="Cr-ation-de-site-1 input-checkbok" class="inputEtape1-1" type="checkbox" name="Cr-ation-de-site" data-name="Création de site"> #}
+                                    <span for="Cr-ation-de-site" class="form-checkbox-text w-form-label">Checkbox</span>
+                                </label>
+
+                                <label class="w-checkbox form-checkbox-field" id="input-label">
+                                    <div class="form-checkbox-wrap">
+                                        <img loading="lazy" src="./assets/images/home/autre_question.webp" alt="" class="form-icon">
+                                        <div>
+                                            <div class="form-item-title">Autre</div>
+                                            <p class="form-item-description">Vous avez une question ou une autre demande ?</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"></div>
+                                    {# <input id="Cr-ation-de-site-2 input-checkbok" class="inputEtape1-2" type="checkbox" name="Cr-ation-de-site" data-name="Création de site"> #}
+                                    <span for="Cr-ation-de-site" class="form-checkbox-text w-form-label">Checkbox</span>
+                                </label>
+
+                                <div class="contact_button-base">
+                                    <a href="#two" class="next-button-slide w-button w--current" onclick="nextStepForm1();">Étape suivante</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="contact_form_slide" id="two">
+                <div class="container_form">
+                    <div class="content_form">
+                        <div class="form_title">
+                            <div class="progress_bar_form">
+                                <div class="form-active">1</div>
+                                <div class="stepline _50"></div>
+                                <div class="stepline _2"></div>
+                                <div class="form-active">2</div>
+                                <div class="form-step">3</div>
+                            </div>
+                            <div class="content_step_title">
+                                <div class="form-step-count">Étape 2/3</div>
+                                <h2 class="form-title">Discutons ensemble de votre projet<span class="styled-colored">.</span></h2>
+                                <p class="form-description">Veuillez remplir les détails ci-dessous afin que je puisse prendre contact avec vous.</p>
+                            </div>
+                        </div>
+                        <div class="form_body">
+                            <div class="form_body_step_2">
+                                <div class="form-field-wrap">
+                                    <label for="Nom-pr-nom" class="form-field-label">Entrez votre nom</label>
+                                    {# <input class="form-text-field w-input" maxlength="256" name="Nom-pr-nom" data-name="Nom" placeholder="ex. Jérémie" type="text" id="Nom-pr-nom" tabindex="-1"> #}
+                                    {{form_row(formMoreInfo.nom)}}
 
-            
-          <!--<form action="#" class="newsletter-form" method="POST">
-              <div class="row justify-content-between">
-                  <div class="col-md">
-                      <input type="text" name="fname" placeholder="Nom">
-                  </div>
-                  <div class="col-md">
-                      <input type="text" name="email" placeholder="Email">
-                  </div>
+                                </div>
+                                <div class="form-field-wrap">
+                                    <label for="Prenom-pr-prenom" class="form-field-label">Entrez votre prénom</label>
+                                    <input class="form-text-field w-input" maxlength="256" name="Prenom-pr-prenom" data-name="Prénom" placeholder="ex. Maole" type="text" id="Prenom-pr-prenom" tabindex="-1">
+                                </div>
+                                <div class="form-field-wrap margin-m">
+                                    <label for="T-l-phone" class="form-field-label">Entrez votre numéro de téléphone</label>
+                                    <input class="form-text-field w-input" maxlength="256" name="T-l-phone" data-name="Téléphone" placeholder="ex. 0607080910" type="tel" id="T-l-phone" tabindex="-1">
+                                </div>
+                                <div class="form-field-wrap">
+                                    <label for="Site-Web-3" class="form-field-label">Entrez le lien de votre site web (facultatif)</label>
+                                    <input class="form-text-field w-input" maxlength="256" name="Site-Web" data-name="Site Web" placeholder="ex. jeremiecode.fr" type="text" id="Site-Web-3" tabindex="-1">
+                                </div>
+                                <div class="contact_button-base">
+                                    <a onclick="prevStepForm1();" class="back-button-slide w-button">Retour</a>
+                                    <a onclick="nextStepForm2();" class="next-button-slide w-button w--current">Étape suivante</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact_form_slide" id="three">
+                <div class="container_form">
+                    <div class="content_form">
+                        <div class="form_title">
+                            <div class="progress_bar_form">
+                                <div class="form-active">1</div>
+                                <div class="stepline blue"></div>
+                                <div class="form-active">2</div>
+                                <div class="form-active">3</div>
+                            </div>
+                            <div class="form-step-count">Étape 3/3</div>
+                            <h2 class="form-title">Confirmer l'envoi<span class="styled-colored">.</span><br></h2>
+                            <p class="form-description">Merci d'avoir pris le temps de remplir ce formulaire. Je te répondrai dans les 24 heures.<br></p>
+                        </div>
+                        <div class="form_body">
+                            <div class="form_body_step_3">
+                                <div class="form-field-wrap">
+                                    <label for="Email" class="form-field-label">Entrez votre e-mail</label>
+                                    <input class="form-text-field w-input" autocomplete="Email" maxlength="256" name="Email" placeholder="ex. contact.snapcode@jeremiecode.fr" type="email" id="Email">
+                                </div>
+                                <div class="form-field-wrap margin-m">
+                                    <label for="Description" class="form-field-label">Comment nous pouvons t'aider ?</label>
+                                    <textarea id="Description" name="Description" maxlength="5000" placeholder="J'ai besoin de..." class="form-text-field larger w-input"></textarea>
+                                </div>
+                                {{form_end(formMoreInfo)}}
+                                <div class="contact_button-base">
+                                    <a onclick="prevStepForm2();" class="back-button-slide w-button">Retour</a>
+                                    <a class="next-button-slide w-button w--current">Confirmer l'envoi</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
 
-                  <div class="col-md-auto">
-                      <a href="#" class="custom-btn secondary-btn">Prendre un RDV</a>
-                  </div>
-              </div>
-          </form>-->
-          <!-- End of .newsletter-form -->
-
-      <!-- <div class="social-icons-wrapper d-flex justify-content-center">
-          <p>Suivez nous:</p>
-          <ul class="social-icons">
-              <li>
-                  <a href="http://www.facebook.com/" target="_blank" rel="noopener">
-                      <i class="fab fa-facebook-f"></i>
-                  </a>
-              </li>
-              <li>
-                  <a href="http://twitter.com/" target="_blank" rel="noopener">
-                      <i class="fab fa-twitter"></i>
-                  </a>
-              </li>
-              <li>
-                  <a href="http://youtube.com/" target="_blank" rel="noopener">
-                      <i class="fab fa-youtube"></i>
-                  </a>
-              </li>
-              <li>
-                  <a href="http://plus.google.com/discover" target="_blank" rel="noopener">
-                      <i class="fab fa-google-plus-g"></i>
-                  </a>
-              </li>
-          </ul>
-          
-      </div> --> 
-          <!-- End of .social-icons -->
-
-      <!-- End of .social-icons-wrapper -->
-  </div>
-  <!-- End of .container -->
-</section>
-<!-- End of .latest-news End of .rendez vous -->
-
-<!-- location starts -->
-
-<!-- End of .location -->
 {% endblock %}

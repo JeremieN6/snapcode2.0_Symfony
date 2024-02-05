@@ -1,0 +1,143 @@
+/* -- Form css
+-------------------------------------- -- */
+
+::placeholder {
+    color: $typo-lighter !important;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $typo-lighter !important;
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $typo-lighter !important;
+    opacity: 1;
+}
+
+input,
+textarea,
+select {
+    display: block;
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    padding: 1.3rem 2rem;
+    color: $typo-light;
+    background: #fff;
+    border: 1px solid $grey-bg-color;
+    border-radius: 6px;
+    transition: all .5s;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        border-color: $typo-lighter;
+    }
+}
+
+textarea {
+    min-height: 10rem;
+}
+
+.quote-form-wrapper {
+    width: 100%;
+    max-width: 48rem;
+
+    .quote-form {
+        margin: 0 -1rem;
+
+        [class*="col-"] {
+            padding: 0 1rem;
+
+            input,
+            textarea {
+                margin: 1rem 0;
+            }
+        }
+
+        .social-icons-wrapper {
+            padding-top: 9px;
+        }
+
+        button {
+            margin-top: 1rem;
+        }
+    }
+
+    .social-icons li:hover {
+        color: $color-palette-c;
+    }
+}
+
+.form-group {
+    margin-bottom: 3rem;
+
+    input,
+    textarea,
+    select {
+        margin: 0;
+    }
+}
+
+.full-width-modal.quote-modal .modal-content {
+    padding-top: 117.5px;
+    padding-bottom: 115.5px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.err-msg,
+.success-msg {
+    font-size: 1.4rem;
+    line-height: 20px;
+    color: #ff4545;
+    font-weight: 400;
+    text-align: left;
+    margin-top: -4px;
+}
+
+.success-msg {
+    color: #00af28;
+    margin-bottom: 7px;
+}
+
+textarea+.err-msg {
+    margin-bottom: 7px;
+}
+
+.search-form {
+    position: relative;
+
+    input {
+        background-color: $light-grey-bg-color;
+        &:hover,
+        &:focus {
+            border-color: $typo-lighter;
+        }
+    }
+
+    .search-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 0 2rem;
+        font-size: 1.6rem;
+        line-height: 1;
+        color: $typo-lighter;
+        background: transparent;
+        border-radius: 0 6px 6px 0;
+        cursor: pointer;
+
+        &:hover {
+            background: $color-palette-b;
+            color: #fff;
+        }
+    }
+}

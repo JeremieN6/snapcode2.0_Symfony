@@ -1,81 +1,58 @@
-<!-- footer starts -->
-<footer class="page-footer dark-footer-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="footer-widget widget-about">
-                    <a href="index.html"><img class="footer-logo" src="assets/images/footer-logo.svg" alt="footer logo"
-                            height="16"></a>
-                    <p>Transformez votre présence en ligne avec des sites web rapides et des intégrations personnalisées afin d'atteindre enfin vos objectifs et d'aller chercher toujours plus loin.</p>
-                    <!--<ul class="social-icons">
-                        <li>
-                            <a href="http://www.facebook.com/" target="_blank" rel="noopener">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://twitter.com/" target="_blank" rel="noopener">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://youtube.com/" target="_blank" rel="noopener">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://plus.google.com/discover" target="_blank" rel="noopener">
-                                <i class="fab fa-google-plus-g"></i>
-                            </a>
-                        </li>
-                    </ul>-->
-                    <!-- End of .social-icons -->
-                    <p class="copywrite-txt">© 2020 <a>SnapCode™ - Corp</a>. All Rights
-                        Reserved.</p>
+<footer class="footer-component">
+    <div class="footer_content-wrapper">
+        <div class="footer_cta">
+            <div class="footer_logo-wrapper">
+                <a href="#" class="nav_logo-link w-nav-brand">
+                    <img src="./assets/images/home/brand-logo.svg" loading="lazy" 
+                    srcset="./assets/images/home/brand-logo.svg, 
+                    ./assets/images/home/brand-logo.svg, 
+                    ./assets/images/home/brand-logo.svg" alt="Logo SnapCode™ Agency transparent" class="nav_logo">
+                </a>
+            </div>
+            <div class="foooter_cta-wrapper">
+                <div class="footer_cta-title">Prêt à vous lancez ?</div>
+                <div class="container_link_cta">
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">
+                        <div class="container_cta">
+                            <div class="button w-button">Prendre un RDV</div>
+                        </div>
+                    </a>
                 </div>
             </div>
-
-            <div class="col-lg-3">
-                <div class="footer-widget">
-                    <h5 class="footer-nav-title">Services</h5>
-                    <ul class="footer-nav dynamic-nav">
-                        <li><a href="html-integrator.html">Intégration HTML</a></li>
-                        <li><a href="mobile-app-development.html">Développement de site web personnalisé</a></li>
-
-                    </ul>
-                </div>
-            </div>
-            <!-- End of .col-lg-2 -->
-
-            <div class="col-lg-3">
-                <div class="footer-widget">
-                    <h5 class="footer-nav-title">Support</h5>
-                    <ul class="footer-nav dynamic-nav">
-                        <li><a href="{{path('app_contact')}}">Contact</a></li>
-                        <li><a href="#">Politique de vie privée</a></li>
-                        <li><a href="#">Termes &amp; Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End of .col-lg-2 -->
-
-            <div class="col-lg-2">
-                <div class="footer-widget">
-                    <h5 class="footer-nav-title">Resources</h5>
-                    <ul class="footer-nav dynamic-nav">
-                        <li><a href="{{path('portfolio')}}">Portfolio</a></li>
-                        <li><a href="{{path('team')}}">Notre équipe</a></li>
-                        <li><a href="{{path('pricing')}}">Nos tarifs</a></li>
-                        <!--<li><a href="case-studies.html">Etude de cas</a></li>-->
-                        <li><a href="{{path('about')}}">A propos</a></li>
-                        <!--<li><a href="news.html">Les nouvelles</a></li>-->
-                    </ul>
-                </div>
-            </div>
-            <!-- End of .col-lg-2 -->
         </div>
-        <!-- End of .row -->
+        <div class="w-layout-grid footer_grid">
+            <address class="footer_links-list">
+                <div class="footer_logo">Jérémie MAOLE</div>
+                <div class="footer_copyright">Expert Développement Web<br>CEO SnapCode™ Agency</div>
+                <a href="tel:+33661463480" class="footer_contact-link">+33 6 6* 4* 34 8*</a>
+                <a href="mailto:contact.snapcode@jeremiecode.fr" class="footer_contact-link">contact.snapcode@jeremiecode.fr</a>
+            </address>
+            <div class="footer_links-list is--lower">
+                <div class="footer_title">Informations</div>
+                <a href="#a-propos" class="footer_link">À Propos</a>
+                <a href="#realisations" class="footer_link">Mes Réalisations</a>
+                <a href="#avis-clients" class="footer_link">Avis Clients</a>
+                <a href="#tarifs" class="footer_link">Mes tarifs</a>
+                <a href="#contact" class="footer_link">Contact</a>
+            </div>
+        </div>
+        <div class="footer_bottom-content">
+            <p class="footer_bottom-text">© 2019-<span id="year" class="footer_auto-year">2024</span> 
+                <a href="/#" class="footer_home-link">
+                    <span class="white-text">SnapCode™ Agency</span>
+                </a>. Tous droits réservés. Designed by SnapCode™ Agency
+            </p>
+            <div class="footer_social-list">
+                <a href="https://www.linkedin.com/in/jeremie-ngoyi-maole-366a41144/" target="_blank" class="footer_social-link-item w-inline-block">
+                    <img src="https://assets-global.website-files.com/6533bdea645a5e7646167e3d/6533bdeb645a5e7646167f13_linkedin-icon.svg" alt="Icone linkedin" class="footer_social-icon">
+                </a>
+                <a href="https://www.malt.fr/profile/jeremiengoyi?overview" target="_blank" class="footer_social-link-item w-inline-block">
+                    <img src="https://assets-global.website-files.com/6533bdea645a5e7646167e3d/6533ebc22845a4410ac2963e_malt-svgrepo-com.svg" width="24" alt="" class="footer_social-icon">
+                </a>
+                <a href="mailto:contact.snapcode@jeremiecode.frcontact.snapcode@jeremiecode.fr?subject=J'ai%20une%20question%20!%20" class="footer_social-link-item w-inline-block">
+                    <img src="https://assets-global.website-files.com/6533bdea645a5e7646167e3d/6533bdeb645a5e7646167f14_icon-mail.svg" alt="Icone mail" class="footer_social-icon">
+                </a>
+            </div>
+        </div>
     </div>
-    <!-- End of .container -->
 </footer>
-<!-- End of .page-footer -->

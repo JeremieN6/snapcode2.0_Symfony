@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Newsletter;
 use App\Entity\Contact;
+use App\Entity\MoreInfoFormulaireController;
 use App\Form\ContactType;
+use App\Form\MoreInfoFormType;
 use App\Form\NewsletterType;
 use App\Repository\NewsletterRepository;
 use App\Repository\PlanRepository;
@@ -52,9 +54,49 @@ class HomeController extends AbstractController
             $flashy->error('Une erreur est survenue lors de l\'ajout à la Newsletter.');
         }
 
+        $formMoreInfo = $this->createForm(MoreInfoFormType::class);
+        $formMoreInfo->handleRequest($request);
+
+        if ($formMoreInfo->isSubmitted() && $formMoreInfo->isValid()){
+            $data = $formMoreInfo->getData();
+
+            $serviceTypeMoreInfoForm = $data['serviceType']; // Type de service
+            $nomMoreInfoForm = $data['nom']; // Nom du client
+            $prenomMoreInfoForm = $data['prenom']; // Nom du client
+            $emailMoreInfoForm = $data['email']; // Adresse Email
+            $phoneMoreInfoForm = $data['phone']; // Téléphone
+            $websiteMoreInfoForm = $data['website']; // Siteweb du client
+            $descriptionMoreInfoForm = $data['description']; // Description
+
+            // Enregistrer les informations du formulaire dans la base de donnée
+            // Crée une nouvelle instance de l'entité Contact
+                $moreInfo = new MoreInfoFormulaireController();
+                $moreInfo->setServiceType($data['serviceType']);
+                $moreInfo->setNom($data['nom']);
+                $moreInfo->setPrenom($data['prenom']);
+                $moreInfo->setEmail($data['email']);
+                $moreInfo->setWebsite($data['website']);
+                $moreInfo->setTelephone($data['telephone']);
+                $moreInfo->setDescription($data['description']);
+
+                // Enregistre l'entité dans la base de données
+                $entityManager->persist($moreInfo);
+                $entityManager->flush();
+
+                // Utilisez Flashy pour afficher un message flash de succès
+                $flashy->success('Votre formulaire nous a bien été envoyé ✅ !');
+
+                // Redirigez l'utilisateur vers la même page (rafraîchissement)
+                return $this->redirectToRoute('app_home');
+
+        }elseif ($formMoreInfo->isSubmitted() && !$formMoreInfo->isValid()) {
+            $flashy->error('Une erreur est survenue lors de l\'envoie du formulaire. Veuillez réessayer.');
+        }
+
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
-            'formNewsletter' => $formNewsletter->createView()
+            'formNewsletter' => $formNewsletter->createView(),
+            'formMoreInfo' => $formMoreInfo->createView(),
         ]);
     }
 

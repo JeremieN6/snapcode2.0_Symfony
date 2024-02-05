@@ -1,0 +1,60 @@
+/* -- Widgets css -- */
+.post-metas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 3rem;
+    list-style: none;
+
+    li {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: $typo-lighter;
+        font-weight: 400;
+        margin-bottom: .6rem;
+        margin-right: 3rem;
+
+        &:hover {
+            color: $color-palette-b;
+        }
+
+        a {
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        i {
+            margin-right: .5rem;
+        }
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 100%;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.widget {
+    .post-metas {
+        margin-bottom: 0;
+        a {
+            display: inline-block;
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+            color: $typo-lighter;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+
+            &:hover {
+                color: $color-palette-b;
+            }
+        }
+    }
+}

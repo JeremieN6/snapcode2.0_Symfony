@@ -1,61 +1,38 @@
-<header class="page-header">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg align-items-center">
-            <a class="navbar-brand" href="{{path('app_home')}}">
-                <img src="assets/images/brand-logo.svg" alt="SnapCode brand logo">
-            </a>
-            <!-- End of .navbar-brand -->
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#custom-navbar"
-                aria-controls="custom-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="custom-toggler-icon"></span>
-                <span class="custom-toggler-icon"></span>
-                <span class="custom-toggler-icon"></span>
-            </button>
-            <!-- End of .navbar-toggler -->
-
-            <div class="collapse navbar-collapse" id="custom-navbar">
-                <ul class="navbar-nav ml-auto align-items-center dynamic-nav">
-                    <li class="nav-item has-dropdown">
-                        <a href="#" class="nav-link">Services</a>
-                        <ul class="submenu">
-                            <li><a href="{{path('app_service_integration')}}">Intégration HTML</a></li>
-                            <li><a href="{{path('app_service_webDevPersonalized')}}">Développement de site web personnalisé</a></li>
-                            <!--<li><a href="mobile-app-development.html">Développement d'application mobile</a></li>
-                            <li><a href="search-engine-optimization.html">Search Engine Optimization</a></li>
-                            <li><a href="pay-per-click.html">Pay-Per-Click</a></li>
-                            <li><a href="social-media-marketing.html">Marketing sur les réseaux sociaux</a></li>-->
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{path('about')}}" class="nav-link">A propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{path('portfolio')}}" class="nav-link">Portfolio</a>
-                    </li>
-                    <!--<li class="nav-item">
-                        <a href="case-studies.html" class="nav-link">Etude de Cas</a>
-                    </li>-->
-                    <li class="nav-item">
-                        <a href="{{path('team')}}" class="nav-link">Équipe</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{path('pricing')}}" class="nav-link">Tarifs</a>
-                    </li>
-                    <!--<li class="nav-item">
-                        <a href="news.html" class="nav-link">Les News</a>
-                    </li>-->
-                    <li class="nav-item">
-                        <a href="{{path('app_contact')}}" class="nav-link">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <!--<a href="#" class="custom-btn btn-small" data-toggle="modal" data-target="#quote-modal">Prendre un RDV</a>-->
-                        <a href="" class="custom-btn btn-small" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1'});return false;">Prendre un RDV</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- End of .navbar-nav -->
-        </nav>
+<div class="nav sticky sticky-dark" id="navMenu">
+    <a href="#">
+        <div class="containerLogo">
+            <img src="./assets/images/home/brand-logo.svg" alt="Logo" class="contentLogo" id="contentLogo">
+        </div>
+    </a>
+    <div class="containerNavIcon">
+        <i class="fa fa-bars" id="fa-bars" aria-hidden="true" onclick="openMenu();"></i>
+        <i class="fa fa-close" id="closeIcon" aria-hidden="true" onclick="closeMenu();"></i>
     </div>
-    <!-- End of .container -->
-</header>
+    <div class="containerNavMenu" id="containerNavMenu">
+        <ul class="menuUl" id="menuUl">
+            <a href="#realisations" class="link-styled">
+                <li class="menuLi">Mes réalisations</li>
+            </a>
+            <a href="#process" class="link-styled">
+                <li class="menuLi">Comment ça marche</li>
+            </a>
+            <a href="#testimonials" class="link-styled">
+                <li class="menuLi">Avis</li>
+            </a>
+            <a href="#pricing" class="link-styled">
+                <li class="menuLi">Tarifs</li>
+            </a>
+        </ul>
+    </div>
+    <div class="containerSwitchTheme" id="containerSwitchTheme">
+        <div class="switchTheme" id="switchTheme">
+            <div class="containerMoon isActive" id="containerMoon" onclick="switchDark();">
+                <img src="./assets/images/home/Moon_fill_light.svg" alt="Moon Fill Light" class="contentMoon moonLight" id="moonLight">
+                <img src="./assets/images/home/Moon_fill.svg" alt="Moon Fill Light" class="contentMoon moonDark" id="moonDark">
+            </div>
+            <div class="containerSun" id="containerSun" onclick="switchLight();">
+                <img src="./assets/images/home/Sun_fill.svg" alt="Sun Fill Light" class="contentSun" id="contentSun">
+            </div>
+        </div>
+    </div>
+</div>
