@@ -8,6 +8,7 @@ use App\Entity\Plan;
 use App\Entity\Subscription;
 use App\Entity\Users;
 use App\Entity\Contact;
+use App\Entity\MoreInfoFormulaireController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -42,7 +43,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Voyageur+');
+            ->setTitle('SnapCode™ Agency');
     }
 
     public function configureMenuItems(): iterable
@@ -57,6 +58,7 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Utilisateurs');
         yield MenuItem::linkToCrud('Utilisateur', 'fa fa-users', Users::class);
+        yield MenuItem::linkToCrud('Formulaire', 'fa fa-users', MoreInfoFormulaireController::class);
         yield MenuItem::linkToCrud('Newsletter', 'fa fa-newspaper-o', Newsletter::class);
 
         yield MenuItem::section('Utilisateurs');

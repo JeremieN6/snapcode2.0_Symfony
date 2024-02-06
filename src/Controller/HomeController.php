@@ -60,18 +60,20 @@ class HomeController extends AbstractController
         if ($formMoreInfo->isSubmitted() && $formMoreInfo->isValid()){
             $data = $formMoreInfo->getData();
 
-            $serviceTypeMoreInfoForm = $data['serviceType']; // Type de service
+            $serviceType1MoreInfoForm = $data['serviceTypeSuperSite']; // Type de service 1
+            $serviceType2MoreInfoForm = $data['serviceTypeAutre']; // Type de service 2
             $nomMoreInfoForm = $data['nom']; // Nom du client
             $prenomMoreInfoForm = $data['prenom']; // Nom du client
             $emailMoreInfoForm = $data['email']; // Adresse Email
-            $phoneMoreInfoForm = $data['phone']; // Téléphone
+            $phoneMoreInfoForm = $data['telephone']; // Téléphone
             $websiteMoreInfoForm = $data['website']; // Siteweb du client
             $descriptionMoreInfoForm = $data['description']; // Description
 
             // Enregistrer les informations du formulaire dans la base de donnée
             // Crée une nouvelle instance de l'entité Contact
                 $moreInfo = new MoreInfoFormulaireController();
-                $moreInfo->setServiceType($data['serviceType']);
+                $moreInfo->setServiceTypeSuperSite($data['serviceTypeSuperSite']);
+                $moreInfo->setServiceTypeAutre($data['serviceTypeAutre']);
                 $moreInfo->setNom($data['nom']);
                 $moreInfo->setPrenom($data['prenom']);
                 $moreInfo->setEmail($data['email']);

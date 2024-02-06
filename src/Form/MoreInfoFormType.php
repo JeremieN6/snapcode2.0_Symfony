@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,60 +17,68 @@ class MoreInfoFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $serviceType = array("role1","role2","role3");
         $builder
-            ->add('serviceType', ChoiceType::class, [
-                'label' => false,
-                'choices' => [
-                    'Création de site surperformant' => "creation_de_site_surperformant",
-                    'Autre' => "autre"
-                    ],
-                    'expanded' => true, // Active cette option pour afficher les checkboxes au lieu d'une liste déroulante
-                    'multiple' => true, // Active cette option si tu veux permettre la sélection de plusieurs options
-                    'required' => false, // À ajuster selon tes besoins
-                    'attr' => [
-                        'class' => ''
-                    ]
-            ])
-            ->add('nom', TextType::class, [
+            ->add('serviceTypeSuperSite', CheckboxType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'ex. Jérémie Maole',
+                    'class' => 'w-checkbox form-checkbox-field'
+                ],
+                'required' => false,
+            ])
+            ->add('serviceTypeAutre', CheckboxType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'w-checkbox form-checkbox-field'
+                ],
+                'required' => false,
+            ])
+            ->add('nom', TextType::class, [
+                'label' => 'Entrez votre nom',
+                'attr' => [
+                    'placeholder' => 'Maole',
                     'class' => 'form-text-field w-input'
                 ],
             ])
             ->add('prenom', TextType::class, [
                 'label' => 'Entrez votre prénom',
                 'attr' => [
-                    'placeholder' => 'ex. Jérémie Maole'
+                    'placeholder' => 'Jérémie',
+                    'class' => 'form-text-field w-input'
                 ],
             ])
             ->add('telephone', TextType::class, [
                 'label' => 'Entrez votre numéro de téléphone',
                 'attr' => [
-                    'placeholder' => 'ex. 0607080910'
+                    'placeholder' => 'ex. 0607080910',
+                    'class' => 'form-text-field w-input'
                 ],
             ])
             ->add('website', TextType::class, [
                 'label' => 'Entrez le lien de votre site web (facultatif)',
                 'attr' => [
-                    'placeholder' => 'ex. jeremiecode.fr'
+                    'placeholder' => 'ex. jeremiecode.fr',
+                    'class' => 'form-text-field w-input'
                 ],
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Entrez votre e-mail',
+                'label' => false,
                 'attr' => [
-                    'placeholder' => 'ex. contact.snapcode@jeremiecode.fr'
+                    'placeholder' => 'ex. contact.snapcode@jeremiecode.fr',
+                    'class' => 'form-text-field w-input'
                 ],
             ])
             ->add('description', TextareaType::class, [
-                'label' => 'Comment pouvons nous vous aidez ?',
+                'label' => false,
                 'attr' => [
-                    'placeholder' => 'ex. jeremiecode.fr'
+                    'placeholder' => 'Décrivez votre besoin ...',
+                    'class' => 'form-text-field larger w-input'
                 ],
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Valider',
+                'label' => 'Envoyer le formulaire',
+                'attr' => [
+                    'class' => 'next-button-slide w-button w--current'
+                ]
                 ])
         ;
     }

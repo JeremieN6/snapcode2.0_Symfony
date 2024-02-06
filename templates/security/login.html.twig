@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Voyageur + | Connexion{% endblock %}
+{% block title %}SnapCode™ | Connexion{% endblock %}
 
 {% block body %}
 <main class="container">
@@ -20,13 +20,12 @@
     
                 <hgroup>
                     <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-                    <h2>Retrouvez tous vos voyages</h2>
                 </hgroup>
                 <label for="inputEmail">Email</label>
-                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-text-field w-input"
                     autocomplete="email" required autofocus>
                 <label for="inputPassword">Mot de passe</label>
-                <input type="password" name="password" id="inputPassword" class="form-control"
+                <input type="password" name="password" id="inputPassword" class="form-text-field w-input"
                     autocomplete="current-password" required>
     
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -43,7 +42,7 @@
                 </div>
                 #}
                 <a href="{{path('forgetten_password')}}">Mot de passe oublié ? Clique ici</a> <br><br>
-                <button class="btn btn-lg btn-primary" type="submit">
+                <button class="next-button-slide w-button w--current" type="submit">
                     Connexion
                 </button>
             </form>

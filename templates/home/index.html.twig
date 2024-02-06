@@ -124,9 +124,9 @@
                         </a>
                     </div>
                 </div>
-                <div class="containerCardBottonRightBottom">
-                    <img src="https://assets-global.website-files.com/6533bdea645a5e7646167e3d/65345481694c7dea027d888f_pdp%20agency-min(1)%201.png" alt="Illustration" class="contentCardImageIllustration">
-                </div>
+                {# <div class="containerCardBottonRightBottom">
+                    <img src="{{ asset('assets/images/home/about-me-img-1-no-bg.png') }}" alt="Illustration" class="contentCardImageIllustration">
+                </div> #}
             </div>
         </div>
     </div>
@@ -496,7 +496,7 @@
                 <div class="full-width-grid_max-width-right-image">
                     <div class="circle-image_component">
                         <div class="circle-image_image1-wrapper">
-                            <img src="https://assets-global.website-files.com/6533bdea645a5e7646167e3d/6533d000e7a6dfe0f1c99047_itsme%201%20(1).webp" loading="lazy" alt="" class="circle-image_image1">
+                            <img src="{{ asset('assets/images/home/about-me-img-2-with-bg.jpg') }}" loading="lazy" alt="" class="circle-image_image1">
                         </div>
                         <div class="circle-image_decorative-wrapper">
                             <div class="circle-image_decorative-group">
@@ -697,7 +697,7 @@
     </div>
     </section>
 
-    <section class="section-faq fade-in-bottom" id="faq">
+    <section class="section-faq" id="faq">
     <div class="page-padding">
         <div class="container-large">
             <div class="padding-vertical padding-xhuge">
@@ -954,141 +954,147 @@
                     </a>
                 </div>
             </div>
-
-            <div class="contact_form_slide" id="one">
-                <div class="container_form">
-                    <div class="content_form">
-                        <div class="form_title">
-                            <div class="progress_bar_form">
-                                <div class="form-active">1</div>
-                                <div class="stepline"></div>
-                                <div class="form-step">2</div>
-                                <div class="form-step">3</div>
+                <div class="contact_form_slide" id="one">
+                    <div class="container_form">
+                        <div class="content_form">
+                            <div class="form_title">
+                                <div class="progress_bar_form">
+                                    <div class="form-active">1</div>
+                                    <div class="stepline"></div>
+                                    <div class="form-step">2</div>
+                                    <div class="form-step">3</div>
+                                </div>
+                                <div class="content_step_title">
+                                    <div class="form-step-count">Étape 1/3</div>
+                                    <h2 class="form-title">De quels services avez-vous besoin <span class="styled-colored">?</span></h2>
+                                    <p class="form-description"> Je réponds à toutes demandes sous 24 heures<span class="styled-colored">.</span></p>
+                                </div>
                             </div>
-                            <div class="content_step_title">
-                                <div class="form-step-count">Étape 1/3</div>
-                                <h2 class="form-title">De quels services avez-vous besoin <span class="styled-colored">?</span></h2>
-                                <p class="form-description"> Je réponds à toutes demandes sous 24 heures<span class="styled-colored">.</span></p>
-                            </div>
-                        </div>
-                        <div class="form_body">
-                            <div class="form_body_step_1">
-                                <label class="w-checkbox form-checkbox-field" id="input-label">
-                                    <div class="form-checkbox-wrap">
-                                        <img loading="lazy" src="./assets/images/home/creation_de_site.png" alt="" class="form-icon">
-                                        <div>
-                                            <div class="form-item-title">Création Site Surperformant</div>
-                                            <p class="form-item-description">Création d'un site web mémorable axé sur la performance.</p>
+                            <div class="form_body">
+                                <div class="form_body_step_1">
+                                    {{ form_start(formMoreInfo) }}
+                                    <label class="w-checkbox form-checkbox-field" id="input-label">
+                                        <div class="form-checkbox-wrap">
+                                            <img loading="lazy" src="./assets/images/home/creation_de_site.png" alt="" class="form-icon">
+                                            <div>
+                                                <div class="form-item-title">Création Site Surperformant</div>
+                                                <p class="form-item-description">Création d'un site web mémorable axé sur la performance.</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"></div>
-                                    {{form_start(formMoreInfo)}}
-                                    {{form_row(formMoreInfo.serviceType)}}
-                                    {# <input id="Cr-ation-de-site-1 input-checkbok" class="inputEtape1-1" type="checkbox" name="Cr-ation-de-site" data-name="Création de site"> #}
-                                    <span for="Cr-ation-de-site" class="form-checkbox-text w-form-label">Checkbox</span>
-                                </label>
+                                        <div class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"></div>
+                                        {{ form_row(formMoreInfo.serviceTypeSuperSite) }}
+                                        {# <input id="Cr-ation-de-site-1 input-checkbok" class="inputEtape1-1" type="checkbox" name="Cr-ation-de-site" data-name="Création de site"> #}
+                                        <span for="Cr-ation-de-site" class="form-checkbox-text w-form-label">Checkbox</span>
+                                    </label>
 
-                                <label class="w-checkbox form-checkbox-field" id="input-label">
-                                    <div class="form-checkbox-wrap">
-                                        <img loading="lazy" src="./assets/images/home/autre_question.webp" alt="" class="form-icon">
-                                        <div>
-                                            <div class="form-item-title">Autre</div>
-                                            <p class="form-item-description">Vous avez une question ou une autre demande ?</p>
+                                    <label class="w-checkbox form-checkbox-field" id="input-label">
+                                        <div class="form-checkbox-wrap">
+                                            <img loading="lazy" src="./assets/images/home/autre_question.webp" alt="" class="form-icon">
+                                            <div>
+                                                <div class="form-item-title">Autre</div>
+                                                <p class="form-item-description">Vous avez une question ou une autre demande ?</p>
+                                            </div>
                                         </div>
+                                        <div class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"></div>
+                                        {{form_row(formMoreInfo.serviceTypeAutre)}}
+                                        <input id="Cr-ation-de-site-2 input-checkbok" class="inputEtape1-2" type="checkbox" name="Cr-ation-de-site" data-name="Création de site">
+                                        <span for="Cr-ation-de-site" class="form-checkbox-text w-form-label">Checkbox</span>
+                                    </label>
+
+                                    <div class="contact_button-base">
+                                        <a href="#two" class="next-button-slide w-button w--current" onclick="nextStepForm1();">Étape suivante</a>
                                     </div>
-                                    <div class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"></div>
-                                    {# <input id="Cr-ation-de-site-2 input-checkbok" class="inputEtape1-2" type="checkbox" name="Cr-ation-de-site" data-name="Création de site"> #}
-                                    <span for="Cr-ation-de-site" class="form-checkbox-text w-form-label">Checkbox</span>
-                                </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact_form_slide" id="two">
+                    <div class="container_form">
+                        <div class="content_form">
+                            <div class="form_title">
+                                <div class="progress_bar_form">
+                                    <div class="form-active">1</div>
+                                    <div class="stepline _50"></div>
+                                    <div class="stepline _2"></div>
+                                    <div class="form-active">2</div>
+                                    <div class="form-step">3</div>
+                                </div>
+                                <div class="content_step_title">
+                                    <div class="form-step-count">Étape 2/3</div>
+                                    <h2 class="form-title">Discutons ensemble de votre projet<span class="styled-colored">.</span></h2>
+                                    <p class="form-description">Veuillez remplir les détails ci-dessous afin que je puisse prendre contact avec vous.</p>
+                                </div>
+                            </div>
+                            <div class="form_body">
+                                <div class="form_body_step_2">
+                                    <div class="form-field-wrap">
+                                        {# <label for="Nom-pr-nom" class="form-field-label">Entrez votre nom</label> #}
+                                        {# <input class="form-text-field w-input" maxlength="256" name="Nom-pr-nom" data-name="Nom" placeholder="ex. Jérémie" type="text" id="Nom-pr-nom" tabindex="-1"> #}
+                                        {{form_row(formMoreInfo.nom)}}
+                                    </div>
+                                    <div class="form-field-wrap">
+                                        {# <label for="Prenom-pr-prenom" class="form-field-label">Entrez votre prénom</label> #}
+                                        {# <input class="form-text-field w-input" maxlength="256" name="Prenom-pr-prenom" data-name="Prénom" placeholder="ex. Maole" type="text" id="Prenom-pr-prenom" tabindex="-1"> #}
+                                        {{form_row(formMoreInfo.prenom)}}
+                                    </div>
+                                    <div class="form-field-wrap margin-m">
+                                        {# <label for="T-l-phone" class="form-field-label">Entrez votre numéro de téléphone</label> #}
+                                        {# <input class="form-text-field w-input" maxlength="256" name="T-l-phone" data-name="Téléphone" placeholder="ex. 0607080910" type="tel" id="T-l-phone" tabindex="-1"> #}
+                                        {{form_row(formMoreInfo.telephone)}}
+                                    </div>
+                                    <div class="form-field-wrap">
+                                        {# <label for="Site-Web-3" class="form-field-label">Entrez le lien de votre site web (facultatif)</label> #}
+                                        {# <input class="form-text-field w-input" maxlength="256" name="Site-Web" data-name="Site Web" placeholder="ex. jeremiecode.fr" type="text" id="Site-Web-3" tabindex="-1"> #}
+                                        {{form_row(formMoreInfo.website)}}
+                                    </div>
+                                    <div class="contact_button-base">
+                                        <a onclick="prevStepForm1();" class="back-button-slide w-button">Retour</a>
+                                        <a onclick="nextStepForm2();" class="next-button-slide w-button w--current">Étape suivante</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact_form_slide" id="three">
+                    <div class="container_form">
+                        <div class="content_form">
+                            <div class="form_title">
+                                <div class="progress_bar_form">
+                                    <div class="form-active">1</div>
+                                    <div class="stepline blue"></div>
+                                    <div class="form-active">2</div>
+                                    <div class="form-active">3</div>
+                                </div>
+                                <div class="form-step-count">Étape 3/3</div>
+                                <h2 class="form-title">Confirmer l'envoi<span class="styled-colored">.</span><br></h2>
+                                <p class="form-description">Merci d'avoir pris le temps de remplir ce formulaire. Je te répondrai dans les 24 heures.<br></p>
+                            </div>
+                            <div class="form_body">
+                                <div class="form_body_step_3">
+                                    <div class="form-field-wrap">
+                                        <label for="Email" class="form-field-label">Entrez votre e-mail</label>
+                                        {# <input class="form-text-field w-input" autocomplete="Email" maxlength="256" name="Email" placeholder="ex. contact.snapcode@jeremiecode.fr" type="email" id="Email"> #}
+                                        {{form_row(formMoreInfo.email)}}
+                                    </div>
+                                    <div class="form-field-wrap margin-m">
+                                        <label for="Description" class="form-field-label">Comment nous pouvons t'aider ?</label>
+                                        {# <textarea id="Description" name="Description" maxlength="5000" placeholder="J'ai besoin de..." class="form-text-field larger w-input"></textarea> #}
+                                        {{form_row(formMoreInfo.description)}}
+                                    </div>
 
-                                <div class="contact_button-base">
-                                    <a href="#two" class="next-button-slide w-button w--current" onclick="nextStepForm1();">Étape suivante</a>
+                                    <div class="contact_button-base">
+                                        <a onclick="prevStepForm2();" class="back-button-slide w-button">Retour</a>
+                                        {{form_row(formMoreInfo.submit)}}
+                                        {# <a class="next-button-slide w-button w--current">Confirmer l'envoi</a> #}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="contact_form_slide" id="two">
-                <div class="container_form">
-                    <div class="content_form">
-                        <div class="form_title">
-                            <div class="progress_bar_form">
-                                <div class="form-active">1</div>
-                                <div class="stepline _50"></div>
-                                <div class="stepline _2"></div>
-                                <div class="form-active">2</div>
-                                <div class="form-step">3</div>
-                            </div>
-                            <div class="content_step_title">
-                                <div class="form-step-count">Étape 2/3</div>
-                                <h2 class="form-title">Discutons ensemble de votre projet<span class="styled-colored">.</span></h2>
-                                <p class="form-description">Veuillez remplir les détails ci-dessous afin que je puisse prendre contact avec vous.</p>
-                            </div>
-                        </div>
-                        <div class="form_body">
-                            <div class="form_body_step_2">
-                                <div class="form-field-wrap">
-                                    <label for="Nom-pr-nom" class="form-field-label">Entrez votre nom</label>
-                                    {# <input class="form-text-field w-input" maxlength="256" name="Nom-pr-nom" data-name="Nom" placeholder="ex. Jérémie" type="text" id="Nom-pr-nom" tabindex="-1"> #}
-                                    {{form_row(formMoreInfo.nom)}}
-
-                                </div>
-                                <div class="form-field-wrap">
-                                    <label for="Prenom-pr-prenom" class="form-field-label">Entrez votre prénom</label>
-                                    <input class="form-text-field w-input" maxlength="256" name="Prenom-pr-prenom" data-name="Prénom" placeholder="ex. Maole" type="text" id="Prenom-pr-prenom" tabindex="-1">
-                                </div>
-                                <div class="form-field-wrap margin-m">
-                                    <label for="T-l-phone" class="form-field-label">Entrez votre numéro de téléphone</label>
-                                    <input class="form-text-field w-input" maxlength="256" name="T-l-phone" data-name="Téléphone" placeholder="ex. 0607080910" type="tel" id="T-l-phone" tabindex="-1">
-                                </div>
-                                <div class="form-field-wrap">
-                                    <label for="Site-Web-3" class="form-field-label">Entrez le lien de votre site web (facultatif)</label>
-                                    <input class="form-text-field w-input" maxlength="256" name="Site-Web" data-name="Site Web" placeholder="ex. jeremiecode.fr" type="text" id="Site-Web-3" tabindex="-1">
-                                </div>
-                                <div class="contact_button-base">
-                                    <a onclick="prevStepForm1();" class="back-button-slide w-button">Retour</a>
-                                    <a onclick="nextStepForm2();" class="next-button-slide w-button w--current">Étape suivante</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="contact_form_slide" id="three">
-                <div class="container_form">
-                    <div class="content_form">
-                        <div class="form_title">
-                            <div class="progress_bar_form">
-                                <div class="form-active">1</div>
-                                <div class="stepline blue"></div>
-                                <div class="form-active">2</div>
-                                <div class="form-active">3</div>
-                            </div>
-                            <div class="form-step-count">Étape 3/3</div>
-                            <h2 class="form-title">Confirmer l'envoi<span class="styled-colored">.</span><br></h2>
-                            <p class="form-description">Merci d'avoir pris le temps de remplir ce formulaire. Je te répondrai dans les 24 heures.<br></p>
-                        </div>
-                        <div class="form_body">
-                            <div class="form_body_step_3">
-                                <div class="form-field-wrap">
-                                    <label for="Email" class="form-field-label">Entrez votre e-mail</label>
-                                    <input class="form-text-field w-input" autocomplete="Email" maxlength="256" name="Email" placeholder="ex. contact.snapcode@jeremiecode.fr" type="email" id="Email">
-                                </div>
-                                <div class="form-field-wrap margin-m">
-                                    <label for="Description" class="form-field-label">Comment nous pouvons t'aider ?</label>
-                                    <textarea id="Description" name="Description" maxlength="5000" placeholder="J'ai besoin de..." class="form-text-field larger w-input"></textarea>
-                                </div>
-                                {{form_end(formMoreInfo)}}
-                                <div class="contact_button-base">
-                                    <a onclick="prevStepForm2();" class="back-button-slide w-button">Retour</a>
-                                    <a class="next-button-slide w-button w--current">Confirmer l'envoi</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{ form_end(formMoreInfo) }}
         </div>
     </div>
     </section>
