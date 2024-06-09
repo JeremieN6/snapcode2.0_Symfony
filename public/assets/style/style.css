@@ -1004,9 +1004,9 @@ h1{
         position: absolute;
         left: 16rem;
     }
-    #w-slider-mask-1,
-    #w-slider-mask-2
-    #w-slider-mask-3{
+    .w-slider-mask-1,
+    .w-slider-mask-2,
+    .w-slider-mask-3{
         display: none;
     }
     /* SECTION TEMOIGNAGES */
@@ -1914,7 +1914,7 @@ h1{
         position: relative;
     }
     .form-text-field::placeholder{
-        color: #FFF;
+        color: #607d8b;
         font-weight: 600;
     }
     .w-input, .w-select {
@@ -3155,9 +3155,9 @@ h1{
         position: absolute;
         left: 20rem;
     }
-    #w-slider-mask-1,
-    #w-slider-mask-2,
-    #w-slider-mask-3{
+    .w-slider-mask-1,
+    .w-slider-mask-2,
+    .w-slider-mask-3{
         display: none;
     }
     /* SECTION TEMOIGNAGES */
@@ -4075,7 +4075,7 @@ h1{
         position: relative;
     }
     .form-text-field::placeholder{
-        color: #FFF;
+        color: #607d8b;
         font-weight: 600;
     }
     .w-input, .w-select {

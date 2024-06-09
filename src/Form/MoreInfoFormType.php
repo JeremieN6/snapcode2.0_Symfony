@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 class MoreInfoFormType extends AbstractType
@@ -35,14 +36,14 @@ class MoreInfoFormType extends AbstractType
             ->add('nom', TextType::class, [
                 'label' => 'Entrez votre nom',
                 'attr' => [
-                    'placeholder' => 'Maole',
+                    'placeholder' => 'Nom',
                     'class' => 'form-text-field w-input'
                 ],
             ])
             ->add('prenom', TextType::class, [
                 'label' => 'Entrez votre prénom',
                 'attr' => [
-                    'placeholder' => 'Jérémie',
+                    'placeholder' => 'Prénom',
                     'class' => 'form-text-field w-input'
                 ],
             ])
@@ -55,6 +56,13 @@ class MoreInfoFormType extends AbstractType
             ])
             ->add('website', TextType::class, [
                 'label' => 'Entrez le lien de votre site web (facultatif)',
+                'required' => false,
+                'constraints' => [
+                    new Assert\Url([
+                        'message' => 'Veuillez saisir une URL valide',
+                        'protocols' => ['http', 'https'],
+                    ]),
+                ],
                 'attr' => [
                     'placeholder' => 'ex. jeremiecode.fr',
                     'class' => 'form-text-field w-input'
@@ -63,7 +71,7 @@ class MoreInfoFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'ex. contact.snapcode@jeremiecode.fr',
+                    'placeholder' => 'ex. contact@email.fr',
                     'class' => 'form-text-field w-input'
                 ],
             ])
