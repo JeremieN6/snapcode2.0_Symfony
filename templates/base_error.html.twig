@@ -4,18 +4,79 @@
 <head>
     {% block meta %}
     <!-- Required meta tags -->
+    <!-- links for favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/favicon/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/favicon/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/favicon/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/favicon/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/favicon/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/favicon/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/favicon/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/favicon/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/favicon/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets/favicon/manifest.json') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/favicon/ms-icon-144x144.png') }}">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Basic metas -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Mobile specific metas -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SnapCode™">
+    <meta name="twitter:creator" content="@SnapCode™">
+    <meta name="twitter:title" content="SnapCode™">
+    <meta name="twitter:description" content="SnapCode™ Digital Agency">
+    <meta name="twitter:image" content="assets/images/brand-logo.svg">
+    <!-- Facebook -->
+    <meta property="og:url" content="">
+    <meta property="og:title" content="SnapCode™">
+    <meta property="og:description" content="SnapCode™ Digital Agency">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/brand-logo.svg">
+    <meta property="og:image:secure_url" content="">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     {% endblock %}
     <title>{% block title %}SnapCode™ Agency{% endblock %}</title>
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <!-- Icon fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,500i,700,700i,900" rel="stylesheet">
+
+    <!-- css links -->
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('V1/assets/css/vendor/owl.carousel.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('V1/assets/css/vendor/owl.theme.default.min.css') }}">
+
+    <!-- Magnific popup -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('V1/assets/css/vendor/magnific-popup.css') }}">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/style/style.css') }}">
+
     <!-- Load Flashy default CSS -->
     <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+
     <!--Message Flash Icon-->
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% endblock %}
 
 </head>
