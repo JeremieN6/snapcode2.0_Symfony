@@ -57,12 +57,6 @@ class MoreInfoFormType extends AbstractType
             ->add('website', TextType::class, [
                 'label' => 'Entrez le lien de votre site web (facultatif)',
                 'required' => false,
-                'constraints' => [
-                    new Assert\Url([
-                        'message' => 'Veuillez saisir une URL valide',
-                        'protocols' => ['http', 'https'],
-                    ]),
-                ],
                 'attr' => [
                     'placeholder' => 'ex. jeremiecode.fr',
                     'class' => 'form-text-field w-input'
