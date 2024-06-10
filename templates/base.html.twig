@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('V1/assets/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('V1/assets/favicon/favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('V1/assets/favicon/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('V1/assets/favicon/manifest.json') }}">
+    {# <link rel="manifest" href="{{ asset('V1/assets/favicon/manifest.json') }}"> #}
     <meta name="msapplication-TileColor" content="#ffffff">
     {# <meta name="msapplication-TileImage" content="{{ asset('assets/favicon/ms-icon-144x144.png') }}"> #}
     <meta name="theme-color" content="#ffffff">
@@ -70,7 +70,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/style/style.css') }}">
 
     <!-- Load Flashy default CSS -->
-    <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+    <link rel="stylesheet" href="{{ asset('./bundles/mercuryseriesflashy/css/flashy.css') }}">
 
     <!--Message Flash Icon-->
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -121,7 +121,7 @@
         <!-- Custom Script -->
         <script src="{{ asset('assets/js/script.js') }}"></script>
         <!-- Load Flashy default JavaScript -->
-        <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+        <script src="{{ asset('./bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
     {% endblock %}
         <!-- Include Flashy default partial -->
         {{ include('@MercurySeriesFlashy/flashy.html.twig') }}

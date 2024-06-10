@@ -2133,6 +2133,7 @@ h1{
     .content_errorpage p{
         padding: 15px 0;
         margin-bottom: 15px;
+        text-align: center;
     }
     .navbar_error{
         padding: 30px;
