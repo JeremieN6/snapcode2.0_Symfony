@@ -1,15 +1,22 @@
 {% extends "base_error.html.twig" %}
 
 {% block body %}
-<article id="article" style="text-align: center;">
-    <hgroup>
-        <h2>Oups ! Vous vous êtes perdu ... 🫠</h2>
-        <p>Cette page n'existe pas !</p>
-    
-        <a href="{{path('app_home')}}">   
-            <button>Je retrouve mon chemin</button> 
+<div class="container_page">
+    <div class="container_title">
+        <h1>Oups ! Une erreur est survenue ... 🫠</h1>
+    </div>
+    <div class="content_errorpage">
+        <p>
+            Veuillez recommencer ou patienter quelques instants ! <br>
+            En attendant je vous raccompagne à l'accueil.
+        </p>
+        <a href="{{path('app_home')}}">
+            <button class="button w-button">Je retrouve mon chemin</button>
         </a>
-    </hgroup>
-</article>
-
+        <p style="text-align: center;">
+            Si vous êtes l'administrateur de ce merveilleux site, veuillez vérifier les logs afin de corriger rapidement
+            le problème. <br> Merci
+        </p>
+    </div>
+</div>
 {% endblock %}

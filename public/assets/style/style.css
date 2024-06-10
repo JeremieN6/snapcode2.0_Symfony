@@ -2116,6 +2116,28 @@ h1{
         margin-bottom: 0;
     }
     /* FOOTER */
+    /*ERROR PAGE*/
+    .container_page{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5em;
+    }
+    .content_errorpage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .content_errorpage p{
+        padding: 15px 0;
+        margin-bottom: 15px;
+    }
+    .navbar_error{
+        padding: 30px;
+    }
+    /*ERROR PAGE*/
         /* ANIMATION */
         .fade-in {
             opacity: 0;
@@ -4292,6 +4314,29 @@ h1{
     }
 }
 /* A PROPOS */
+
+/*Error Page*/
+@media (min-width: 769px){
+    .container_page{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5em;
+    }
+    .content_errorpage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .content_errorpage p{
+        padding: 15px 0;
+        margin-bottom: 15px;
+    }
+}
+/*Error Page*/
+
 
 /* MEDIA QUERIES */
 @media (min-width:1400px) and (max-width:1699px){
