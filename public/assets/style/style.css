@@ -1918,7 +1918,7 @@ h1{
         font-weight: 600;
     }
     .w-input, .w-select {
-        width: 97%;
+        width: 90%;
         height: 38px;
         color: #333;
         /* vertical-align: middle; */
