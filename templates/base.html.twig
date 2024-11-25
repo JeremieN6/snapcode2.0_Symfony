@@ -4,6 +4,8 @@
 <head>
     {% block meta %}
     <!-- Required meta tags -->
+    <!-- Canonic URL -->
+    <link rel="canonical" href="{{ app.request.scheme ~ '://' ~ app.request.host ~ app.request.pathInfo }}">
     <!-- links for favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('V1/assets/favicon/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('V1/assets/favicon/apple-icon-60x60.png') }}">
