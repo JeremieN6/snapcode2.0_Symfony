@@ -116,7 +116,7 @@ class HomeController extends AbstractController
         if ($contactForm->isSubmitted() && $contactForm->isValid()){
             $data = $contactForm->getData();
 
-            $senderEmail = 'contact@snapcode.jeremiecode.fr'; // Adresse de l'expéditeur
+            $senderEmail = 'contact@jeremiecode.fr'; // Adresse de l'expéditeur
             $mailAdress = $data['email']; // Adresse du destinataire
 
             $senderName = $data['nom']; // Nom du destinataire
@@ -127,7 +127,7 @@ class HomeController extends AbstractController
 
             $email = (new Email())
                 ->from($senderEmail)
-                ->to('contact@snapcode.jeremiecode.fr')
+                ->to('contact@jeremiecode.fr')
                 ->subject('Email de contact de SnapCode™ Agency')
                 ->text($emailMessage);
 
