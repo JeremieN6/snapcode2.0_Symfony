@@ -1,0 +1,120 @@
+{% extends 'blog/base_blog.html.twig' %}
+
+{% block title %}Accueil | Blog - SnapCode™ Agency{% endblock %}
+
+{% block body %}
+          <div class="cs-site-content cs-sidebar-enabled cs-sidebar-right">
+            <div class="cs-container">
+              <section class="cs-home-hero cs-hero-type-1">
+                <div class="cs-hero-type-1__slider" data-cs-autoplay="1" data-cs-autoplay-delay="5000" data-cs-parallax="1" data-cs-gap="32">
+                  <div class="cs-hero-type-1__wrapper" data-scheme="inverse">
+                    {% for post in recentPosts %}
+                        <article class="cs-hero-type-1__item cs-entry">
+                            <div class="cs-entry__outer cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-slider">
+                                <div class="cs-entry__inner cs-entry__thumbnail">
+                                    <div class="cs-overlay-background">
+                                        <img width="512" height="314" src="{{ post.featuredImage }}" class="attachment-csco-thumbnail-uncropped size-csco-thumbnail-uncropped wp-post-image" alt="{{ post.title }}" decoding="async" fetchpriority="high" srcset="{{ post.featuredImage }} 512w, {{ post.featuredImage }} 300w, {{ post.featuredImage }} 1024w, {{ post.featuredImage }} 768w, {{ post.featuredImage }} 1536w, {{ post.featuredImage }} 2048w, {{ post.featuredImage }} 920w, {{ post.featuredImage }} 1600w, {{ post.featuredImage }} 3200w, {{ post.featuredImage }} 1920w, {{ post.featuredImage }} 3840w" sizes="(max-width: 512px) 100vw, 512px" />
+                                        <img width="1600" height="980" src="{{ post.featuredImage }}" class="attachment-csco-large-uncropped size-csco-large-uncropped wp-post-image" alt="{{ post.title }}" decoding="async" srcset="{{ post.featuredImage }} 1600w, {{ post.featuredImage }} 300w, {{ post.featuredImage }} 1024w, {{ post.featuredImage }} 768w, {{ post.featuredImage }} 1536w, {{ post.featuredImage }} 2048w, {{ post.featuredImage }} 512w, {{ post.featuredImage }} 920w, {{ post.featuredImage }} 3200w, {{ post.featuredImage }} 1920w, {{ post.featuredImage }} 3840w" sizes="(max-width: 1600px) 100vw, 1600px" />
+                                    </div>
+                                </div>
+                                <div class="cs-entry__inner cs-entry__content cs-overlay-content" data-swiper-parallax-x="-400" data-swiper-parallax-duration="800">
+                                    <div class="cs-entry__post-meta">
+                                        <div class="cs-meta-author">
+                                            <span class="cs-meta-author-by">Par</span>
+                                            <a class="cs-meta-author-link url fn n" href="#">
+                                                <span class="cs-meta-author-name">
+                                                    {% if post.users %}
+                                                        {{ post.users.prenom }} {{ post.users.nom }}
+                                                    {% else %}
+                                                        Auteur inconnu
+                                                    {% endif %}
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="cs-meta-date">{{ post.createdAt|date('d F Y') }}</div>
+                                    </div>
+                                    <h2 class="cs-entry__title">{{ post.title }}</h2>
+                                    {% if post.categories|length > 0 %}
+                                    <div class="cs-entry__subtitle">{{ post.categories|first.description|default('')|raw }}</div>
+                                    {% endif %}
+                                    <div class="cs-entry__post-meta">
+                                        <div class="cs-meta-category">
+                                            <ul class="post-categories">
+                                                {% if post.categories|length > 0 %}
+                                                <li>
+                                                    <a href="{{ path('app_category', {slug: post.categories|first.slug}) }}" rel="category tag">{{ post.categories|first.name }}</a>
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="cs-overlay-link" href="{{ path('article_show', {slug: post.slug}) }}" title="{{ post.title }}"></a>
+                            </div>
+                        </article>
+                    {% endfor %}
+                  </div>
+                  <div class="cs-hero-type-1__pagination"></div>
+                  <div class="cs-hero-type-1__button-prev"></div>
+                  <div class="cs-hero-type-1__button-next"></div>
+                </div>
+              </section>
+              <div id="content" class="cs-main-content">
+                <div id="primary" class="cs-content-area">
+                  <div class="cs-posts-area cs-posts-area-posts">
+                    <div class="cs-posts-area__outer">
+                      <div class="cs-posts-area__main cs-archive-grid  cs-posts-area__home cs-posts-area__grid">
+                        {% for post in latestPostsByCategory %}
+                            <article class="post-{{ post.id }} post type-post status-publish format-standard has-post-thumbnail category-{{ post.categories|first.slug }} cs-entry">
+                                <div class="cs-entry__outer">
+                                    <div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape" data-scheme="inverse">
+                                        <div class="cs-overlay-background">
+                                            <img width="512" height="384" src="{{ post.featuredImage }}" class="attachment-csco-thumbnail size-csco-thumbnail wp-post-image" alt="{{ post.title }}" decoding="async" loading="lazy" srcset="{{ post.featuredImage }} 512w, {{ post.featuredImage }} 1024w" sizes="(max-width: 512px) 100vw, 512px" />
+                                        </div>
+                                        <a class="cs-overlay-link" href="{{ path('article_show', {slug: post.slug}) }}" title="{{ post.title }}"></a>
+                                    </div>
+                                    <div class="cs-entry__inner cs-entry__content">
+                                        <div class="cs-entry__post-meta">
+                                            <div class="cs-meta-author">
+                                                <span class="cs-meta-author-by">Par</span>
+                                                <a class="cs-meta-author-link url fn n" href="#">
+                                                    <span class="cs-meta-author-name">
+                                                        {% if post.users %}
+                                                            {{ post.users.prenom }} {{ post.users.nom }}
+                                                        {% else %}
+                                                            Auteur inconnu
+                                                        {% endif %}
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="cs-meta-date">{{ post.createdAt|date('d F Y') }}</div>
+                                        </div>
+                                        <h2 class="cs-entry__title">
+                                            <a href="{{ path('article_show', {slug: post.slug}) }}">
+                                                <span>{{ post.title }}</span>
+                                            </a>
+                                        </h2>
+                                        <div class="cs-entry__post-meta">
+                                            <div class="cs-meta-category">
+                                                <ul class="post-categories">
+                                                    {% for category in post.categories %}
+                                                        <li>
+                                                            <a href="{{ path('app_category', {slug: category.slug}) }}" rel="category tag">{{ category.name }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% include 'blog/main_aside.html.twig' %}
+              </div>
+            </div>
+          </div>
+{% endblock %}

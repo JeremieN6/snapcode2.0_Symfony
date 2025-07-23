@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Interdire l'accès aux répertoires sensibles
+Disallow: /admin/
+Disallow: /var/
+Disallow: /vendor/
+Disallow: /config/
+Disallow: /src/
+Disallow: /_profiler/
+Disallow: /_wdt/
+
+# Autoriser spécifiquement le blog
+Allow: /blog/
+Allow: /blog/*
+
+# Sitemap
+Sitemap: https://agence.jeremiecode.fr/sitemap.xml
+
+# Délai entre les requêtes (en secondes)
+Crawl-delay: 1

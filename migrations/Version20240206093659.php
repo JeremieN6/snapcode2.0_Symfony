@@ -20,7 +20,8 @@ final class Version20240206093659 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE more_info_formulaire_controller ADD service_type_autre VARCHAR(255) DEFAULT NULL, CHANGE service_type service_type_super_site VARCHAR(255) DEFAULT NULL');
+        // Les colonnes service_type_autre et service_type_super_site existent déjà dans la structure initiale
+        // Cette migration ne fait rien car les colonnes sont déjà créées
     }
 
     public function down(Schema $schema): void

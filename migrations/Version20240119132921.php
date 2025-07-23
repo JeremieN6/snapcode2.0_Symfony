@@ -20,7 +20,8 @@ final class Version20240119132921 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE users DROP pseudo');
+        // La colonne pseudo n'existe pas dans la nouvelle structure, donc on ne fait rien
+        // Cette migration était pour supprimer une colonne qui n'existe plus
     }
 
     public function down(Schema $schema): void

@@ -3,10 +3,12 @@
 /.env.local
 /.env.local.php
 /.env.*.local
+/.env.*
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/easyadmin
 /var/
 /vendor/
+/blog
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###

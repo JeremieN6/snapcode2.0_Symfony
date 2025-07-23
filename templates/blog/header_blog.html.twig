@@ -1,0 +1,234 @@
+<div class="cs-site-overlay"></div>
+<div class="cs-offcanvas">
+  <div class="cs-offcanvas__header">
+    <div class="cs-logo">
+      <a class="cs-header__logo cs-logo-default " href="{{ path('blog_index') }}">
+        <img src="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }}" alt="Logo SnapCode™ Agency - Le Blog"
+          srcset="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }} 1x, {{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }} 2x">
+      </a>
+      <a class="cs-header__logo cs-logo-dark " href="{{ path('blog_index') }}">
+        <img src="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }}" alt="Logo SnapCode™ Agency - Le Blog"
+          srcset="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }} 1x, {{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }} 2x">
+      </a>
+    </div>
+    <nav class="cs-offcanvas__nav">
+      <span class="cs-offcanvas__toggle" role="button" aria-label="Close mobile menu button">
+        <i class="cs-icon cs-icon-x"></i>
+      </span>
+    </nav>
+  </div>
+  <aside class="cs-offcanvas__sidebar">
+    <div class="cs-offcanvas__inner cs-offcanvas__area cs-widget-area">
+      <div class="widget widget_nav_menu">
+        <div class="menu-primary-container">
+          <ul id="menu-primary" class="menu">
+            {% for name, slug in menuCategorie %}
+                {% if name in ['Développement Web', 'Projets Clients', 'Conseils aux Entreprises', 'Marketing Digital et Stratégie Web'] %}
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <a href="{{ path('app_category', { slug: slug }) }}">{{ name }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            <li id="menu-item-7"
+            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-7">
+            <a href="#">Autres</a>
+            <ul class="sub-menu">
+              {% for name, slug in menuCategorie %}
+                  {% if name not in ['Développement Web', 'Projets Clients', 'Conseils aux Entreprises', 'Marketing Digital et Stratégie Web'] %}
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                          <a href="{{ path('app_category', { slug: slug }) }}">{{ name }}</a>
+                      </li>
+                  {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+          <li class="menu-item menu-item-type-custom menu-item-object-custom">
+            <a href="{{ path('app_home') }}"> Retour vers SnapCode™ Agency </a>
+          </li>
+          </ul>
+        </div>
+      </div>
+      <div class="cs-offcanvas__button">
+        {% if app.user %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a class="cs-button cs-header__custom-button" href="{{ path('admin') }}">
+                    <i class="fa fa-user-circle-o" style="font-size:20px"></i>
+                </a>
+                <a class="cs-button cs-header__custom-button" href="{{ path('app_logout') }}">
+                    <i class="fa fa-sign-out" style="font-size:20px"></i>
+                </a>
+            {% endif %}
+        {% else %}
+            {# <a class="cs-button cs-header__custom-button" href="{{ path('app_login') }}">
+                <i class="fa fa-sign-in" style="font-size:20px"></i>
+            </a> #}
+        {% endif %}
+      </div>
+      <div class="cs-offcanvas__bottombar">
+        <div class="cs-social">
+          <a class="cs-social__link" href="#" target="_blank">
+            <img src="{{ asset('blog/assets/social-icons/demo-icon-facebook-0001.webp') }}" alt="Facebook"
+              srcset="{{ asset('blog/assets/social-icons/demo-icon-facebook-0001.webp') }} 1x, {{ asset('blog/assets/social-icons/demo-icon-facebook-0001.webp') }} 2x">
+          </a>
+          <a class="cs-social__link" href="#" target="_blank">
+            <img src="{{ asset('blog/assets/social-icons/demo-icon-twitter-new-0001.webp') }}" alt="Twitter"
+              srcset="{{ asset('blog/assets/social-icons/demo-icon-twitter-new-0001.webp') }} 1x, {{ asset('blog/assets/social-icons/demo-icon-twitter-new-0001.webp') }} 2x">
+          </a>
+          <a class="cs-social__link" href="#" target="_blank">
+            <img src="{{ asset('blog/assets/social-icons/demo-icon-instagram-0001.webp') }}" alt="Instagram"
+              srcset="{{ asset('blog/assets/social-icons/demo-icon-instagram-0001.webp') }} 1x, {{ asset('blog/assets/social-icons/demo-icon-instagram-0001.webp') }} 2x">
+          </a>
+          <a class="cs-social__link" href="#" target="_blank">
+            <img src="{{ asset('blog/assets/social-icons/demo-icon-pinterest-0001.webp') }}" alt="Pinterest"
+              srcset="{{ asset('blog/assets/social-icons/demo-icon-pinterest-0001.webp') }} 1x, {{ asset('blog/assets/social-icons/demo-icon-pinterest-0001.webp') }} 2x">
+          </a>
+        </div>
+        <span class="cs-site-scheme-toggle cs-offcanvas__scheme-toggle" role="button" aria-label="Scheme Toggle">
+          <span class="cs-header__scheme-toggle-icons">
+            <i class="cs-header__scheme-toggle-icon cs-icon cs-icon-light-mode"></i>
+            <i class="cs-header__scheme-toggle-icon cs-icon cs-icon-dark-mode"></i>
+          </span>
+        </span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<header class="cs-header cs-header-stretch">
+  <div class="cs-container">
+    <div class="cs-header__inner cs-header__inner-desktop">
+      <div class="cs-header__col cs-col-left">
+        <div class="cs-logo">
+          <a class="cs-header__logo cs-logo-default " href="{{ path('blog_index') }}">
+            <img src="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }}" alt="Logo SnapCode™ Agency - Le Blog"
+              srcset="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }} 1x, {{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }} 2x">
+          </a>
+          <a class="cs-header__logo cs-logo-dark " href="{{ path('blog_index') }}">
+            <img src="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }}" alt="Logo SnapCode™ Agency - Le Blog"
+              srcset="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }} 1x, {{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }} 2x">
+          </a>
+        </div>
+      </div>
+      <div class="cs-header__col cs-col-center">
+        <nav class="cs-header__nav">
+          <ul id="menu-primary-1" class="cs-header__nav-inner">
+            {% for name, slug in menuCategorie %}
+                {% if name in ['Développement Web', 'Projets Clients', 'Conseils aux Entreprises', 'Marketing Digital et Stratégie Web'] %}
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <a href="{{ path('app_category', { slug: slug }) }}">{{ name }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            <li
+              class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-7">
+              <a href="#" class="menu-item-without-link">
+                <span>
+                  <span>Autres</span>
+                </span>
+              </a>
+              <ul class="sub-menu">
+                {% for name, slug in menuCategorie %}
+                    {% if name not in ['Développement Web', 'Projets Clients', 'Conseils aux Entreprises', 'Marketing Digital et Stratégie Web'] %}
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                            <a href="{{ path('app_category', { slug: slug }) }}">{{ name }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                  <a href="{{ path('app_home') }}"> Retour vers SnapCode™ Agency </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="cs-header__col cs-col-right">
+        <span class="cs-site-scheme-toggle cs-header__scheme-toggle" role="button" aria-label="Dark mode toggle button">
+          <span class="cs-header__scheme-toggle-icons">
+            <i class="cs-header__scheme-toggle-icon cs-icon cs-icon-light-mode"></i>
+            <i class="cs-header__scheme-toggle-icon cs-icon cs-icon-dark-mode"></i>
+          </span>
+        </span>
+        <span class="cs-header__search-toggle" role="button" aria-label="Search">
+          <i class="cs-icon cs-icon-search"></i>
+        </span>
+        {% if app.user %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a class="cs-button cs-header__custom-button" href="{{ path('admin') }}">
+                    <i class="fa fa-user-circle-o" style="font-size:20px"></i>
+                </a>
+                <a class="cs-button cs-header__custom-button" href="{{ path('app_logout') }}">
+                    <i class="fa fa-sign-out" style="font-size:20px"></i>
+                </a>
+            {% endif %}
+            {% else %}
+                {# <a class="cs-button cs-header__custom-button" href="{{ path('app_login') }}">
+                    <i class="fa fa-sign-in" style="font-size:20px"></i>
+                </a> #}
+        {% endif %}
+      </div>
+    </div>
+    <div class="cs-header__inner cs-header__inner-mobile">
+      <div class="cs-header__col cs-col-left">
+        <span class="cs-header__offcanvas-toggle " role="button" aria-label="Mobile menu button">
+          <i class="cs-icon cs-icon-menu1"></i>
+        </span>
+      </div>
+      <div class="cs-header__col cs-col-center">
+        <div class="cs-logo">
+          <a class="cs-header__logo cs-logo-default " href="#">
+            <img src="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }}"
+              alt="Logo SnapCode™ Agency - Le Blog"
+              srcset="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }} 1x, {{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }} 2x"
+              width="123" height="40">
+          </a>
+          <a class="cs-header__logo cs-logo-dark " href="#">
+            <img src="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }}"
+              alt="Logo SnapCode™ Agency - Le Blog"
+              srcset="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }} 1x, {{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }} 2x"
+              width="123" height="40">
+          </a>
+        </div>
+      </div>
+      <div class="cs-header__col cs-col-right">
+        <span class="cs-header__search-toggle" role="button" aria-label="Search">
+          <i class="cs-icon cs-icon-search"></i>
+        </span>
+      </div>
+    </div>
+    <div class="cs-search-overlay"></div>
+    <div class="cs-search">
+      <div class="cs-search__header">
+        <h2>Que recherchez vous ?</h2>
+        <span class="cs-search__close" role="button" aria-label="Close search button">
+          <i class="cs-icon cs-icon-x"></i>
+        </span>
+      </div>
+      <div class="cs-search__form-container">
+        <form role="search" method="get" class="cs-search__form" action="{{ path('app_search') }}">
+          <div class="cs-search__group">
+            {{ form_start(searchForm, { 'attr': { 'class': 'cs-search__group' } }) }}
+              {{ form_widget(searchForm.query) }}
+              {# <input required class="cs-search__input" type="search" value="" name="s" placeholder="Search..."
+                role="searchbox"> #}
+              <button class="cs-search__submit" aria-label="Search" type="submit">Chercher</button>
+            {{ form_end(searchForm) }}
+          </div>
+        </form>
+      </div>
+      <div class="cs-search__content">
+        <div class="cs-entry__post-meta">
+          <div class="cs-meta-category">
+            <ul class="post-categories">
+              {% for item in categoryPost %}
+              <li>
+                <a href="{{ path('app_category', {slug: item.slug}) }}" rel="category tag"> {{ item.name }} </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

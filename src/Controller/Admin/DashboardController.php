@@ -9,6 +9,10 @@ use App\Entity\Subscription;
 use App\Entity\Users;
 use App\Entity\Contact;
 use App\Entity\MoreInfoFormulaireController;
+use App\Entity\Posts;
+use App\Entity\Categories;
+use App\Entity\Keywords;
+use App\Entity\Comments;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -61,8 +65,14 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Formulaire', 'fa fa-users', MoreInfoFormulaireController::class);
         yield MenuItem::linkToCrud('Newsletter', 'fa fa-newspaper-o', Newsletter::class);
 
-        yield MenuItem::section('Utilisateurs');
+        yield MenuItem::section('Contact');
         yield MenuItem::linkToCrud('Contact', 'fa fa-user', Contact::class);
+
+        yield MenuItem::section('Blog');
+        yield MenuItem::linkToCrud('Articles', 'fa fa-file-text', Posts::class);
+        yield MenuItem::linkToCrud('Catégories', 'fa fa-tags', Categories::class);
+        yield MenuItem::linkToCrud('Mots-clés', 'fa fa-key', Keywords::class);
+        yield MenuItem::linkToCrud('Commentaires', 'fa fa-comment', Comments::class);
 
     }
 }

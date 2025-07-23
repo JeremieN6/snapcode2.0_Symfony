@@ -1,0 +1,194 @@
+{% extends 'blog/base_blog.html.twig' %}
+
+{% block title %} Article | Blog SnapCode™ Agency{% endblock %}
+
+{% block body %}
+<div class="cs-site-content cs-sidebar-enabled cs-sidebar-right">
+  <div class="cs-container">
+    <div class="cs-breadcrumbs" id="breadcrumbs">
+      <span>
+        <span>
+          <a href="{{ path('blog_index') }}">Accueil</a>
+        </span>
+        {% for category in post.categories %}
+          <span class="cs-separator"></span>
+          <span>
+            <a href="{{ path('app_category', {slug: category.slug}) }}">{{ category.name }}</a>
+          </span>
+          <span class="cs-separator"></span>
+        {% endfor %}
+        <span class="breadcrumb_last" aria-current="page">{{ post.title }}</span>
+      </span>
+    </div>
+    <div class="cs-entry__header cs-entry__header-standard">
+      <div class="cs-entry__outer cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-3-2">
+        <div class="cs-entry__inner cs-entry__thumbnail">
+          <div class="cs-overlay-background">
+            <img width="512" height="353" src="{{ post.featuredImage }}" class="attachment-csco-thumbnail-uncropped size-csco-thumbnail-uncropped wp-post-image" alt="From Athleisure to Workleisure: Response to Remote Work" decoding="async" fetchpriority="high" srcset="{{ post.featuredImage }} 512w, {{ post.featuredImage }} 300w, {{ post.featuredImage }} 1024w, {{ post.featuredImage }} 768w, {{ post.featuredImage }}, {{ post.featuredImage }} 2048w, {{ post.featuredImage }} 920w, {{ post.featuredImage }} 1600w, {{ post.featuredImage }} 3200w, {{ post.featuredImage }} 1920w, {{ post.featuredImage }} 3840w" sizes="(max-width: 512px) 100vw, 512px">
+            <img width="1920" height="1325" src="{{ post.featuredImage }}" class="attachment-csco-extra-large-uncropped size-csco-extra-large-uncropped wp-post-image" alt="From Athleisure to Workleisure: Response to Remote Work" decoding="async" srcset="{{ post.featuredImage }} 1920w, {{ post.featuredImage }} 300w, {{ post.featuredImage }} 1024w, {{ post.featuredImage }} 768w, {{ post.featuredImage }}, {{ post.featuredImage }} 2048w, {{ post.featuredImage }} 512w, {{ post.featuredImage }} 920w, {{ post.featuredImage }} 1600w, {{ post.featuredImage }} 3200w, {{ post.featuredImage }} 3840w" sizes="(max-width: 1920px) 100vw, 1920px">
+          </div>
+        </div>
+        <div class="cs-entry__inner cs-entry__content cs-overlay-content" data-scheme="inverse">
+          <div class="cs-entry__post-meta">
+            <div class="cs-meta-author">
+              <span class="cs-meta-author-by">Par</span>
+              <a class="cs-meta-author-link url fn n" href="#">
+                <picture class="cs-meta-author-avatar">
+                  <img alt="" src="{{asset('assets/images/authorProfil/photo_de_profil.webp')}}" srcset="{{asset('assets/images/authorProfil/photo_de_profil.webp')}} 2x" class="avatar avatar-36 photo" height="36" width="36" decoding="async">
+                </picture>
+                <span class="cs-meta-author-name">{{ post.users.prenom }} {{post.users.nom}} </span>
+              </a>
+            </div>
+            <div class="cs-meta-date">{{ post.createdAt|date('d F Y') }}</div>
+          </div>
+          <h1 class="cs-entry__title">
+            <span>{{ post.title }}</span>
+          </h1>
+          <div class="cs-entry__subtitle">{{ post.content|striptags|slice(0, 200) }}{% if post.content|length > 200 %}...{% endif %}</div>
+        </div>
+      </div>
+    </div>
+    <div id="content" class="cs-main-content">
+      <div id="primary" class="cs-content-area">
+        <div class="cs-entry__wrap">
+          <div class="cs-entry__container">
+            <div class="cs-entry__content-wrap">
+              <div class="entry-content">
+                {{ post.content|raw }}
+              </div>
+            </div>
+          </div>
+          <div class="cs-entry__footer">
+            <div class="cs-entry__footer-top">
+              <div class="cs-entry__footer-top-left">
+                <div class="cs-entry__post-meta">
+                  <div class="cs-meta-author">
+                    <span class="cs-meta-author-by">Par</span>
+                    <a class="cs-meta-author-link url fn n" href="#">
+                      <picture class="cs-meta-author-avatar">
+                        <img alt="" src="{{asset('assets/images/authorProfil/photo_de_profil.webp')}}" srcset="{{asset('assets/images/authorProfil/photo_de_profil.webp')}} 2x" class="avatar avatar-36 photo" height="36" width="36" loading="lazy" decoding="async">
+                      </picture>
+                      <span class="cs-meta-author-name">{{post.users.prenom}} {{post.users.nom}} </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="cs-entry__footer-date">
+                  <div class="cs-entry__footer-date-inner">
+                    <span class="cs-entry__footer-title">Crée le</span>
+                    <time class="cs-entry__footer-value">{{ post.createdAt|date('d F Y') }}</time>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-entry__footer-top-right">
+                <div class="cs-entry__post-meta">
+                  <div class="cs-meta-category">
+                    <ul class="post-categories">
+                      {% for category in post.categories %}
+                      <li>
+                        <a href="{{ path('app_category', {slug: category.slug}) }}" rel="category tag">{{ category.name }}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="cs-read-next">
+            <div class="cs-read-next__heading">
+              <h2> Lire aussi</h2>
+            </div>
+            <div class="cs-posts-area__read-next cs-read-next__grid">
+              {% for relatedPost in relatedPosts %}
+                <article class="cs-entry">
+                  <div class="cs-entry__outer">
+                    <div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape" data-scheme="inverse">
+                      <div class="cs-overlay-background">
+                        <img width="512" height="384" src="{{ relatedPost.featuredImage }}" class="attachment-csco-thumbnail size-csco-thumbnail wp-post-image" alt="Illustration de l'article" decoding="async" loading="lazy" srcset="{{ relatedPost.featuredImage }} 512w, {{ relatedPost.featuredImage }} 1024w" sizes="(max-width: 512px) 100vw, 512px">
+                      </div>
+                      <a class="cs-overlay-link" href="{{ path('article_show', {slug: relatedPost.slug}) }}" title="{{ relatedPost.title }}"></a>
+                    </div>
+                    <div class="cs-entry__inner cs-entry__content">
+                      <div class="cs-entry__post-meta">
+                        <div class="cs-meta-author">
+                          <span class="cs-meta-author-by">Par</span>
+                          <a class="cs-meta-author-link url fn n" href="#">
+                            <span class="cs-meta-author-name">{{post.users.prenom}}  {{post.users.nom}}</span>
+                          </a>
+                        </div>
+                        <div class="cs-meta-date">{{ relatedPost.createdAt|date('d F Y') }}</div>
+                      </div>
+                      <h3 class="cs-entry__title">
+                        <a href="{{ path('article_show', {slug: relatedPost.slug}) }}">
+                          <span>{{ relatedPost.title }}</span>
+                        </a>
+                      </h3>
+                      <div class="cs-entry__post-meta">
+                        <div class="cs-meta-category">
+                          <ul class="post-categories">
+                            {% for category in relatedPost.categories %}
+                            <li>
+                              <a href="{{ path('app_category', {slug: category.slug}) }}" rel="category tag">{{ category.name }}</a>
+                            </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </section>
+          {# <div class="cs-entry__comments" id="comments">
+            <div class="cs-entry__comments-inner">
+              <div id="respond" class="comment-respond">
+                <h2 id="reply-title" class="comment-reply-title">Leave a Reply <small>
+                    <a rel="nofollow" id="cancel-comment-reply-link" href="/lifestyle/2023/09/10/from-athleisure-to-workleisure-fashions-response-to-remote-work/#respond" style="display:none;">Cancel reply</a>
+                  </small>
+                </h2>
+                <form action="https://swyft.codesupply.co/lifestyle/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+                  <p class="comment-notes">
+                    <span id="email-notes">Your email address will not be published.</span>
+                    <span class="required-field-message">Required fields are marked <span class="required">*</span>
+                    </span>
+                  </p>
+                  <p class="comment-form-comment">
+                    <label for="comment">Comment <span class="required">*</span>
+                    </label>
+                    <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea>
+                  </p>
+                  <p class="comment-form-author">
+                    <label for="author">Your Name <span class="required">*</span>
+                    </label>
+                    <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required">
+                  </p>
+                  <p class="comment-form-email">
+                    <label for="email">Email Address <span class="required">*</span>
+                    </label>
+                    <input id="email" name="email" type="email" value="" size="30" maxlength="100" required="required">
+                  </p>
+                  <p class="comment-form-url">
+                    <label for="url">Website</label>
+                    <input id="url" name="url" type="url" value="" size="30" maxlength="200">
+                  </p>
+                  <p class="comment-form-cookies-consent">
+                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+                    <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
+                  </p>
+                  <p class="form-submit">
+                    <button name="submit" type="submit" id="submit" class="submit" value="Post Comment">Submit Comment </button>
+                    <input type="hidden" name="comment_post_ID" value="2090" id="comment_post_ID">
+                    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div> #}
+        </div>
+      </div>
+        {% include 'blog/main_aside.html.twig' %}
+    </div>
+  </div>
+</div>
+{% endblock %}
