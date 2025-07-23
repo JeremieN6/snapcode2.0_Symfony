@@ -21,6 +21,61 @@ class PostsRepository extends ServiceEntityRepository
         parent::__construct($registry, Posts::class);
     }
 
+        public function findLatestPostsByCategory(): array
+    {
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT p
+            FROM App\Entity\Posts p
+            INNER JOIN p.categories c
+            WHERE p.createdAt IN (
+                SELECT MAX(p2.createdAt)
+                FROM App\Entity\Posts p2
+                INNER JOIN p2.categories c2
+                WHERE c2.id = c.id
+                GROUP BY c2.id
+            )'
+        );
+
+        return $query->getResult();
+    }
+
+    public function searchByKeyword($keyword)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.title LIKE :keyword OR p.content LIKE :keyword')
+            ->setParameter('keyword', '%'.$keyword.'%')
+            ->orderBy('p.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findAllTitles(): array
+    {
+        // Effectue la requête pour récupérer les titres
+        $query = $this->createQueryBuilder('p')
+            ->select('p.title')
+            ->getQuery();
+
+        // Exécute la requête et retourne le tableau des titres
+        $result = $query->getResult();
+
+        // Convertir le résultat pour ne récupérer que les titres sous forme de tableau de chaînes
+        return array_map(function ($post) {
+            return $post['title'];
+        }, $result);
+    }
+
+    public function findTitlesByCategory(string $categoryName): array
+    {
+        return $this->createQueryBuilder('p')
+            ->innerJoin('p.categories', 'c') // Assure-toi que 'category' est le bon nom de la relation dans Posts
+            ->andWhere('c.name = :categoryName') // Utilise la propriété 'name' de Categories
+            ->setParameter('categoryName', $categoryName)
+            ->getQuery()
+            ->getResult();
+    }
+
     /**
      * Trouve les articles publiés, triés par date de création décroissante
      */

@@ -1,186 +1,120 @@
 {% extends 'blog/base_blog.html.twig' %}
 
-{% block title %}Blog SnapCode™ Agency - Conseils développement web et création de sites{% endblock %}
-
-{% block meta_description %}Découvrez nos conseils d'experts en développement web, création de sites internet et landing pages. Actualités, tutoriels et bonnes pratiques SEO.{% endblock %}
-
-{% block meta_keywords %}blog développement web, conseils création site internet, tutoriels landing page, SEO, Franconville, SnapCode{% endblock %}
+{% block title %}Accueil | Blog - SnapCode™ Agency{% endblock %}
 
 {% block body %}
-<div class="blog-header">
-    <h1>Blog SnapCode™ Agency</h1>
-    <p>Conseils d'experts en développement web et création de sites internet</p>
-    
-    <!-- Barre de recherche -->
-    <div class="search-container" style="margin-top: 30px;">
-        <form action="{{ path('blog_search') }}" method="GET" style="display: flex; justify-content: center; gap: 10px;">
-            <input type="text" name="q" placeholder="Rechercher un article..." 
-                   style="padding: 12px 20px; border: none; border-radius: 25px; width: 300px; font-size: 16px;"
-                   value="{{ app.request.query.get('q', '') }}">
-            <button type="submit" style="padding: 12px 25px; background: #fff; color: #2A4DD0; border: none; border-radius: 25px; font-weight: bold; cursor: pointer;">
-                <i class="fa fa-search"></i> Rechercher
-            </button>
-        </form>
-    </div>
-</div>
-
-<div class="blog-grid">
-    <!-- Articles principaux -->
-    <div class="main-content">
-        {% if posts|length > 0 %}
-            <!-- Articles en vedette -->
-            {% if favoritePosts|length > 0 %}
-            <section class="featured-posts" style="margin-bottom: 50px;">
-                <h2 style="color: #2A4DD0; margin-bottom: 30px; font-size: 28px;">
-                    <i class="fa fa-star"></i> Articles en vedette
-                </h2>
-                <div class="featured-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    {% for post in favoritePosts %}
-                    <article class="blog-post-card featured">
-                        {% if post.featuredImage %}
-                        <div class="post-image" style="height: 200px; background-image: url('{{ post.featuredImage }}'); background-size: cover; background-position: center; position: relative;">
-                            <div style="position: absolute; top: 10px; right: 10px; background: #ff6b35; color: white; padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;">
-                                <i class="fa fa-star"></i> Vedette
+          <div class="cs-site-content cs-sidebar-enabled cs-sidebar-right">
+            <div class="cs-container">
+              <section class="cs-home-hero cs-hero-type-1">
+                <div class="cs-hero-type-1__slider" data-cs-autoplay="1" data-cs-autoplay-delay="5000" data-cs-parallax="1" data-cs-gap="32">
+                  <div class="cs-hero-type-1__wrapper" data-scheme="inverse">
+                    {% for post in recentPosts %}
+                        <article class="cs-hero-type-1__item cs-entry">
+                            <div class="cs-entry__outer cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-slider">
+                                <div class="cs-entry__inner cs-entry__thumbnail">
+                                    <div class="cs-overlay-background">
+                                        <img width="512" height="314" src="{{ post.featuredImage }}" class="attachment-csco-thumbnail-uncropped size-csco-thumbnail-uncropped wp-post-image" alt="{{ post.title }}" decoding="async" fetchpriority="high" srcset="{{ post.featuredImage }} 512w, {{ post.featuredImage }} 300w, {{ post.featuredImage }} 1024w, {{ post.featuredImage }} 768w, {{ post.featuredImage }} 1536w, {{ post.featuredImage }} 2048w, {{ post.featuredImage }} 920w, {{ post.featuredImage }} 1600w, {{ post.featuredImage }} 3200w, {{ post.featuredImage }} 1920w, {{ post.featuredImage }} 3840w" sizes="(max-width: 512px) 100vw, 512px" />
+                                        <img width="1600" height="980" src="{{ post.featuredImage }}" class="attachment-csco-large-uncropped size-csco-large-uncropped wp-post-image" alt="{{ post.title }}" decoding="async" srcset="{{ post.featuredImage }} 1600w, {{ post.featuredImage }} 300w, {{ post.featuredImage }} 1024w, {{ post.featuredImage }} 768w, {{ post.featuredImage }} 1536w, {{ post.featuredImage }} 2048w, {{ post.featuredImage }} 512w, {{ post.featuredImage }} 920w, {{ post.featuredImage }} 3200w, {{ post.featuredImage }} 1920w, {{ post.featuredImage }} 3840w" sizes="(max-width: 1600px) 100vw, 1600px" />
+                                    </div>
+                                </div>
+                                <div class="cs-entry__inner cs-entry__content cs-overlay-content" data-swiper-parallax-x="-400" data-swiper-parallax-duration="800">
+                                    <div class="cs-entry__post-meta">
+                                        <div class="cs-meta-author">
+                                            <span class="cs-meta-author-by">Par</span>
+                                            <a class="cs-meta-author-link url fn n" href="#">
+                                                <span class="cs-meta-author-name">
+                                                    {% if post.users %}
+                                                        {{ post.users.prenom }} {{ post.users.nom }}
+                                                    {% else %}
+                                                        Auteur inconnu
+                                                    {% endif %}
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="cs-meta-date">{{ post.createdAt|date('d F Y') }}</div>
+                                    </div>
+                                    <h2 class="cs-entry__title">{{ post.title }}</h2>
+                                    {% if post.categories|length > 0 %}
+                                    <div class="cs-entry__subtitle">{{ post.categories|first.description|default('')|raw }}</div>
+                                    {% endif %}
+                                    <div class="cs-entry__post-meta">
+                                        <div class="cs-meta-category">
+                                            <ul class="post-categories">
+                                                {% if post.categories|length > 0 %}
+                                                <li>
+                                                    <a href="{{ path('app_category', {slug: post.categories|first.slug}) }}" rel="category tag">{{ post.categories|first.name }}</a>
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="cs-overlay-link" href="{{ path('article_show', {slug: post.slug}) }}" title="{{ post.title }}"></a>
                             </div>
-                        </div>
-                        {% endif %}
-                        <div style="padding: 25px;">
-                            <div class="post-meta" style="margin-bottom: 15px; color: #666; font-size: 14px;">
-                                <span><i class="fa fa-calendar"></i> {{ post.createdAt|date('d F Y') }}</span>
-                                {% if post.categories|length > 0 %}
-                                <span style="margin-left: 15px;">
-                                    <i class="fa fa-folder"></i> 
-                                    <a href="{{ path('blog_category', {slug: post.categories|first.slug}) }}" style="color: #2A4DD0; text-decoration: none;">
-                                        {{ post.categories|first.name }}
-                                    </a>
-                                </span>
-                                {% endif %}
-                            </div>
-                            <h3 style="margin-bottom: 15px; font-size: 20px; line-height: 1.4;">
-                                <a href="{{ path('blog_show', {slug: post.slug}) }}" style="color: #333; text-decoration: none;">
-                                    {{ post.title }}
-                                </a>
-                            </h3>
-                            <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
-                                {{ post.content|striptags|slice(0, 150) }}...
-                            </p>
-                            <a href="{{ path('blog_show', {slug: post.slug}) }}" 
-                               style="color: #2A4DD0; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 5px;">
-                                Lire la suite <i class="fa fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
+                        </article>
                     {% endfor %}
+                  </div>
+                  <div class="cs-hero-type-1__pagination"></div>
+                  <div class="cs-hero-type-1__button-prev"></div>
+                  <div class="cs-hero-type-1__button-next"></div>
                 </div>
-            </section>
-            {% endif %}
-
-            <!-- Tous les articles -->
-            <section class="all-posts">
-                <h2 style="color: #2A4DD0; margin-bottom: 30px; font-size: 28px;">
-                    <i class="fa fa-newspaper-o"></i> Tous les articles
-                </h2>
-                <div class="blog-posts">
-                    {% for post in posts %}
-                    <article class="blog-post-card">
-                        {% if post.featuredImage %}
-                        <div class="post-image" style="height: 200px; background-image: url('{{ post.featuredImage }}'); background-size: cover; background-position: center;">
-                        </div>
-                        {% endif %}
-                        <div style="padding: 25px;">
-                            <div class="post-meta" style="margin-bottom: 15px; color: #666; font-size: 14px;">
-                                <span><i class="fa fa-calendar"></i> {{ post.createdAt|date('d F Y') }}</span>
-                                {% if post.categories|length > 0 %}
-                                <span style="margin-left: 15px;">
-                                    <i class="fa fa-folder"></i> 
-                                    <a href="{{ path('blog_category', {slug: post.categories|first.slug}) }}" style="color: #2A4DD0; text-decoration: none;">
-                                        {{ post.categories|first.name }}
-                                    </a>
-                                </span>
-                                {% endif %}
-                            </div>
-                            <h3 style="margin-bottom: 15px; font-size: 20px; line-height: 1.4;">
-                                <a href="{{ path('blog_show', {slug: post.slug}) }}" style="color: #333; text-decoration: none;">
-                                    {{ post.title }}
-                                </a>
-                            </h3>
-                            <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
-                                {{ post.content|striptags|slice(0, 150) }}...
-                            </p>
-                            <a href="{{ path('blog_show', {slug: post.slug}) }}" 
-                               style="color: #2A4DD0; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 5px;">
-                                Lire la suite <i class="fa fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-                    {% endfor %}
+              </section>
+              <div id="content" class="cs-main-content">
+                <div id="primary" class="cs-content-area">
+                  <div class="cs-posts-area cs-posts-area-posts">
+                    <div class="cs-posts-area__outer">
+                      <div class="cs-posts-area__main cs-archive-grid  cs-posts-area__home cs-posts-area__grid">
+                        {% for post in latestPostsByCategory %}
+                            <article class="post-{{ post.id }} post type-post status-publish format-standard has-post-thumbnail category-{{ post.categories|first.slug }} cs-entry">
+                                <div class="cs-entry__outer">
+                                    <div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape" data-scheme="inverse">
+                                        <div class="cs-overlay-background">
+                                            <img width="512" height="384" src="{{ post.featuredImage }}" class="attachment-csco-thumbnail size-csco-thumbnail wp-post-image" alt="{{ post.title }}" decoding="async" loading="lazy" srcset="{{ post.featuredImage }} 512w, {{ post.featuredImage }} 1024w" sizes="(max-width: 512px) 100vw, 512px" />
+                                        </div>
+                                        <a class="cs-overlay-link" href="{{ path('article_show', {slug: post.slug}) }}" title="{{ post.title }}"></a>
+                                    </div>
+                                    <div class="cs-entry__inner cs-entry__content">
+                                        <div class="cs-entry__post-meta">
+                                            <div class="cs-meta-author">
+                                                <span class="cs-meta-author-by">Par</span>
+                                                <a class="cs-meta-author-link url fn n" href="#">
+                                                    <span class="cs-meta-author-name">
+                                                        {% if post.users %}
+                                                            {{ post.users.prenom }} {{ post.users.nom }}
+                                                        {% else %}
+                                                            Auteur inconnu
+                                                        {% endif %}
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="cs-meta-date">{{ post.createdAt|date('d F Y') }}</div>
+                                        </div>
+                                        <h2 class="cs-entry__title">
+                                            <a href="{{ path('article_show', {slug: post.slug}) }}">
+                                                <span>{{ post.title }}</span>
+                                            </a>
+                                        </h2>
+                                        <div class="cs-entry__post-meta">
+                                            <div class="cs-meta-category">
+                                                <ul class="post-categories">
+                                                    {% for category in post.categories %}
+                                                        <li>
+                                                            <a href="{{ path('app_category', {slug: category.slug}) }}" rel="category tag">{{ category.name }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </section>
-        {% else %}
-            <div style="text-align: center; padding: 60px 20px; background: #f8f9fa; border-radius: 10px;">
-                <i class="fa fa-newspaper-o" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
-                <h3 style="color: #666; margin-bottom: 15px;">Aucun article disponible</h3>
-                <p style="color: #999;">Les premiers articles seront bientôt publiés. Revenez nous voir !</p>
+                {% include 'blog/main_aside.html.twig' %}
+              </div>
             </div>
-        {% endif %}
-    </div>
-
-    <!-- Sidebar -->
-    <aside class="blog-sidebar">
-        <!-- Catégories -->
-        {% if categories|length > 0 %}
-        <div class="sidebar-section" style="margin-bottom: 40px;">
-            <h3 style="color: #2A4DD0; margin-bottom: 20px; font-size: 20px; border-bottom: 2px solid #2A4DD0; padding-bottom: 10px;">
-                <i class="fa fa-folder"></i> Catégories
-            </h3>
-            <ul style="list-style: none; padding: 0;">
-                {% for category in categories %}
-                <li style="margin-bottom: 10px;">
-                    <a href="{{ path('blog_category', {slug: category.slug}) }}" 
-                       style="color: #333; text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee;">
-                        <span>{{ category.name }}</span>
-                        <span style="background: #2A4DD0; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px;">
-                            {{ category.postCount }}
-                        </span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-
-        <!-- Articles récents -->
-        {% if recentPosts|length > 0 %}
-        <div class="sidebar-section">
-            <h3 style="color: #2A4DD0; margin-bottom: 20px; font-size: 20px; border-bottom: 2px solid #2A4DD0; padding-bottom: 10px;">
-                <i class="fa fa-clock-o"></i> Articles récents
-            </h3>
-            {% for post in recentPosts %}
-            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
-                <h4 style="margin-bottom: 8px; font-size: 16px; line-height: 1.3;">
-                    <a href="{{ path('blog_show', {slug: post.slug}) }}" style="color: #333; text-decoration: none;">
-                        {{ post.title }}
-                    </a>
-                </h4>
-                <p style="color: #666; font-size: 14px; margin-bottom: 5px;">
-                    <i class="fa fa-calendar"></i> {{ post.createdAt|date('d M Y') }}
-                </p>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
-
-        <!-- Call to action -->
-        <div class="sidebar-section" style="background: linear-gradient(135deg, #2A4DD0 0%, #1a3ba8 100%); color: white; padding: 30px; border-radius: 10px; text-align: center;">
-            <h3 style="margin-bottom: 15px; font-size: 20px;">Besoin d'un site web ?</h3>
-            <p style="margin-bottom: 20px; font-size: 14px; line-height: 1.5;">
-                Découvrez nos services de création de sites internet et landing pages sur-mesure.
-            </p>
-            <a href="{{ path('app_home') }}" 
-               style="background: white; color: #2A4DD0; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block;">
-                Voir nos services
-            </a>
-        </div>
-    </aside>
-</div>
+          </div>
 {% endblock %}

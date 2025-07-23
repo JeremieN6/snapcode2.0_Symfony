@@ -85,7 +85,7 @@ class TestBlogIntegrationCommand extends Command
             
             if (!empty($posts)) {
                 $firstPost = $posts[0];
-                $postUrl = $this->urlGenerator->generate('blog_show', ['slug' => $firstPost->getSlug()]);
+                $postUrl = $this->urlGenerator->generate('blog_index', ['slug' => $firstPost->getSlug()]);
                 $io->text("URL premier article: $postUrl");
             }
             

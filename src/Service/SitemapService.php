@@ -64,7 +64,7 @@ class SitemapService
             
             $loc = $xml->createElement('loc');
             $loc->appendChild($xml->createTextNode(
-                $this->urlGenerator->generate('blog_show', ['slug' => $post->getSlug()], UrlGeneratorInterface::ABSOLUTE_URL)
+                $this->urlGenerator->generate('blog_index', ['slug' => $post->getSlug()], UrlGeneratorInterface::ABSOLUTE_URL)
             ));
             $url->appendChild($loc);
             

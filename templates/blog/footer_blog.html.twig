@@ -1,0 +1,53 @@
+<footer class="cs-footer">
+    <div class="cs-container">
+    <div class="cs-footer__item cs-footer__item-top-bar">
+        <div class="cs-footer__item-inner">
+        <div class="cs-footer__col cs-col-left">
+            <div class="cs-logo">
+            <a class="cs-footer__logo cs-logo-default" href="#">
+                <img src="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }}" alt="Lifestyle" srcset="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }} 1x, {{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }} 2x">
+            </a>
+            <a class="cs-footer__logo cs-logo-dark" href="#">
+                <img src="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_clear.png') }}" alt="Lifestyle" srcset="{{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }} 1x, {{ asset('blog/assets/logos/logo_snapcode_agency_blog_dark.png') }} 2x">
+            </a>
+            </div>
+            <div class="cs-footer__desc">Découvrez Snapcode Agency - Le Blog, plateforme de contenu sur les tendances, actu, conseils web. Parcourez nos articles, engageant qui divertissent tous nos lecteurs.</div>
+        </div>
+        <div class="cs-footer__col cs-col-center">
+            <div class="cs-footer__nav-menu">
+            <ul id="menu-footer" class="cs-footer__nav ">
+                {% for name, slug in menuCategorie %}
+                    {% if name in ['Développement Web', 'Projets Clients', 'Conseils aux Entreprises', 'Marketing Digital et Stratégie Web'] %}
+                        <li id="menu-item-2009" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2009">
+                            <a href="{{ path('app_category', { slug: slug }) }}">{{ name }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+        <div class="cs-footer__col cs-col-right">
+            <div class="cs-social">
+            <a class="cs-social__link" href="#" target="_blank">
+                <img src="{{ asset('blog/assets/social-icons/demo-icon-facebook-0001.webp') }}" alt="Facebook" srcset="{{ asset('blog/assets/social-icons/demo-icon-facebook-0001.webp') }} 1x, {{ asset('blog/assets/social-icons/demo-icon-facebook-0001.webp') }} 2x">
+            </a>
+            <a class="cs-social__link" href="#" target="_blank">
+                <img src="{{ asset('blog/assets/social-icons/demo-icon-twitter-new-0001.webp') }}" alt="Twitter" srcset="{{ asset('blog/assets/social-icons/demo-icon-twitter-new-0001.webp') }} 1x, {{ asset('blog/assets/social-icons/demo-icon-twitter-new-0001.webp') }} 2x">
+            </a>
+            <a class="cs-social__link" href="#" target="_blank">
+                <img src="{{ asset('blog/assets/social-icons/demo-icon-instagram-0001.webp') }}" alt="Instagram" srcset="{{ asset('blog/assets/social-icons/demo-icon-instagram-0001.webp') }} 1x, {{ asset('blog/assets/social-icons/demo-icon-instagram-0001.webp') }} 2x">
+            </a>
+            <a class="cs-social__link" href="#" target="_blank">
+                <img src="{{ asset('blog/assets/social-icons/demo-icon-pinterest-0001.webp') }}" alt="Pinterest" srcset="{{ asset('blog/assets/social-icons/demo-icon-pinterest-0001.webp') }} 1x, {{ asset('blog/assets/social-icons/demo-icon-pinterest-0001.webp') }} 2x">
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="cs-footer__item cs-footer__item-bottom-bar">
+        <div class="cs-footer__item-inner">
+        <div class="cs-footer__copyright"> ©️ 2023 — Snapcode Agency - Le Blog. Tous les droits réservés.</div>
+        </div>
+    </div>
+    </div>
+</footer>
