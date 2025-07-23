@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    {% block meta %}
+    <!-- Required meta tags -->
+    <!-- Canonic URL -->
+    <link rel="canonical" href="{{ app.request.scheme ~ '://' ~ app.request.host ~ app.request.pathInfo }}">
+    <!-- links for favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('V1/assets/favicon/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('V1/assets/favicon/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('V1/assets/favicon/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('V1/assets/favicon/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('V1/assets/favicon/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('V1/assets/favicon/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('V1/assets/favicon/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('V1/assets/favicon/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('V1/assets/favicon/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('V1/assets/favicon/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('V1/assets/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('V1/assets/favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('V1/assets/favicon/favicon-16x16.png') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Basic metas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="SnapCode™ Agency">
+    <meta name="description" content="{% block meta_description %}Blog SnapCode™ - Conseils et actualités sur le développement web, la création de sites internet et les landing pages{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}développement web, création site internet, landing page, SEO, Franconville{% endblock %}">
+
+    <!-- Mobile specific metas -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SnapCode™">
+    <meta name="twitter:creator" content="@SnapCode™">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ block('title') }}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ block('meta_description') }}{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ asset('assets/images/brand-logo.svg') }}{% endblock %}">
+    
+    <!-- Facebook -->
+    <meta property="og:url" content="{{ app.request.uri }}">
+    <meta property="og:title" content="{% block og_title %}{{ block('title') }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ block('meta_description') }}{% endblock %}">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ asset('assets/images/brand-logo.svg') }}{% endblock %}">
+    <meta property="og:image:secure_url" content="{{ block('og_image') }}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="SnapCode™ Agency - Blog">
+    {% endblock %}
+    
+    <title>{% block title %}Blog SnapCode™ Agency - Conseils développement web{% endblock %}</title>
+    
+    {% block stylesheets %}
+    <!-- Icon fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,500i,700,700i,900" rel="stylesheet">
+
+    <!-- css links -->
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('V1/assets/css/vendor/owl.carousel.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('V1/assets/css/vendor/owl.theme.default.min.css') }}">
+
+    <!-- Magnific popup -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('V1/assets/css/vendor/magnific-popup.css') }}">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/style/style.css') }}">
+
+    <!-- Load Flashy default CSS -->
+    <link rel="stylesheet" href="{{ asset('./bundles/mercuryseriesflashy/css/flashy.css') }}">
+
+    <!--Message Flash Icon-->
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Blog specific styles -->
+    <style>
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #2A4DD0 0%, #1a3ba8 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .blog-post-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .blog-sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    {% endblock %}
+    
+<!-- data test -->
+<script
+  defer
+  data-website-id="6776ca8384c862c94194f0b2"
+  data-domain="jeremiecode.fr"
+  src="https://datafa.st/js/script.js">
+</script>
+</head>
+
+<body>
+    {% include 'header.html.twig' %}
+
+    {% if app.user and app.user.isVerified == false %}
+    <div class="flashy flashy--warning">
+        <i class="material-icons">speaker_notes</i>
+        <strong>Bonjour, {{app.user.prenom}}</strong>, <br> votre compte n'est pas encore activé. <br> Un lien d'activation vous a été envoyé par mail.<br>
+        <a class="flashy__body" href="{{path('resend_verif')}}" target="_blank">Pas de lien ? <strong>Renvoyez le lien d'activation.</strong></a>
+    </div>
+    {% endif %}
+
+    <main class="blog-container" id="mainPage">
+        {% block body %}{% endblock %}
+    </main>
+
+    <!-- Début de widget de badge Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/ngoyi-jeremie-pro/appel-d-information-jeremiecode-1er-contact?hide_gdpr_banner=1', text: 'PRENDRE UN RDV', color: '#2A4DD0', textColor: '#ffffff', branding: undefined }); }</script>
+    <!-- Fin de widget de badge Calendly -->
+
+    {% include 'footer.html.twig' %}
+
+    {% block javascripts %}
+        <!-- Charger jQuery en premier -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <!-- Charger le JavaScript de Bootstrap après jQuery -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Custom Script -->
+        <script src="{{ asset('assets/js/script.js') }}"></script>
+        <!-- Load Flashy default JavaScript -->
+        <script src="{{ asset('./bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+    {% endblock %}
+    
+    <!-- Include Flashy default partial -->
+    {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+    
+    {% block structured_data %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog SnapCode™ Agency",
+        "description": "Conseils et actualités sur le développement web, la création de sites internet et les landing pages",
+        "url": "{{ app.request.scheme ~ '://' ~ app.request.host ~ '/blog' }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "SnapCode™ Agency",
+            "url": "{{ app.request.scheme ~ '://' ~ app.request.host }}"
+        }
+    }
+    </script>
+    {% endblock %}
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            $(".my-alert").alert('my-close-button')
+        });
+    </script>
+</body>
+
+</html>

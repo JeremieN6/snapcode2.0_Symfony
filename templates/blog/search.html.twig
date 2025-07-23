@@ -1,0 +1,189 @@
+{% extends 'blog/base_blog.html.twig' %}
+
+{% block title %}Recherche "{{ searchTerm }}" - Blog SnapCode™ Agency{% endblock %}
+
+{% block meta_description %}Résultats de recherche pour "{{ searchTerm }}" sur le blog SnapCode™ Agency. Trouvez des articles sur le développement web et la création de sites internet.{% endblock %}
+
+{% block meta_keywords %}{{ searchTerm }}, recherche, développement web, création site internet, SnapCode{% endblock %}
+
+{% block body %}
+<!-- Breadcrumb -->
+<nav style="margin-bottom: 30px; padding: 15px 0; background: #f8f9fa; border-radius: 8px;">
+    <div style="padding: 0 20px;">
+        <a href="{{ path('app_home') }}" style="color: #2A4DD0; text-decoration: none;">Accueil</a>
+        <span style="margin: 0 10px; color: #666;">/</span>
+        <a href="{{ path('blog_index') }}" style="color: #2A4DD0; text-decoration: none;">Blog</a>
+        <span style="margin: 0 10px; color: #666;">/</span>
+        <span style="color: #666;">Recherche</span>
+    </div>
+</nav>
+
+<!-- En-tête de recherche -->
+<div class="search-header" style="background: linear-gradient(135deg, #2A4DD0 0%, #1a3ba8 100%); color: white; padding: 40px; border-radius: 10px; margin-bottom: 40px; text-align: center;">
+    <h1 style="margin-bottom: 15px; font-size: 32px;">
+        <i class="fa fa-search"></i> Résultats de recherche
+    </h1>
+    <p style="font-size: 18px; opacity: 0.9; margin-bottom: 20px;">
+        Recherche pour : <strong>"{{ searchTerm }}"</strong>
+    </p>
+    <p style="opacity: 0.8; font-size: 14px;">
+        {{ posts|length }} résultat{{ posts|length > 1 ? 's' : '' }} trouvé{{ posts|length > 1 ? 's' : '' }}
+    </p>
+    
+    <!-- Nouvelle recherche -->
+    <div style="margin-top: 30px;">
+        <form action="{{ path('blog_search') }}" method="GET" style="display: flex; justify-content: center; gap: 10px; max-width: 500px; margin: 0 auto;">
+            <input type="text" name="q" placeholder="Nouvelle recherche..." 
+                   style="padding: 12px 20px; border: none; border-radius: 25px; flex: 1; font-size: 16px;"
+                   value="{{ searchTerm }}">
+            <button type="submit" style="padding: 12px 25px; background: #fff; color: #2A4DD0; border: none; border-radius: 25px; font-weight: bold; cursor: pointer;">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="blog-grid">
+    <!-- Résultats de recherche -->
+    <div class="main-content">
+        {% if posts|length > 0 %}
+            <div class="blog-posts">
+                {% for post in posts %}
+                <article class="blog-post-card">
+                    {% if post.featuredImage %}
+                    <div class="post-image" style="height: 200px; background-image: url('{{ post.featuredImage }}'); background-size: cover; background-position: center;">
+                    </div>
+                    {% endif %}
+                    <div style="padding: 25px;">
+                        <div class="post-meta" style="margin-bottom: 15px; color: #666; font-size: 14px;">
+                            <span><i class="fa fa-calendar"></i> {{ post.createdAt|date('d F Y') }}</span>
+                            {% if post.categories|length > 0 %}
+                            <span style="margin-left: 15px;">
+                                <i class="fa fa-folder"></i> 
+                                <a href="{{ path('blog_category', {slug: post.categories|first.slug}) }}" style="color: #2A4DD0; text-decoration: none;">
+                                    {{ post.categories|first.name }}
+                                </a>
+                            </span>
+                            {% endif %}
+                            {% if post.users %}
+                            <span style="margin-left: 15px;">
+                                <i class="fa fa-user"></i> {{ post.users.prenom }} {{ post.users.nom }}
+                            </span>
+                            {% endif %}
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-size: 20px; line-height: 1.4;">
+                            <a href="{{ path('blog_show', {slug: post.slug}) }}" style="color: #333; text-decoration: none;">
+                                {{ post.title }}
+                            </a>
+                        </h3>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">
+                            {% set excerpt = post.content|striptags|slice(0, 200) %}
+                            {% if searchTerm in excerpt|lower %}
+                                {{ excerpt|replace({(searchTerm): '<mark style="background: #ffeb3b; padding: 2px 4px; border-radius: 3px;">' ~ searchTerm ~ '</mark>'})|raw }}...
+                            {% else %}
+                                {{ excerpt }}...
+                            {% endif %}
+                        </p>
+                        <a href="{{ path('blog_show', {slug: post.slug}) }}" 
+                           style="color: #2A4DD0; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 5px;">
+                            Lire la suite <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div style="text-align: center; padding: 60px 20px; background: #f8f9fa; border-radius: 10px;">
+                <i class="fa fa-search" style="font-size: 48px; color: #ccc; margin-bottom: 20px;"></i>
+                <h3 style="color: #666; margin-bottom: 15px;">Aucun résultat trouvé</h3>
+                <p style="color: #999; margin-bottom: 25px;">
+                    Aucun article ne correspond à votre recherche "<strong>{{ searchTerm }}</strong>".
+                </p>
+                <div style="margin-bottom: 25px;">
+                    <p style="color: #666; margin-bottom: 15px;">Suggestions :</p>
+                    <ul style="list-style: none; padding: 0; color: #666; text-align: left; display: inline-block;">
+                        <li style="margin-bottom: 8px;"><i class="fa fa-lightbulb-o"></i> Vérifiez l'orthographe de vos mots-clés</li>
+                        <li style="margin-bottom: 8px;"><i class="fa fa-lightbulb-o"></i> Essayez des termes plus généraux</li>
+                        <li style="margin-bottom: 8px;"><i class="fa fa-lightbulb-o"></i> Utilisez des synonymes</li>
+                        <li><i class="fa fa-lightbulb-o"></i> Réduisez le nombre de mots-clés</li>
+                    </ul>
+                </div>
+                <a href="{{ path('blog_index') }}" 
+                   style="background: #2A4DD0; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; margin-right: 15px;">
+                    Voir tous les articles
+                </a>
+                <button onclick="document.querySelector('input[name=q]').focus()" 
+                        style="background: #666; color: white; padding: 12px 25px; border-radius: 25px; border: none; cursor: pointer; font-weight: bold;">
+                    Nouvelle recherche
+                </button>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+        <!-- Recherches populaires -->
+        <div class="sidebar-section" style="margin-bottom: 40px;">
+            <h3 style="color: #2A4DD0; margin-bottom: 20px; font-size: 20px; border-bottom: 2px solid #2A4DD0; padding-bottom: 10px;">
+                <i class="fa fa-fire"></i> Recherches populaires
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <a href="{{ path('blog_search', {q: 'développement web'}) }}" 
+                   style="background: #e3f2fd; color: #2A4DD0; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 12px;">
+                    développement web
+                </a>
+                <a href="{{ path('blog_search', {q: 'SEO'}) }}" 
+                   style="background: #e3f2fd; color: #2A4DD0; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 12px;">
+                    SEO
+                </a>
+                <a href="{{ path('blog_search', {q: 'landing page'}) }}" 
+                   style="background: #e3f2fd; color: #2A4DD0; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 12px;">
+                    landing page
+                </a>
+                <a href="{{ path('blog_search', {q: 'site internet'}) }}" 
+                   style="background: #e3f2fd; color: #2A4DD0; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 12px;">
+                    site internet
+                </a>
+                <a href="{{ path('blog_search', {q: 'Symfony'}) }}" 
+                   style="background: #e3f2fd; color: #2A4DD0; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 12px;">
+                    Symfony
+                </a>
+            </div>
+        </div>
+
+        <!-- Catégories -->
+        {% if categories|length > 0 %}
+        <div class="sidebar-section" style="margin-bottom: 40px;">
+            <h3 style="color: #2A4DD0; margin-bottom: 20px; font-size: 20px; border-bottom: 2px solid #2A4DD0; padding-bottom: 10px;">
+                <i class="fa fa-folder"></i> Parcourir par catégorie
+            </h3>
+            <ul style="list-style: none; padding: 0;">
+                {% for category in categories %}
+                <li style="margin-bottom: 10px;">
+                    <a href="{{ path('blog_category', {slug: category.slug}) }}" 
+                       style="color: #333; text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee;">
+                        <span>{{ category.name }}</span>
+                        <span style="background: #2A4DD0; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px;">
+                            {{ category.postCount }}
+                        </span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Aide -->
+        <div class="sidebar-section" style="background: linear-gradient(135deg, #2A4DD0 0%, #1a3ba8 100%); color: white; padding: 30px; border-radius: 10px; text-align: center;">
+            <h3 style="margin-bottom: 15px; font-size: 20px;">Besoin d'aide ?</h3>
+            <p style="margin-bottom: 20px; font-size: 14px; line-height: 1.5;">
+                Vous ne trouvez pas ce que vous cherchez ? Contactez-nous directement.
+            </p>
+            <a href="{{ path('app_home') }}"
+               style="background: white; color: #2A4DD0; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block;">
+                Voir nos services
+            </a>
+        </div>
+    </aside>
+</div>
+{% endblock %}
