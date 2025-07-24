@@ -465,6 +465,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface, Serial
 
     public function __toString()
     {
-        return $this->pseudo;
+        return $this->prenom . ' ' . $this->nom;
     }
 }
