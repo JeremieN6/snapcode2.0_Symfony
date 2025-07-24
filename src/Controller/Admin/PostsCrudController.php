@@ -56,11 +56,7 @@ class PostsCrudController extends AbstractCrudController
                 ->setHelp('Description pour les moteurs de recherche (160 caractères max)')
                 ->setColumns(6),
                 
-            ImageField::new('featuredImage', 'Image à la une')
-                ->setBasePath('/uploads/blog/')
-                ->setUploadDir('public/uploads/blog/')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
+            TextField::new('featuredImage', 'Image à la une'),
                 
             TextEditorField::new('content', 'Contenu')
                 ->setRequired(true)
