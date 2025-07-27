@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PostsRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Posts
 {
     #[ORM\Id]
@@ -274,5 +275,18 @@ class Posts
     public function setUpdatedAtValue(): void
     {
         $this->updatedAt = new \DateTime();
+    }
+
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function generateMetaFields(): void
+    {
+        if (empty($this->metaTitle) && !empty($this->title)) {
+            $this->metaTitle = mb_substr($this->title, 0, 60);
+        }
+        if (empty($this->metaDescription) && !empty($this->content)) {
+            $desc = strip_tags($this->content);
+            $this->metaDescription = mb_substr($desc, 0, 160);
+        }
     }
 }
