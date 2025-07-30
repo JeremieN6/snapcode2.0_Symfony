@@ -41,9 +41,6 @@ class RegistrationFormType extends AbstractType
             ->add('ville',TextType::class,[
                 'label' => 'Ville'
             ])
-            ->add('pseudo',TextType::class,[
-                'label' => 'Pseudo'
-            ])
             ->add('description',TextareaType::class,[
                 'label' => 'Description',
                 'attr' => [

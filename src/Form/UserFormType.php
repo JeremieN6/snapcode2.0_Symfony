@@ -51,10 +51,6 @@ class UserFormType extends AbstractType
                 'label' => 'Ville',
                 'attr' => ['placeholder' => 'Entre ta nouvelle ville 📍']
             ])
-            ->add('pseudo', TextType::class, [
-                'label' => 'Pseudo',
-                'attr' => ['placeholder' => 'Entre ton nouveau pseudo 🙂']
-            ])
             ->add('description', TextareaType::class, [
                 'label' => 'Description',
                 'attr' => ['placeholder' => 'Entre une courte description de toi 📰']
