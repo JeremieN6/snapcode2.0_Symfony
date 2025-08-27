@@ -94,7 +94,7 @@ class PostsCrudController extends AbstractCrudController
                 ->hideOnForm()
                 ->setFormat('dd/MM/yyyy HH:mm'),
 
-            BooleanField::new('headline', 'Article en tête de page')
+            BooleanField::new('isHeadline', 'Article en tête de page')
                 ->setHelp('Cochez pour afficher l\'article en tête de page'),
         ];
     }
