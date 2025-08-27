@@ -17,11 +17,11 @@ final class Version20250827123000 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // add nullable boolean column for headline posts
-        $this->addSql('ALTER TABLE posts ADD is_headline TINYINT(1) DEFAULT NULL');
+        $this->addSql('ALTER TABLE posts ADD is_headline TINYINT(1) NULL DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
-        $this->addSql('ALTER TABLE posts DROP is_headline');
+        $this->addSql('ALTER TABLE posts DROP COLUMN is_headline');
     }
 }
