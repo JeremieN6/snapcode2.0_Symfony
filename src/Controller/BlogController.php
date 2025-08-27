@@ -28,8 +28,29 @@ class BlogController extends AbstractController
         // Récupérer les catégories avec le nombre de posts
         $allCategoriesWithCount = $categoriesRepository->findAllWithPostCount();
 
-        // Récupérer les 3 articles les plus récents
-        $recentPosts = $postsRepository->findThreeMostRecentPosts();
+        // Récupérer d'abord les articles marqués "headline" (à afficher en haut)
+        $recentPosts = $postsRepository->findHeadlinePosts(3);
+
+        // Si moins de 3 articles marqués, compléter avec les plus récents non déjà inclus
+        if (count($recentPosts) < 3) {
+            $needed = 3 - count($recentPosts);
+            $additional = $postsRepository->findPublishedPosts($needed);
+
+            foreach ($additional as $post) {
+                // éviter les doublons
+                $already = false;
+                foreach ($recentPosts as $r) {
+                    if ($r->getId() === $post->getId()) {
+                        $already = true;
+                        break;
+                    }
+                }
+                if (!$already) {
+                    $recentPosts[] = $post;
+                }
+            }
+            // s'il reste moins que 3 après tentative, on garde ce qu'on a
+        }
 
         // Définir la locale pour la requête
         $request->setLocale('fr');
