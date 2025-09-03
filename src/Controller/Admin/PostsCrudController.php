@@ -17,6 +17,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\EntityFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\BooleanFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\DateTimeFilter;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 
 class PostsCrudController extends AbstractCrudController
 {
@@ -33,6 +35,16 @@ class PostsCrudController extends AbstractCrudController
             ->setSearchFields(['title', 'content', 'slug'])
             ->setDefaultSort(['createdAt' => 'DESC'])
             ->setPaginatorPageSize(20);
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->add(Crud::PAGE_INDEX, Action::new('generateArticle', 'Générer un Article')
+                ->linkToRoute('admin_article_generator')
+                ->setIcon('fa fa-magic')
+                ->setCssClass('btn btn-primary')
+                ->displayAsButton());
     }
 
     public function configureFields(string $pageName): iterable

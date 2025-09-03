@@ -22,3 +22,7 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 /public/upload/images/profil/*
+
+.specstory
+.cursorindexingignore
+/documents

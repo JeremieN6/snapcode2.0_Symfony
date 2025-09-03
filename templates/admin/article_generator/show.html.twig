@@ -1,0 +1,174 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }} - SnapCode™ Agency{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Article généré -->
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="mb-0">
+                            <i class="fa fa-check-circle"></i> Article Généré avec Succès !
+                        </h3>
+                        <span class="badge bg-light text-dark">
+                            <i class="fa fa-clock-o"></i> {{ article.createdAt|date('d/m/Y H:i') }}
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-success">
+                        <h5><i class="fa fa-info-circle"></i> Article créé automatiquement</h5>
+                        <p class="mb-0">
+                            L'article a été généré avec l'IA et est maintenant publié sur votre blog. 
+                            Vous pouvez le modifier ou le supprimer depuis le panneau d'administration.
+                        </p>
+                    </div>
+
+                    <!-- Métadonnées de l'article -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <strong>Catégorie :</strong>
+                            {% for category in article.categories %}
+                                <span class="badge bg-primary">{{ category.name }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Auteur :</strong> {{ article.users.prenom }} {{ article.users.nom }}
+                        </div>
+                    </div>
+
+                    <!-- Contenu de l'article -->
+                    <article class="blog-post">
+                        <h1 class="blog-post-title">{{ article.title }}</h1>
+                        
+                        <div class="blog-post-content">
+                            {{ article.content|raw }}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Actions rapides -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fa fa-cogs"></i> Actions Rapides
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                                                 <a href="{{ path('admin', {'crudAction': 'edit', 'crudControllerFqcn': 'App\\Controller\\Admin\\PostsCrudController', 'entityId': article.id}) }}" class="btn btn-outline-primary">
+                             <i class="fa fa-edit"></i> Modifier l'Article
+                         </a>
+                        <a href="{{ path('article_show', {'slug': article.slug}) }}" class="btn btn-outline-info" target="_blank">
+                            <i class="fa fa-eye"></i> Voir sur le Site
+                        </a>
+                        <a href="{{ path('admin_article_generator') }}" class="btn btn-outline-success">
+                            <i class="fa fa-magic"></i> Générer un Autre Article
+                        </a>
+                                                 <a href="{{ path('admin', {'crudAction': 'index', 'crudControllerFqcn': 'App\\Controller\\Admin\\PostsCrudController'}) }}" class="btn btn-outline-secondary">
+                             <i class="fa fa-list"></i> Tous les Articles
+                         </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informations SEO -->
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">
+                        <i class="fa fa-search"></i> Informations SEO
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <strong>Titre SEO :</strong>
+                        <p class="text-muted small">{{ article.metaTitle ?: 'Non défini' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Description SEO :</strong>
+                        <p class="text-muted small">{{ article.metaDescription ?: 'Non définie' }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Slug :</strong>
+                        <code class="small">{{ article.slug }}</code>
+                    </div>
+                    <div>
+                        <strong>Statut :</strong>
+                        {% if article.isPublished %}
+                            <span class="badge bg-success">Publié</span>
+                        {% else %}
+                            <span class="badge bg-warning">Brouillon</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.blog-post-title {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.blog-post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+.blog-post-content h2 {
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.blog-post-content h3 {
+    color: #34495e;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+}
+
+.blog-post-content p {
+    margin-bottom: 1.2rem;
+}
+
+.blog-post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.blog-post-content figure {
+    margin: 2rem 0;
+}
+
+.blog-post-content figcaption {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
+    margin-top: 0.5rem;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.badge {
+    font-size: 0.8rem;
+}
+</style>
+{% endblock %}
