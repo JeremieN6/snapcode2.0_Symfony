@@ -42,6 +42,7 @@ services:
 
     App\Service\SitemapGenerator:
         arguments:
+            $projectDir: '%kernel.project_dir%'
             $baseUrl: '%app.base_url%'
 
     # add more service definitions when explicit configuration is needed

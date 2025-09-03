@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Repository\PostsRepository;
 use App\Repository\CategoriesRepository;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 class SitemapGenerator
 {
@@ -14,7 +15,7 @@ class SitemapGenerator
     private string $projectDir;
     private string $baseUrl;
 
-    public function __construct(PostsRepository $postsRepository, CategoriesRepository $categoriesRepository, UrlGeneratorInterface $urlGenerator, string $projectDir, string $baseUrl)
+    public function __construct(PostsRepository $postsRepository, CategoriesRepository $categoriesRepository, UrlGeneratorInterface $urlGenerator, #[Autowire('%kernel.project_dir%')] string $projectDir, #[Autowire('%env(APP_BASE_URL)%')] string $baseUrl)
     {
         $this->postsRepository = $postsRepository;
         $this->categoriesRepository = $categoriesRepository;
