@@ -17,6 +17,7 @@ parameters:
     aws_bucket: '%env(resolve:AWS_BUCKET)%'
     aws_s3_base_url: '%env(resolve:AWS_S3_BASE_URL)%'
     aws_s3_endpoint: '%env(resolve:AWS_S3_ENDPOINT)%'
+    app.base_url: 'https://agence.jeremiecode.fr'
 
 
 services:
@@ -38,6 +39,10 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+
+    App\Service\SitemapGenerator:
+        arguments:
+            $baseUrl: '%app.base_url%'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

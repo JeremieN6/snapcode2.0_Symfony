@@ -51,6 +51,9 @@ class Posts
     #[ORM\Column(nullable: true)]
     private ?bool $isFavorite = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?bool $isHeadline = null;
+
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $metaDescription = null;
 
@@ -230,6 +233,17 @@ class Posts
     public function setIsFavorite(?bool $isFavorite): static
     {
         $this->isFavorite = $isFavorite;
+        return $this;
+    }
+
+    public function isIsHeadline(): ?bool
+    {
+        return $this->isHeadline;
+    }
+
+    public function setIsHeadline(?bool $isHeadline): static
+    {
+        $this->isHeadline = $isHeadline;
         return $this;
     }
 

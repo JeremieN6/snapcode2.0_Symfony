@@ -147,6 +147,22 @@ class PostsRepository extends ServiceEntityRepository
     }
 
     /**
+     * Trouve les articles marqués comme "headline" (à afficher en haut), triés par date décroissante
+     */
+    public function findHeadlinePosts(int $limit = 3): array
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->where('p.isHeadline = :headline')
+            ->andWhere('p.isPublished = :published')
+            ->setParameter('headline', true)
+            ->setParameter('published', true)
+            ->orderBy('p.createdAt', 'DESC')
+            ->setMaxResults($limit);
+
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
      * Trouve les 3 articles les plus récents
      */
     public function findThreeMostRecentPosts(): array

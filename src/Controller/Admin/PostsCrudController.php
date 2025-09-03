@@ -100,12 +100,14 @@ class PostsCrudController extends AbstractCrudController
                 ->setHelp('Cochez pour mettre en avant cet article'),
                 
             DateTimeField::new('createdAt', 'Date de création')
-                ->hideOnForm()
                 ->setFormat('dd/MM/yyyy HH:mm'),
                 
             DateTimeField::new('updatedAt', 'Dernière modification')
                 ->hideOnForm()
                 ->setFormat('dd/MM/yyyy HH:mm'),
+
+            BooleanField::new('isHeadline', 'Article en tête de page')
+                ->setHelp('Cochez pour afficher l\'article en tête de page'),
         ];
     }
 
