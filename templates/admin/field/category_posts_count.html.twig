@@ -1,3 +1,4 @@
+{% set count = (value|default([])|length) %}
 <span class="badge badge-primary">
-    {{ value|length }} article{{ value|length > 1 ? 's' : '' }}
+    {{ count }} article{{ count > 1 ? 's' : '' }}
 </span>
