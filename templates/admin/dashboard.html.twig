@@ -42,4 +42,36 @@
     </div>
 </div>
 
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card border-info mb-3">
+            <div class="card-header">Prospection QR</div>
+            <div class="card-body">
+                <h5 class="card-title">Statistiques (live)</h5>
+                <ul class="list-unstyled mb-0">
+                    <li><strong>Enseignes:</strong> {{ qr_stats.enseignes ?? '—' }}</li>
+                    <li><strong>Scans:</strong> {{ qr_stats.scans ?? '—' }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card border-secondary mb-3">
+            <div class="card-header">Top Enseignes</div>
+            <div class="card-body p-0">
+                <table class="table table-sm mb-0">
+                    <thead><tr><th>Enseigne</th><th class="text-end">Scans</th></tr></thead>
+                    <tbody>
+                    {% for row in qr_stats.top ?? [] %}
+                        <tr><td>{{ row.name }}</td><td class="text-end">{{ row.total }}</td></tr>
+                    {% else %}
+                        <tr><td colspan="2" class="text-center text-muted">Aucune donnée</td></tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

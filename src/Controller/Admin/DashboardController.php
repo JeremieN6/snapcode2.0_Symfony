@@ -13,6 +13,8 @@ use App\Entity\Posts;
 use App\Entity\Categories;
 use App\Entity\Keywords;
 use App\Entity\Comments;
+use App\Repository\EnseigneRepository;
+use App\Repository\QrScanRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -22,10 +24,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/admin', name: 'admin')]
-    public function index(): Response
+    public function customDashboard(EnseigneRepository $enseigneRepository, QrScanRepository $qrScanRepository): Response
     {
-        return $this->render('admin/dashboard.html.twig');
-        // return parent::index();
+        $stats = [
+            'enseignes' => $enseigneRepository->countAll(),
+            'scans' => $qrScanRepository->countAll(),
+            'top' => $enseigneRepository->findTopEnseignes(5),
+        ];
+        return $this->render('admin/dashboard.html.twig', ['qr_stats' => $stats]);
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
@@ -74,6 +80,10 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Catégories', 'fa fa-tags', Categories::class);
         yield MenuItem::linkToCrud('Mots-clés', 'fa fa-key', Keywords::class);
         yield MenuItem::linkToCrud('Commentaires', 'fa fa-comment', Comments::class);
+
+    yield MenuItem::section('QR Prospection');
+    yield MenuItem::linkToCrud('Enseignes', 'fa fa-qrcode', \App\Entity\Enseigne::class);
+    yield MenuItem::linkToCrud('Scans', 'fa fa-eye', \App\Entity\QrScan::class);
 
     }
 }

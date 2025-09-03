@@ -45,6 +45,10 @@ services:
             $projectDir: '%kernel.project_dir%'
             $baseUrl: '%app.base_url%'
 
+    App\Service\QrCodeGenerator:
+        arguments:
+            $publicDir: '%kernel.project_dir%/public'
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
     Aws\S3\S3Client:
