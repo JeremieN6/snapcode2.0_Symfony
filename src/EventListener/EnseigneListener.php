@@ -5,11 +5,11 @@ namespace App\EventListener;
 use App\Entity\Enseigne;
 use App\Service\QrCodeGenerator;
 use Doctrine\Bundle\DoctrineBundle\Attribute\AsEntityListener;
-use Doctrine\ORM\Event\PostPersistEventArgs;
+use Doctrine\ORM\Event\PrePersistEventArgs;
 use Doctrine\ORM\Events;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-#[AsEntityListener(event: Events::postPersist, method: 'postPersist', entity: Enseigne::class)]
+#[AsEntityListener(event: Events::prePersist, method: 'prePersist', entity: Enseigne::class)]
 class EnseigneListener
 {
     public function __construct(
@@ -17,15 +17,13 @@ class EnseigneListener
         private QrCodeGenerator $qrCodeGenerator,
     ) {}
 
-    public function postPersist(Enseigne $enseigne, PostPersistEventArgs $args): void
+    public function prePersist(Enseigne $enseigne, PrePersistEventArgs $args): void
     {
-        // Si déjà initialisé, on évite boucle
         if ($enseigne->getTrackingUrl() ?? false) {
-            return;
+            return; // déjà défini
         }
 
         $relativePath = '/r/' . $enseigne->getUuid();
-        // Génération URL absolue si possible (router context), sinon relative
         try {
             $tracking = $this->urlGenerator->generate('qr_redirect', ['uuid' => $enseigne->getUuid()], UrlGeneratorInterface::ABSOLUTE_URL);
         } catch (\Throwable) {
@@ -33,12 +31,10 @@ class EnseigneListener
         }
         $enseigne->setTrackingUrl($tracking);
 
+        // Génère le QR code avant insertion (uuid suffisant)
         $filename = $enseigne->getUuid() . '.png';
         $qrRelative = $this->qrCodeGenerator->generate($tracking, $filename, $enseigne->getName());
         $enseigne->setQrFilename($qrRelative);
-
-        $em = $args->getObjectManager();
-        $em->persist($enseigne);
-        $em->flush();
+        // Pas de flush/persist ici : Doctrine fera l'INSERT avec les valeurs mises à jour
     }
 }
