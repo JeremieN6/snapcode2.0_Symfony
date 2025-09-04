@@ -2,76 +2,95 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1 class="display-4">Administration SnapCode™ Agency</h1>
-    <p class="lead">Bienvenue sur l'interface d'administration de votre site web.</p>
-    
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <i class="fa fa-magic"></i> Générateur d'Articles IA
-                    </h5>
-                    <p class="card-text">
-                        Générez automatiquement des articles de blog avec l'intelligence artificielle.
-                        Entrez un sujet et notre IA créera un article complet avec image.
-                    </p>
-                    <a href="{{ path('admin_article_generator') }}" class="btn btn-primary">
-                        <i class="fa fa-magic"></i> Générer un Article
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <i class="fa fa-newspaper-o"></i> Gestion des Articles
-                    </h5>
-                    <p class="card-text">
-                        Gérez vos articles de blog : créer, modifier, publier ou supprimer.
-                    </p>
-                                         <a href="{{ path('admin', {'crudAction': 'index', 'crudControllerFqcn': 'App\\Controller\\Admin\\PostsCrudController'}) }}" class="btn btn-outline-primary">
-                         <i class="fa fa-list"></i> Voir les Articles
-                     </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+	<div class="jumbotron">
+		<h1 class="display-4">Administration SnapCode™ Agency</h1>
+		<p class="lead">Bienvenue sur l'interface d'administration de votre site web.</p>
 
-<div class="row mt-4">
-    <div class="col-md-4">
-        <div class="card border-info mb-3">
-            <div class="card-header">Prospection QR</div>
-            <div class="card-body">
-                <h5 class="card-title">Statistiques (live)</h5>
-                <ul class="list-unstyled mb-0">
-                    <li><strong>Enseignes:</strong> {{ qr_stats.enseignes ?? '—' }}</li>
-                    <li><strong>Scans:</strong> {{ qr_stats.scans ?? '—' }}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-8">
-        <div class="card border-secondary mb-3">
-            <div class="card-header">Top Enseignes</div>
-            <div class="card-body p-0">
-                <table class="table table-sm mb-0">
-                    <thead><tr><th>Enseigne</th><th class="text-end">Scans</th></tr></thead>
-                    <tbody>
-                    {% for row in qr_stats.top ?? [] %}
-                        <tr><td>{{ row.name }}</td><td class="text-end">{{ row.total }}</td></tr>
-                    {% else %}
-                        <tr><td colspan="2" class="text-center text-muted">Aucune donnée</td></tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+		<div class="row mt-4">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<i class="fa fa-magic"></i>
+							Générateur d'Articles IA
+						</h5>
+						<p class="card-text">
+							Générez automatiquement des articles de blog avec l'intelligence artificielle.
+							                        Entrez un sujet et notre IA créera un article complet avec image.
+						</p>
+						<a href="{{ path('admin_article_generator') }}" class="btn btn-primary">
+							<i class="fa fa-magic"></i>
+							Générer un Article
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<i class="fa fa-newspaper-o"></i>
+							Gestion des Articles
+						</h5>
+						<p class="card-text">
+							Gérez vos articles de blog : créer, modifier, publier ou supprimer.
+						</p>
+						<a href="{{ path('admin', {'crudAction': 'index', 'crudControllerFqcn': 'App\\Controller\\Admin\\PostsCrudController'}) }}" class="btn btn-outline-primary">
+							<i class="fa fa-list"></i>
+							Voir les Articles
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row mt-4">
+			<div class="col-md-4">
+				<div class="card mb-3">
+					<div class="card-header">Prospection QR</div>
+					<div class="card-body">
+						<h5 class="card-title">Statistiques (live)</h5>
+						<ul class="list-unstyled mb-0">
+							<li>
+								<strong>Enseignes:</strong>
+								{{ qr_stats.enseignes ?? '—' }}</li>
+							<li>
+								<strong>Scans:</strong>
+								{{ qr_stats.scans ?? '—' }}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="card border-secondary mb-3">
+					<div class="card-header">Top Enseignes</div>
+					<div class="card-body p-0">
+						<table class="table table-sm mb-0">
+							<thead>
+								<tr>
+									<th>Enseigne</th>
+									<th class="text-end">Scans</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for row in qr_stats.top ?? [] %}
+									<tr>
+										<td>{{ row.name }}</td>
+										<td class="text-end">{{ row.total }}</td>
+									</tr>
+								{% else %}
+									<tr>
+										<td colspan="2" class="text-center text-muted">Aucune donnée</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 {% endblock %}
