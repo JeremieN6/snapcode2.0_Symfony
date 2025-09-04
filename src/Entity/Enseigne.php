@@ -24,7 +24,7 @@ class Enseigne
     private string $uuid;
 
     #[ORM\Column(length: 255)]
-    private string $trackingUrl;
+    private string $trackingUrl = '';
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $qrFilename = null;
