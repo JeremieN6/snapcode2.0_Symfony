@@ -36,10 +36,15 @@ class Enseigne
     #[ORM\OneToMany(mappedBy: 'enseigne', targetEntity: QrScan::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $scans;
 
+    /** @var Collection<int, QrShare> */
+    #[ORM\OneToMany(mappedBy: 'enseigne', targetEntity: QrShare::class, orphanRemoval: true, cascade: ['persist'])]
+    private Collection $shares;
+
     public function __construct()
     {
         $this->uuid = Uuid::v4()->toRfc4122();
-        $this->scans = new ArrayCollection();
+    $this->scans = new ArrayCollection();
+    $this->shares = new ArrayCollection();
         $this->createdAt = new \DateTimeImmutable();
     }
 
@@ -59,6 +64,11 @@ class Enseigne
     public function removeScan(QrScan $scan): self { if($this->scans->removeElement($scan)){ if($scan->getEnseigne() === $this){ $scan->setEnseigne(null);} } return $this; }
 
     public function getTotalScans(): int { return $this->scans->count(); }
+    /** @return Collection<int, QrShare> */
+    public function getShares(): Collection { return $this->shares; }
+    public function addShare(QrShare $share): self { if(!$this->shares->contains($share)){ $this->shares->add($share); $share->setEnseigne($this);} return $this; }
+    public function removeShare(QrShare $share): self { if($this->shares->removeElement($share)){ if($share->getEnseigne() === $this){ $share->setEnseigne(null);} } return $this; }
+    public function getTotalShares(): int { return $this->shares->count(); }
 
     public function __toString(): string { return $this->name; }
 }

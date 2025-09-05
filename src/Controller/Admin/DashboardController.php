@@ -15,6 +15,7 @@ use App\Entity\Keywords;
 use App\Entity\Comments;
 use App\Repository\EnseigneRepository;
 use App\Repository\QrScanRepository;
+use App\Repository\QrShareRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -24,11 +25,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/admin', name: 'admin')]
-    public function customDashboard(EnseigneRepository $enseigneRepository, QrScanRepository $qrScanRepository): Response
+    public function customDashboard(EnseigneRepository $enseigneRepository, QrScanRepository $qrScanRepository, QrShareRepository $qrShareRepository): Response
     {
         $stats = [
             'enseignes' => $enseigneRepository->countAll(),
             'scans' => $qrScanRepository->countAll(),
+            'shares' => $qrShareRepository->countAll(),
             'top' => $enseigneRepository->findTopEnseignes(5),
         ];
         return $this->render('admin/dashboard.html.twig', ['qr_stats' => $stats]);
@@ -84,6 +86,7 @@ class DashboardController extends AbstractDashboardController
     yield MenuItem::section('QR Prospection');
     yield MenuItem::linkToCrud('Enseignes', 'fa fa-qrcode', \App\Entity\Enseigne::class);
     yield MenuItem::linkToCrud('Scans', 'fa fa-eye', \App\Entity\QrScan::class);
+    yield MenuItem::linkToCrud('Partages', 'fa fa-share-alt', \App\Entity\QrShare::class);
 
     }
 }

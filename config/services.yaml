@@ -18,6 +18,14 @@ parameters:
     aws_s3_base_url: '%env(resolve:AWS_S3_BASE_URL)%'
     aws_s3_endpoint: '%env(resolve:AWS_S3_ENDPOINT)%'
     app.base_url: 'https://agence.jeremiecode.fr'
+    # Valeurs par défaut (surchargées par .env.local non commité)
+    contact_first_name: '%env(default:CONTACT_FIRSTNAME)%'
+    contact_last_name: '%env(default:CONTACT_LASTNAME)%'
+    contact_org: '%env(default:CONTACT_ORG)%'
+    contact_title: '%env(default:CONTACT_TITLE)%'
+    contact_email: '%env(default:CONTACT_EMAIL)%'
+    contact_phone: '%env(default:CONTACT_PHONE)%'
+    contact_website: '%env(default:CONTACT_WEBSITE)%'
 
 
 services:
@@ -48,6 +56,16 @@ services:
     App\Service\QrCodeGenerator:
         arguments:
             $publicDir: '%kernel.project_dir%/public'
+
+    App\Service\ContactCardProvider:
+        arguments:
+            $contactFirstName: '%contact_first_name%'
+            $contactLastName: '%contact_last_name%'
+            $contactOrg: '%contact_org%'
+            $contactTitle: '%contact_title%'
+            $contactEmail: '%contact_email%'
+            $contactPhone: '%contact_phone%'
+            $contactWebsite: '%contact_website%'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

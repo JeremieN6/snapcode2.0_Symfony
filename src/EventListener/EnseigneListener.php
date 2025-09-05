@@ -23,9 +23,9 @@ class EnseigneListener
             return; // déjà défini
         }
 
-        $relativePath = '/r/' . $enseigne->getUuid();
+        $relativePath = '/c/' . $enseigne->getUuid();
         try {
-            $tracking = $this->urlGenerator->generate('qr_redirect', ['uuid' => $enseigne->getUuid()], UrlGeneratorInterface::ABSOLUTE_URL);
+            $tracking = $this->urlGenerator->generate('business_card', ['uuid' => $enseigne->getUuid()], UrlGeneratorInterface::ABSOLUTE_URL);
         } catch (\Throwable) {
             $tracking = $relativePath;
         }

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% block title %}Carte de visite - {{ enseigne.name }}{% endblock %}
+{% block body %}
+<div class="container py-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="d-flex align-items-center mb-3">
+        <img src="/favicon.ico" class="rounded me-3" style="width:64px;height:64px" alt="Logo">
+        <div>
+          <h4 class="mb-0">{{ contact.firstName }} {{ contact.lastName }}</h4>
+          <small class="text-muted">{{ contact.title }} – {{ contact.org }}</small>
+        </div>
+      </div>
+  <p class="mb-1"><strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+  <p class="mb-1"><strong>Téléphone:</strong> <a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></p>
+  <p class="mb-3"><strong>Site:</strong> <a href="{{ contact.website }}" target="_blank" rel="noopener">{{ contact.website|replace({'https://':'','http://':''}) }}</a></p>
+
+      <div class="alert alert-info py-2">Vous avez scanné ce code pour l'enseigne <strong>{{ enseigne.name }}</strong>.</div>
+
+      <a id="downloadVcard" href="{{ path('business_card_vcard', {uuid: enseigne.uuid}) }}" class="btn btn-primary mb-3">
+        <i class="fa fa-address-card"></i> Ajouter le contact
+      </a>
+
+      <h5>Partager mes coordonnées</h5>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-outline-success share-btn" data-channel="whatsapp">WhatsApp</button>
+        <button class="btn btn-outline-secondary share-btn" data-channel="sms">SMS</button>
+        <button class="btn btn-outline-info share-btn" data-channel="email">Email</button>
+        <button class="btn btn-outline-primary share-btn" data-channel="copy">Copier lien</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+ const uuid = '{{ enseigne.uuid }}';
+ const baseUrl = window.location.origin;
+ const contactUrl = baseUrl + '{{ path('business_card', {uuid: enseigne.uuid}) }}';
+ const vcardLink = document.getElementById('downloadVcard');
+ // Déclenchement auto du téléchargement après 1s si pas cliqué
+ setTimeout(()=>{ if(vcardLink){ vcardLink.click(); } }, 1000);
+
+ function postShare(channel){
+   fetch(`{{ path('business_card_share', {uuid: enseigne.uuid, channel: 'CHAN'}) }}`.replace('CHAN', channel), {method:'POST'}).catch(()=>{});
+ }
+ function handleShare(channel){
+   postShare(channel);
+   if(channel==='whatsapp'){
+     window.location.href = 'https://wa.me/?text=' + encodeURIComponent('Voici un contact: ' + contactUrl);
+   } else if(channel==='sms') {
+     window.location.href = 'sms:?body=' + encodeURIComponent('Contact: ' + contactUrl);
+   } else if(channel==='email') {
+     window.location.href = 'mailto:?subject=' + encodeURIComponent('Contact pro') + '&body=' + encodeURIComponent(contactUrl);
+   } else if(channel==='copy') {
+     navigator.clipboard && navigator.clipboard.writeText(contactUrl);
+     alert('Lien copié');
+   }
+ }
+ document.querySelectorAll('.share-btn').forEach(btn=>{
+   btn.addEventListener('click', ()=> handleShare(btn.dataset.channel));
+ });
+})();
+</script>
+{% endblock %}
