@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 
 class MoreInfoFormulaireControllerCrudController extends AbstractCrudController
 {
@@ -29,7 +30,9 @@ class MoreInfoFormulaireControllerCrudController extends AbstractCrudController
             TextField::new('website', 'Site web Entreprise'),
             TextField::new('serviceTypeSuperSite', "Besoin Super Site"),
             TextField::new('serviceTypeAutre', 'Autre besoin'),
-            TextField::new('description', 'Besoin Client'),
+            DateTimeField::new('createdAt', 'Formulaire soumis le')
+                ->setFormat('dd/MM/yyyy HH:mm'),
+            TextEditorField ::new('description', 'Besoin Client'),
         ];
     }
     

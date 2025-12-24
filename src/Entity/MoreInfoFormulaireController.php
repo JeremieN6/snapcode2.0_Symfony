@@ -38,6 +38,16 @@ class MoreInfoFormulaireController
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    public function __construct()
+    {
+        if ($this->createdAt === null) { 
+            $this->createdAt = new \DateTimeImmutable(); 
+        }
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -135,6 +145,18 @@ class MoreInfoFormulaireController
     public function setDescription(?string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): static
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }
